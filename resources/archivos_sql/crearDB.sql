@@ -1,8 +1,9 @@
 
 /*DROP DATABASE hashtag;*/
-CREATE DATABASE hashtag;
-CREATE USER 'hashtag'@'localhost' IDENTIFIED BY 'hashtag';
-GRANT ALL PRIVILEGES ON hashtag.* TO 'hashtag'@'localhost'/* WITH GRANT OPTION*/;
+CREATE DATABASE tfg;
+CREATE USER 'admintfg'@'localhost' IDENTIFIED BY 'admintfg';
+GRANT ALL PRIVILEGES ON tfg.* TO 'tfg'@'localhost'/* WITH GRANT OPTION*/;
+
 
 
 
