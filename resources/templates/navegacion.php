@@ -20,7 +20,7 @@ if(isset($_GET['ID'])){
   </div>
   <nav>
     <ul>
-        <li><a href="">Inicio</a></li>
+        <li><a href="principal.php">Inicio</a></li>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <li><a href="perfil.php">Perfil</a></li>
         <li><a href="principal.php?cerrarSesion=true"  id='perfil'>Logout</a></li>
