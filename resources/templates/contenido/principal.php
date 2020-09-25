@@ -7,3 +7,6 @@
 <a href="ejercicio.php">un ejercicio cualquiera</a>
 <br>
 <a href="receta.php">una receta cualquiera</a>
+<br>
+<br>
+<a href="">esto no va a nada</a>
