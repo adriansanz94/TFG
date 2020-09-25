@@ -14,8 +14,9 @@ $config = [
   'mail_password' => 'cámbiala',
   'mail_correo' => 'miCorreo',
   'mail_server' => 'server',
-  'img_path' => '/uploaded/images',
-  'img_in_url' => '/images',
+  'img_path' => '/uploaded/images',//carpeta donde se guardan las imagenes descargadas de twitter
+  'img_in_url' => '/images',//ruta de las imagenes
+  /*esto es todo de la api de twitter */
   'oauth_access_token' => "YOUR_OAUTH_ACCESS_TOKEN",
   'oauth_access_token_secret' => "YOUR_OAUTH_ACCESS_TOKEN_SECRET",
   'consumer_key' => "YOUR_CONSUMER_KEY",
