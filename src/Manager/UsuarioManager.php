@@ -9,9 +9,9 @@
 
     public static function autentificado($nombre){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("SELECT ID,USUARIO,CONTRASEÑA,EMAIL
+      $db->ejecuta("SELECT ID,NOMBRE,PASS,EMAIL
                     FROM  USUARIO
-                    WHERE USUARIO = ? ",
+                    WHERE NOMBRE = ? ",
                     $nombre);
       $datos =  $db->obtenDatos();
       if(count($datos)>0) return $datos[0];
@@ -28,7 +28,7 @@
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (USUARIO, CONTRASEÑA , EMAIL)
+      $db->ejecuta("INSERT INTO USUARIO (USUARIO, PASS , EMAIL)
                     VALUES (?, ?, ?)",
                     $campos);
     }
@@ -38,7 +38,7 @@
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("UPDATE USUARIO
                     SET USUARIO = ?,
-                        CONTRASEÑA = ?,
+                        PASS = ?,
                         EMAIL = ?
                     WHERE ID = ?",
                     $parametros);

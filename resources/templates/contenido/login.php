@@ -9,7 +9,7 @@ if( count($_POST) > 0 ){
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
 
-      if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['CONTRASEÑA']) ){
+      if( $datos != null && password_verify($info['CONTRASEÑA'], $datos['PASS']) ){
         $id = $datos['ID'];
         $_SESSION['autentificado'] = true;
         $_SESSION['ID'] = $id;
