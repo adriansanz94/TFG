@@ -86,7 +86,7 @@
 		<div class="centrar">
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
-				<label> Nombre actual: <?=$datos['USUARIO']?></label><br>
+				<label> Nombre actual: <?=$datos['NOMBRE']?></label><br>
 				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
 				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
 				<?php if(isset($errores['usuario'])) { ?>
