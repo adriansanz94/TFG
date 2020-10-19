@@ -1,7 +1,7 @@
 <?php
 
 $uri = $_SERVER['REQUEST_URI'];
-//ubtenemos id del usuario
+//obtenemos id del usuario
 if(isset($_GET['ID'])){
   $id = intval($_GET['ID']);
 
@@ -10,13 +10,13 @@ if(isset($_GET['ID'])){
 //token
 
 ?>
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="/css/principal.css">
 <header>
   <a href="principal.php">
-  <img src="imagenes/logo.png" alt="logo de la empresa"></a>
+  <img src="imagenes/logo.png" alt="logo de la empresa" id="logo"></a>
 
   <div>
-    <h3 class="color">Fitness Club </h3>
+    <h3 class="color">Ponte En Forma </h3>
   </div>
   <nav>
     <ul>

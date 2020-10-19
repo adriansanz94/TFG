@@ -17,7 +17,8 @@ Son necesarias las variables
     <meta charset="utf-8">
     <title><?=$titulo?></title>
   </head>
-  <link rel="stylesheet" href="/css/principal.css">
+  <!-- <link rel="stylesheet" href="/css/principal.css">  // Esto jode todo el rato, ya que se aplica a todas las paginas
+-->
   <body>
     <?php
         require("$ROOT/resources/templates/autentificacion.php");

@@ -1,0 +1,56 @@
+table {
+	border: 2px solid #353A46;
+	background-color: #3ABAF1;
+	/*opacity: 0.6;*/
+	margin:0 auto;
+}
+
+tr {
+	/*opacity: 0.6;*/
+}
+
+form {
+    width: 48%;
+    height: 40%;
+    padding-top: 5%;
+    margin:0 auto;
+}
+
+h1{
+	text-align: center;
+}
+input[type=text], input[type=password]{
+	width: 100%;
+	padding: 8px 20px;
+	border: 2px solid #ccc;
+	box-sizing: border-box;
+}
+
+#candado{
+	width: 100px;
+	height: 100px;
+}
+
+label{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: arial;
+}
+
+input[type=submit]{
+	background-color: #1C94C8;
+	color:white;
+	padding: 8px 10px;
+	margin: 8px 0px;
+	border: solid;
+	cursor: pointer;
+	width: 40%;
+}
+
+#registrate,#olvidadoContraseña{
+  text-decoration: none;
+}
+
+.error{
+	color:red;
+}
