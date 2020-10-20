@@ -15,7 +15,7 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	//NOMBRE
 	if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=3 ) {
 		$usuario = limpiarCadena($_POST['usuario']);
-	}else{>=3
+	}else{
 		$errores['error_usuario'] = "Nombre muy corto";
 	}
 
