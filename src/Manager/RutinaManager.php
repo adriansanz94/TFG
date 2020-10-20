@@ -13,6 +13,11 @@ class RutinaManager {
     $db->ejecuta("SELECT * FROM RUTINA WHERE ID = ?",$id);
     return $db->obtenDatos()[0];
   }
+  public static function getIdByNombre($nombre){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT ID FROM RUTINA WHERE NOMBRE = ?",$nombre);
+    return $db->obtenDatos()[0];
+  }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO RUTINA (NOMBRE,DIFICULTAD,DESCRIPCION)
