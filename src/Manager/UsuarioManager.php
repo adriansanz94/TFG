@@ -2,7 +2,7 @@
 /**************
  *
  *  HAY QUE MODIFICAR TODOS LOS ATRIBUTOS DE LAS CONSULTAS CON NUESTROS ATRIBUTOS DE BASE DE DATOS
- * 
+ *
  ***************/
 
   class UsuarioManager implements IDWESEntidadManager{
@@ -28,7 +28,7 @@
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (USUARIO, PASS , EMAIL)
+      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, PASS , EMAIL)
                     VALUES (?, ?, ?)",
                     $campos);
     }
@@ -37,7 +37,7 @@
       array_push($parametros,$id);
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("UPDATE USUARIO
-                    SET USUARIO = ?,
+                    SET NOMBRE = ?,
                         PASS = ?,
                         EMAIL = ?
                     WHERE ID = ?",

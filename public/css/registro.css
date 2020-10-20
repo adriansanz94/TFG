@@ -1,0 +1,8 @@
+.noError {
+
+}
+
+.error {
+    color : red;
+    font-size:2 vmin ;
+}
