@@ -17,19 +17,19 @@ print_r($datosReceta);
 <div class="rutinas">
   <?php foreach ($datosRutina as $fila) { ?>
     <div class="rutina">
-    <h2><a href="rutina.php?id=<?= $fila[ID]?>"><?= $fila[NOMBRE]?></a></h2> 
-    <P>Dificultad:<?= $fila[DIFICULTAD]?></P>
-    <P>Descripcion <br><?= $fila[DESCRIPCION]?></P>
+    <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
+    <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
+    <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
     </div>
   <?php } ?>
 </div>
 <div class="recetas">
   <?php foreach ($datosReceta as $fila) { ?>
     <div class="rutina">
-    <h2><a href="receta.php?id=<?= $fila[ID]?>"><?= $fila[NOMBRE]?></a></h2> 
-    <P><?= $fila[DESCRIPCION]?></P>
-    <P><?= $fila[TIEMPO]?></P>
-    <P><?= $fila[IMAGEN]?></P>
+    <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
+    <P><?= $fila['DESCRIPCION']?></P>
+    <P><?= $fila['TIEMPO']?></P>
+    <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
 </div>
