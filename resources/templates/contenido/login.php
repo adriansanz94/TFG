@@ -52,7 +52,7 @@ if( count($_POST) > 0 ){
      <input type="submit" name="enviar" value="Enviar">
      <p>O</p>
      <a href="registrate.php" id="registrate">Registrate</a>
-      
+
       <?php if( isset($errores['db'])) { ?>
         <br><br><span class='error'><?=$errores['db']?></span><br>
       <?php } ?>

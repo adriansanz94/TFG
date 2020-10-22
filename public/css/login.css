@@ -2,26 +2,30 @@
 /*CSS para el formulario de login */
 div.centrar{
 	border: 1px solid red;
-
 }
+
 form {
-    width: 48%;
-    height: 40%;
-    padding-top: 5%;
-		margin:0 auto;
-		border: 1px solid red;
-	
+	display: inline-block;
+  text-align: center;
+  width: 48%;
+  height: 40%;
+  padding-top: 5%;
+	margin:0 auto;
+	border: 1px solid red;
 }
 
-input{
+input[type=text], input[type=password]{
 	margin: 0 auto;
-	
 }
 
 #registrate,#olvidadoContraseña{
 	text-decoration: none;
 	color: black;
 	margin:0 auto;
+}
+
+ form a{
+	text-align: center;
 }
 
 .error{
