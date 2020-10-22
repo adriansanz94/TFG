@@ -16,7 +16,7 @@ print_r($datosReceta);*/
 
 <div class="rutinas">
   <?php foreach ($datosRutina as $fila) { ?>
-    <div class="rutina2">
+    <div class="rutina">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
