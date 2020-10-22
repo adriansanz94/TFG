@@ -13,6 +13,16 @@ class EjercicioRutinaManager {
     $db->ejecuta("SELECT * FROM EJERCICIORUTINA WHERE ID = ?",$id);
     return $db->obtenDatos()[0];
   }
+  public static function getByIdRutina($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM EJERCICIORUTINA WHERE ID_RUTINA = ?",$id);
+    return $db->obtenDatos();
+  }
+  public static function getByIdEjercicio($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM EJERCICIORUTINA WHERE ID_EJERCICIO = ?",$id);
+    return $db->obtenDatos()[0];
+  }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("INSERT INTO EJERCICIORUTINA (ID_RUTINA,ID_EJERCICIO,REPETICIONES)
