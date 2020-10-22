@@ -6,10 +6,10 @@ $datosReceta = RecetaManager::getAll();
 
 
 
-echo "<pre>";
+/*echo "<pre>";
 print_r($datosRutina);
 echo "<pre>";
-print_r($datosReceta);
+print_r($datosReceta);*/
 
 
 ?>
