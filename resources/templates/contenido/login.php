@@ -34,32 +34,27 @@ if( count($_POST) > 0 ){
 ?>
 <link rel="stylesheet" href="/css/login.css">
  <div class="centrar">
-   <form class="" action="login.php" method="post">
-
-      <label>Login</label>
-      <label>Usuario</label>
-      <input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
-      <label>Password</label>
-      <input type="password" name="CONTRASEÑA" value="" placeholder="Introduce tu contraseña">
-      <input type="submit" name="enviar" value="Enviar" />
-      <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
-      <?php if( isset($errores['USUARIO'])) { ?>
-        <br><span class='error'><?=$errores['USUARIO']?></span><br>
+ <form class="" action="login.php" method="post">
+     <input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
+     <?php if( isset($errores['USUARIO'])) { ?>
+       <br><span class='error'><?=$errores['USUARIO']?></span><br>
+     <?php } ?>
+     <br>
+     <input type="password" name="CONTRASEÑA" value="" placeholder="Introduce tu contraseña">
+     <?php if( isset($errores['CONTRASEÑA'])) { ?>
+       <br><span class='error'><?=$errores['CONTRASEÑA']?></span><br>
+     <?php } ?>
+     <br>
+     <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
+     <br>
+     <a href="recuperarPass.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
+     <br>
+     <input type="submit" name="enviar" value="Enviar">
+     <p>O</p>
+     <a href="registrate.php" id="registrate">Registrate</a>
+      
+      <?php if( isset($errores['db'])) { ?>
+        <br><br><span class='error'><?=$errores['db']?></span><br>
       <?php } ?>
-
-      <?php if( isset($errores['CONTRASEÑA'])) { ?>
-        <br><span class='error'><?=$errores['CONTRASEÑA']?></span><br>
-      <?php } ?>
-      <br>
-      <br>
-
-
-      <br>
-      <a href="registrate.php" id="registrate">Registrate</a> <br>
-      <a href="recuperarPass.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
-      <br>
-       <?php if( isset($errores['db'])) { ?>
-         <br><br><span class='error'><?=$errores['db']?></span><br>
-       <?php } ?>
    </form>
  </div>

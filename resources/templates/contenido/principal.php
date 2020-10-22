@@ -5,7 +5,6 @@ $datosRutina = RutinaManager::getAll();
 $datosReceta = RecetaManager::getAll();
 
 
-
 /*echo "<pre>";
 print_r($datosRutina);
 echo "<pre>";
@@ -15,6 +14,7 @@ print_r($datosReceta);*/
 ?>
 
 <div class="rutinas">
+  <h1>Rutinas:</h1>
   <?php foreach ($datosRutina as $fila) { ?>
     <div class="rutina">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
@@ -24,6 +24,7 @@ print_r($datosReceta);*/
   <?php } ?>
 </div>
 <div class="recetas">
+<h1>Recetas:</h1>
   <?php foreach ($datosReceta as $fila) { ?>
     <div class="recetas2">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
