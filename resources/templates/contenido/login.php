@@ -22,7 +22,7 @@ if( count($_POST) > 0 ){
           setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
         }
 
-        header("Location: principal.php");
+        header("Location:principal.php");
         die();
       }else{
         $errores['db'] = 'El usuario o la contraseña no estan registrados';
@@ -46,7 +46,7 @@ if( count($_POST) > 0 ){
         <tr>
           <td>  <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
           </td>
-        </tr>  
+        </tr>
         </table>
       <?php if( isset($errores['USUARIO'])) { ?>
         <br><span class='error'><?=$errores['USUARIO']?></span><br>

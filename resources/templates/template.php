@@ -26,7 +26,6 @@ Son necesarias las variables
 
   <body>
     <?php
-
         require("$ROOT/resources/templates/contenido$ruta_contenido");
      ?>
      <script>

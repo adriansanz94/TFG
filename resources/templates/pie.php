@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/footer.css">
-<footer>
+<footer class="pie">
       <div>
         <p>DAW 2020</p>
         <p>Codificado por Steven y Adrian</p>
