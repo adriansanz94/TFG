@@ -46,9 +46,12 @@ input[type=submit]{
 	cursor: pointer;
 	width: 40%;
 }
+a{
 
+}
 #registrate,#olvidadoContraseña{
   text-decoration: none;
+	margin:0 auto;
 }
 
 .error{

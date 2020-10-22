@@ -45,9 +45,9 @@ if( count($_POST) > 0 ){
         <tr><td><input type="submit" name="enviar" value="Enviar" /> </td></tr>
         <tr>
           <td>  <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
-          </table></td>
-        </tr>
-
+          </td>
+        </tr>  
+        </table>
       <?php if( isset($errores['USUARIO'])) { ?>
         <br><span class='error'><?=$errores['USUARIO']?></span><br>
       <?php } ?>

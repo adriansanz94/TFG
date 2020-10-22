@@ -10,7 +10,7 @@ if(isset($_GET['ID'])){
 //token
 
 ?>
-<link rel="stylesheet" href="/css/principal.css">
+<link rel="stylesheet" href="/css/principal.css"> 
 <header>
   <a href="principal.php">
   <img src="imagenes/logo.png" alt="logo de la empresa" id="logo"></a>

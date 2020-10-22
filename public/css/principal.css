@@ -11,12 +11,12 @@ header{
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
-h3{
+header h3{
   font: oblique bold 120% cursive;
   font-size:30px;
 }
 
-nav  a{
+header nav  a{
 text-decoration: none;
 color: white ;
 margin: 0 auto;
@@ -37,21 +37,21 @@ nav  a{
   font-size: 1.2em;
 }*/
 
-img{
+header img{
   width:50%;
   height:50%;
 }
-nav{
+header nav{
   border-radius: 4em;
 }
 
-nav > ul{
+header nav > ul{
  padding: 0;
  }
-nav > ul > li {
+header nav > ul > li {
  display: inline;
  }
- nav > ul > li > a {
+header nav > ul > li > a {
  font-family: Arial;
  font-size: 15px;
  text-decoration: none;
@@ -61,7 +61,7 @@ nav > ul > li {
  color: #fff;
  }
 
- nav ul li a:hover {
+header nav ul li a:hover {
  background-color: #2586d7;
  margin-top: -2;
  padding-bottom: 12px;]
