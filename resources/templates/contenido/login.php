@@ -36,18 +36,13 @@ if( count($_POST) > 0 ){
  <div class="centrar">
    <form class="" action="login.php" method="post">
 
-      <table>
-        <tr><td colspan="2" style="background-color:#33A8DB; padding-bottom:5px; padding-top:5px;"><label>Login</label></td></tr>
-        <tr><td align="center" rowspan="5"><img src="imagenes/candado.png" id="candado" /></td><td><label>Usuario</label></td></tr>
-        <tr><td><input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre"></td></tr>
-        <tr><td><label>Password</label></td></tr>
-        <tr><td><input type="password" name="CONTRASEÑA" value="" placeholder="Introduce tu contraseña"> </td></tr>
-        <tr><td><input type="submit" name="enviar" value="Enviar" /> </td></tr>
-        <tr>
-          <td>  <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
-          </td>
-        </tr>
-        </table>
+      <label>Login</label>
+      <label>Usuario</label>
+      <input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
+      <label>Password</label>
+      <input type="password" name="CONTRASEÑA" value="" placeholder="Introduce tu contraseña">
+      <input type="submit" name="enviar" value="Enviar" />
+      <label for="recuerdame">Recuerdame</label> <input type="checkbox" name="recuerdame" value="true" id="recuerdame">
       <?php if( isset($errores['USUARIO'])) { ?>
         <br><span class='error'><?=$errores['USUARIO']?></span><br>
       <?php } ?>
