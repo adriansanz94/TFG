@@ -1,17 +1,12 @@
-
 /*CSS para el formulario de login */
-div.centrar{
-	border: 1px solid red;
-}
 
 form {
 	display: inline-block;
   text-align: center;
-  width: 48%;
+  width: 100%;
   height: 40%;
   padding-top: 5%;
 	margin:0 auto;
-	border: 1px solid red;
 }
 
 input[type=text], input[type=password]{
