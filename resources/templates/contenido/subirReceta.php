@@ -33,7 +33,9 @@ if (count($_POST)>0 ) {
   //IMAGEN
   if (isset($_POST['imagen'])) {
     $imagen = limpiarCadena($_POST['imagen']);
-    guardarImagen(`recetas/$id_usuario`,,);
+    //probar con rutas para ver como guardar las imagenes 
+    //esto puede cambiar
+     guardarImagen(`recetas/$id_usuario`,$idREceta,$imagen);
   }else{
     $errores['imagen'] = "No hay imagen";
   }
