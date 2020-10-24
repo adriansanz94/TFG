@@ -33,7 +33,7 @@ if (count($_POST)>0 ) {
   //IMAGEN
   if (isset($_POST['imagen'])) {
     $imagen = limpiarCadena($_POST['imagen']);
-    //guardarImagen('recetas',)
+    guardarImagen(`recetas/$id_usuario`,,);
   }else{
     $errores['imagen'] = "No hay imagen";
   }
