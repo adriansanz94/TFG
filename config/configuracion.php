@@ -14,8 +14,9 @@ $config = [
   'mail_password' => 'cámbiala',
   'mail_correo' => 'miCorreo',
   'mail_server' => 'server',
-  'img_path' => '/uploaded/images',//carpeta donde se guardan las imagenes descargadas de twitter
-  'img_in_url' => '/images',//ruta de las imagenes
+  'img_path' => '/public/imgs',//carpeta donde se guardan las imagenes descargadas de twitter
+  //probar estto con otro nombre
+  'img_in_url' => '/imgs',//ruta de las imagenes
   /*esto es todo de la api de twitter */
   'oauth_access_token' => "YOUR_OAUTH_ACCESS_TOKEN",
   'oauth_access_token_secret' => "YOUR_OAUTH_ACCESS_TOKEN_SECRET",
@@ -35,10 +36,10 @@ spl_autoload_register(function ($name){
     }
   }
 
-  if(file_exists($class_file = "$ROOT/uploaded/images")){
+  if(file_exists($class_file = "$ROOT/public/imgs")){
 
   }else{
-    mkdir("$ROOT/uploaded/images",0777,true);
+    mkdir("$ROOT/public/imgs",0777,true);
   }
 });
 ?>

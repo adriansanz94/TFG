@@ -32,5 +32,32 @@ function startsWith ($string, $startString) {
     $len = strlen($startString);
     return (substr($string, 0, $len) === $startString);
 }
+ //funciona que guarda las imagenes en la BBDD
+ function guardarImagen($carpeta,$id,$imagen){
+  global $ROOT;
+  global $config;
 
+  $fichero = file_get_contents($imagen);
+  $nombreImg = explode('/',$imagen);
+
+  $dirCarpeta = "$carpeta";
+  $dirID = "$id";
+  $nombre = $nombreImg[count($nombreImg)-1];
+
+  $rutaSEHDir = "/$dirCarpeta/$dirID/";
+  $rutaSEH = "$rutaSEHDir$nombre";
+
+  $rutaURLImagenParaBD = $config['img_in_url'] . $rutaSEH;
+  $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
+
+  /*as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
+  as_debug($rutaURLImagenParaBD, "Ruta imgen en base de datos -> ");
+  */
+
+  mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
+  file_put_contents($rutaFísicaDeFichero, $fichero);
+
+  return $rutaURLImagenParaBD;
+
+}
 ?>
