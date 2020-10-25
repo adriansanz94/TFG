@@ -33,7 +33,7 @@ if (count($_POST)>0 ) {
   //IMAGEN
   if (isset($_POST['imagen'])) {
     $imagen = limpiarCadena($_POST['imagen']);
-    //probar con rutas para ver como guardar las imagenes 
+    //probar con rutas para ver como guardar las imagenes
     //esto puede cambiar
      guardarImagen(`recetas/$id_usuario`,$idREceta,$imagen);
   }else{
@@ -82,7 +82,7 @@ if (count($_POST)>0 ) {
   <label>Subir imagen de receta:</label> <br>
   <input type="file" name="imagen" value="Seleccione archivo"> <br>
   <?php if( isset($errores['imagen'])) { ?>
-    <br><span class='error'><?=$errores['imagen']?>imagen no valida</span><br>
+    <br><span class='error'><?=$errores['imagen']?></span><br>
   <?php } ?>
 
   <input type="submit" name="enviar" value="Subir Receta">
