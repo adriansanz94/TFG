@@ -37,8 +37,16 @@ function startsWith ($string, $startString) {
   global $ROOT;
   global $config;
 
-  $fichero = file_get_contents($imagen);
-  $nombreImg = explode('/',$imagen);
+  $fichero;
+  $nombreImg;
+
+  if(file_get_contents($imagen) != null){
+    $fichero = file_get_contents($imagen);
+    $nombreImg = explode('/',$imagen);
+  }else{
+    mkdir($ROOT .$carpeta.$id.$imagen . $rutaSEHDir, 0777, true);
+  }
+  
 
   $dirCarpeta = "$carpeta";
   $dirID = "$id";

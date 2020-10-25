@@ -35,9 +35,9 @@ if (count($_POST)>0 ) {
     $imagen = limpiarCadena($_POST['imagen']);
     //probar con rutas para ver como guardar las imagenes
     //esto puede cambiar
-     guardarImagen(`recetas/$id_usuario`,$idREceta,$imagen);
+     guardarImagen(`$id_usuario/recetas`,$_POST['nombre'],$imagen);
   }else{
-    $errores['imagen'] = "No hay imagen";
+    $errores['imagen'] = "imagen no valida";
   }
 
   echo "<pre>";
@@ -68,7 +68,7 @@ if (count($_POST)>0 ) {
   <?php } ?>
 
   <label>Descripción de la receta (Ingredientes y preparación):</label> <br>
-  <input type="text" name="descripcion" value=""> <br>
+  <input type="textarea" name="descripcion" value=""> <br>
   <?php if( isset($errores['descripcion'])) { ?>
     <br><span class='error'><?=$errores['descripcion']?></span><br>
   <?php } ?>
