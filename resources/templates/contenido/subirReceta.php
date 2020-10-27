@@ -6,6 +6,7 @@ $tiempo = "";
 $imagen = "";
 $errores = [];
 $id_usuario = $_SESSION['ID'];
+$rutaImagen = ""; 
 
 if (count($_POST)>0 ) {
 
@@ -35,7 +36,7 @@ if (count($_POST)>0 ) {
     $imagen = limpiarCadena($_POST['imagen']);
     //probar con rutas para ver como guardar las imagenes
     //esto puede cambiar
-     guardarImagen(`$id_usuario/recetas`,$_POST['nombre'],$imagen);
+     $rutaImagen = guardarImagen($id_usuario.'/recetas',$_POST['nombre'],$imagen);
   }else{
     $errores['imagen'] = "imagen no valida";
   }
@@ -46,9 +47,9 @@ if (count($_POST)>0 ) {
 
   if (count($errores) == 0) {
 
-      RecetaManager::insert($nombre,$descripcion,$tiempo,$imagen,$id_usuario);
-      header("Location:principal.php");
-      die();
+      RecetaManager::insert($nombre,$descripcion,$tiempo,$rutaImagen,$id_usuario);
+      /*header("Location:principal.php");
+      die();*/
   }
 }
 

@@ -39,33 +39,26 @@ function startsWith ($string, $startString) {
 
   $fichero;
   $nombreImg;
-
-  if(file_get_contents($imagen) != null){
-    $fichero = file_get_contents($imagen);
-    $nombreImg = explode('/',$imagen);
-  }else{
-    mkdir($ROOT .$carpeta.$id.$imagen . $rutaSEHDir, 0777, true);
-  }
+  //mete el nombre del fichero como string y luego nombre separa el nombre de la imagen
   
 
+  //metemos la información dentro de las variables 
   $dirCarpeta = "$carpeta";
   $dirID = "$id";
-  $nombre = $nombreImg[count($nombreImg)-1];
-
-  $rutaSEHDir = "/$dirCarpeta/$dirID/";
-  $rutaSEH = "$rutaSEHDir$nombre";
+  $nombre = $imagen;//[count($nombreImg)-1];
+  //son variables para la ruta
+  $rutaSEHDir = "/$dirCarpeta/$dirID/";///3/recetas/nombrecarpeta/
+  $rutaSEH = "$rutaSEHDir$nombre";///3/recetas/nombrecarpeta/
 
   $rutaURLImagenParaBD = $config['img_in_url'] . $rutaSEH;
   $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
 
-  /*as_debug($rutaFísicaDeFichero, "Fichero físico en -> "); // Donde debéis guardar el fichero
-  as_debug($rutaURLImagenParaBD, "Ruta imgen en base de datos -> ");
-  */
+  $fichero = file_get_contents($rutaFísicaDeFichero.'/'.$imagen);
+  $nombreImg = explode('/',$imagen);
 
   mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
   file_put_contents($rutaFísicaDeFichero, $fichero);
 
   return $rutaURLImagenParaBD;
-
 }
 ?>

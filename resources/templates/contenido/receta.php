@@ -13,7 +13,8 @@ print_r($recetas);
 <div class="receta">
   <div>
     <h1><?= $recetas['NOMBRE']?></h1>
-    <p><?= $recetas['DIFICULTAD']?></p>
+    <figure><img src="<?= $recetas['IMAGEN'] ?>"></figure>
+    <p><?= $recetas['TIEMPO']?></p>
     <p><?= $recetas['DESCRIPCION']?></p>
   </div>
 
