@@ -6,6 +6,7 @@ $tiempo = "";
 $imagen = "";
 $errores = [];
 $id_usuario = $_SESSION['ID'];
+$rutaImagen = ""; 
 
 if (count($_POST)>0 ) {
 
@@ -33,11 +34,11 @@ if (count($_POST)>0 ) {
   //IMAGEN
   if (isset($_POST['imagen'])) {
     $imagen = limpiarCadena($_POST['imagen']);
-    
-    
-    //probar con rutas para ver como guardar las imagenes 
+
+    //probar con rutas para ver como guardar las imagenes
+
     //esto puede cambiar
-     guardarImagen(`$id_usuario/recetas`,$_POST['nombre'],$imagen);
+     $rutaImagen = guardarImagen($id_usuario.'/recetas',$_POST['nombre'],$imagen);
   }else{
     $errores['imagen'] = "imagen no valida";
   }
@@ -48,7 +49,8 @@ if (count($_POST)>0 ) {
 
   if (count($errores) == 0) {
 
-      RecetaManager::insert($nombre,$descripcion,$tiempo,$imagen,$id_usuario);
+      RecetaManager::insert($nombre,$descripcion,$tiempo,$rutaImagen,$id_usuario);
+
       /*header("Location:principal.php");
       die();*/
   }
@@ -84,7 +86,7 @@ if (count($_POST)>0 ) {
   <label>Subir imagen de receta:</label> <br>
   <input type="file" name="imagen" value="Seleccione archivo"> <br>
   <?php if( isset($errores['imagen'])) { ?>
-    <br><span class='error'><?=$errores['imagen']?>imagen no valida</span><br>
+    <br><span class='error'><?=$errores['imagen']?></span><br>
   <?php } ?>
 
   <input type="submit" name="enviar" value="Subir Receta">

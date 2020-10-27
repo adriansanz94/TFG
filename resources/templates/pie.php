@@ -2,7 +2,7 @@
 <footer class="pie">
       <div>
         <p>DAW 2020</p>
-        <p>Codificado por Steven y Adrian</p>
+        <p>Codificado por Steven, Adrián y Germán</p>
       </div>
       <!-- Sociales -->
       <div>
