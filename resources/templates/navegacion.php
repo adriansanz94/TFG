@@ -24,7 +24,7 @@ if(isset($_GET['ID'])){
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
         <li><a href="configuracionUsuario.php">Configuración</a></li>
         <li><a href="principal.php?cerrarSesion=true"  id='perfil'>Logout</a></li>
-        <li><a href="administrador.php">Admin</a></li>
+        <li><a href="admin.php">Admin</a></li>
         <li><a href="subirReceta.php">Subir Receta</a></li>
       <?php } elseif($uri != '/login.php'){?>
         <li><a href="login.php">Login</a></li>
