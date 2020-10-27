@@ -32,11 +32,11 @@ if (count($_POST)>0 ) {
   }
 
   //IMAGEN
-  if (isset($_POST['imagen'])) {
-    $imagen = limpiarCadena($_POST['imagen']);
+  if (isset($_FILES['imagen'])) {
+    $imagen = limpiarCadena($_FILES['imagen']['name']);
     //probar con rutas para ver como guardar las imagenes
     //esto puede cambiar
-     $rutaImagen = guardarImagen($id_usuario.'/recetas',$_POST['nombre'],$imagen);
+     $rutaImagen = guardarImagen($id_usuario.'/recetas',$nombre,$_FILES['imagen']['name']);
   }else{
     $errores['imagen'] = "imagen no valida";
   }
@@ -61,7 +61,7 @@ if (count($_POST)>0 ) {
 </style>
 
 
-<form action="subirReceta.php" method="post">
+<form action="subirReceta.php" method="post" enctype="multipart/form-data">
   <label>Nombre de la receta:</label> <br>
   <input type="text" name="nombre" value=""> <br>
   <?php if( isset($errores['nombre'])) { ?>

@@ -5,15 +5,16 @@ global $config;
     $id = $_GET['id'];
   }
 $recetas = RecetaManager::getById($id);
+$no = $recetas['IMAGEN'];
 echo "<pre>";
 print_r($recetas);
 
-
+echo "</pre>";
 ?>
 <div class="receta">
   <div>
     <h1><?= $recetas['NOMBRE']?></h1>
-    <figure><img src="<?= $recetas['IMAGEN'] ?>"></figure>
+    <figure><img src="<?=$recetas['IMAGEN'] ?>"></figure>
     <p><?= $recetas['TIEMPO']?></p>
     <p><?= $recetas['DESCRIPCION']?></p>
   </div>
