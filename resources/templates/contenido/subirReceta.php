@@ -33,6 +33,8 @@ if (count($_POST)>0 ) {
   //IMAGEN
   if (isset($_POST['imagen'])) {
     $imagen = limpiarCadena($_POST['imagen']);
+    
+    
     //probar con rutas para ver como guardar las imagenes 
     //esto puede cambiar
      guardarImagen(`$id_usuario/recetas`,$_POST['nombre'],$imagen);
@@ -47,8 +49,8 @@ if (count($_POST)>0 ) {
   if (count($errores) == 0) {
 
       RecetaManager::insert($nombre,$descripcion,$tiempo,$imagen,$id_usuario);
-      header("Location:principal.php");
-      die();
+      /*header("Location:principal.php");
+      die();*/
   }
 }
 
