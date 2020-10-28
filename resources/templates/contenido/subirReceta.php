@@ -32,14 +32,9 @@ if (count($_POST)>0 ) {
   }
 
   //IMAGEN
-<<<<<<< HEAD
+
   if (isset($_FILES['imagen'])) {
     $imagen = limpiarCadena($_FILES['imagen']['name']);
-=======
-  if (isset($_POST['imagen'])) {
-    $imagen = limpiarCadena($_POST['imagen']);
-
->>>>>>> 23af7dee37b77fd565a1b86f5e845d6fb1183f3b
     //probar con rutas para ver como guardar las imagenes
 
     //esto puede cambiar
