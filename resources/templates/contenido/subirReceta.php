@@ -6,7 +6,7 @@ $tiempo = "";
 $imagen = "";
 $errores = [];
 $id_usuario = $_SESSION['ID'];
-$rutaImagen = ""; 
+$rutaImagen = "";
 
 if (count($_POST)>0 ) {
 
