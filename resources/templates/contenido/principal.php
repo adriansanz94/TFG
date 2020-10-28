@@ -28,6 +28,7 @@ print_r($datosReceta);*/
   <?php foreach ($datosReceta as $fila) { ?>
     <div class="recetas2">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
+    <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
     <P><?= $fila['DESCRIPCION']?></P>
     <P><?= $fila['TIEMPO']?></P>
     <P><?= $fila['IMAGEN']?></P>

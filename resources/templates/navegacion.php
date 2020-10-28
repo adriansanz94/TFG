@@ -25,7 +25,7 @@ if(isset($_GET['ID'])){
         <li><a href="configuracionUsuario.php">Configuración</a></li>
         <li><a href="admin.php">Admin</a></li>
         <li><a href="subirReceta.php">Subir Receta</a></li>
-        <li><a href="subirEjercicio.php">Subir Ejercicio</a></li>
+        <li><a href="subirRutina.php">Subir Rutina</a></li>
         <li><a href="principal.php?cerrarSesion=true"  id='perfil'>Logout</a></li>
       <?php } elseif($uri != '/login.php'){?>
         <li><a href="login.php">Login</a></li>
