@@ -6,7 +6,7 @@ $tiempo = "";
 $imagen = "";
 $errores = [];
 $id_usuario = $_SESSION['ID'];
-$rutaImagen = ""; 
+$rutaImagen = "";
 
 if (count($_POST)>0 ) {
 
@@ -35,9 +35,6 @@ if (count($_POST)>0 ) {
 
   if (isset($_FILES['imagen'])) {
     $imagen = limpiarCadena($_FILES['imagen']['name']);
-
- 
-
 
     //probar con rutas para ver como guardar las imagenes
 
