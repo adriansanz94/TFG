@@ -1,14 +1,14 @@
 use tfg;
 
 /*INSERT DE USUARIOS*/
-INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,IMAGEN,ROL)
+INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,IMAGEN,ROL,RECETAS_FAVORITAS,RUTINAS_FAVORITAS)
  VALUES
- (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','RUTAIMAGENES','ADMIN'),/*1234*/
- (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','RUTAIMAGENES','ADMIN'),/*1234*/
- (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','RUTAIMAGENES','ADMIN'),/*1234*/
- (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','RUTAIMAGENES','USER'),/*1234*/
- (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','RUTAIMAGENES','USER'),/*1234*/
- (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','RUTAIMAGENES','USER');/*1234*/
+ (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','RUTAIMAGENES','ADMIN','',''),/*1234*/
+ (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','RUTAIMAGENES','ADMIN','',''),/*1234*/
+ (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','RUTAIMAGENES','ADMIN','',''),/*1234*/
+ (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','RUTAIMAGENES','USER','',''),/*1234*/
+ (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','RUTAIMAGENES','USER','',''),/*1234*/
+ (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','RUTAIMAGENES','USER','','');/*1234*/
  /*aqui pon tu correo german copia la pass que es 1234 *//*1234*/;
 
 INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO)
@@ -18,11 +18,11 @@ INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO)
  (3,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',2),
  (4,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',3);
 
-INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION)
+INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION,ID_USUARIO)
  VALUES
- (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida'),
- (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses'),
- (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos');
+ (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
+ (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses',3),
+ (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2);
 
 INSERT INTO EJERCICIO (ID,NOMBRE,GRUPOMUSCULAR,DESCRIPCION,IMAGEN)
  VALUES
