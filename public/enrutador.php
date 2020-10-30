@@ -5,6 +5,7 @@ require_once("$ROOT/config/configuracion.php");
 require_once("$ROOT/src/funcionesComunes.php");
 /*require_once("$ROOT/src/funcionesApiTwitter.php");*/
 
+
 if (preg_match('/\.(?:css|js|ico|png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])){
 
   if(startsWith($_SERVER["REQUEST_URI"], $config['img_in_url'])) {

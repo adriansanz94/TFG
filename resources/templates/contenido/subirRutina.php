@@ -1,6 +1,16 @@
 <?php
 
  $ejercicios = EjercicioManager::getAll();
+ //print_r($ejercicios);
+
+ /*$ejercicios_juntos = implode("/",$ejercicios);*/
+
+$ejercicios_json = json_encode($ejercicios);
+
+
+//printf($ejercicios_json);
+print_r($ejercicios_json);
+
 
 
 
@@ -32,3 +42,7 @@
   <span> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="">
   </div>
   <?php } ?>
+
+  <script type="text/javascript">
+
+  </script>
