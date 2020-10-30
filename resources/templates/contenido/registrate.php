@@ -48,8 +48,8 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 
 //hacer el insert y redirigir a Login
 if (count($errores)==0 && count($_POST)>0) {
-
-	UsuarioManager::insert($usuario,$contraseña,$correo);
+	$rol = "USER";
+	UsuarioManager::insert($usuario,$contraseña,$correo,$rol);
 
 	header('Location: login.php');
 	die();

@@ -36,11 +36,11 @@
      //SINO AL INICIO
      }else{
        //header('Location: principal.php');
-       exit;
+       //die();
      }
    }else{
-    // header('Location: principal.php');
-     exit;
+     header('Location: principal.php');
+     die();
    }
 ?>
 <style media="screen">
@@ -63,6 +63,7 @@
         <th>Email</th>
         <th>Imagen</th>
         <th>Rol</th>
+        <th>Cambiar Rol</th>
         <th>Borrar Usuario</th>
       </tr>
     </thead>
@@ -81,8 +82,19 @@
       <td><?=$fila['IMAGEN']?></td>
       <td><?=$fila['ROL']?></td>
       <td>
-        <a href="borrarADMIN.php?id_usuario=<?=$fila['ID']?>"><img id="basura" src="papelera.png" alt="Borrar usuario"></a>
+        <?php
+              if($_SESSION['ID'] != $fila['ID']){
+        ?>
+        <a href="cambiarROL.php?id_usuario=<?=$fila['ID']?>">Cambiar Rol</a>
+        <?php } ?>
       </td>
+      <td>
+        <?php
+              if($_SESSION['ID'] != $fila['ID']){
+        ?>
+        <a href="borrarADMIN.php?id_usuario=<?=$fila['ID']?>"><img id="basura" src="papelera.png" alt="Borrar usuario"></a>
+      <?php } ?>
+    </td>
     </tr>
   <?php } ?>
   </tbody>

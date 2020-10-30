@@ -39,7 +39,18 @@
       $db->ejecuta("UPDATE USUARIO
                     SET NOMBRE = ?,
                         PASS = ?,
-                        EMAIL = ?
+                        EMAIL = ?,
+                        ROL = ?,
+                    WHERE ID = ?",
+                    $parametros);
+    }
+
+    public static function updateROL($id,...$campos){
+      $parametros = $campos;
+      array_push($parametros,$id);
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("UPDATE USUARIO
+                    SET  ROL = ?
                     WHERE ID = ?",
                     $parametros);
     }
