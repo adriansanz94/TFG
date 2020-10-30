@@ -29,6 +29,7 @@ class EjercicioRutinaManager {
                   VALUES (?, ?, ?)",
                   $campos);
   }
+  /*EjercicioRutinaManager::insert(array[i],array2[i]);*/
   public static function update($id, ...$campos){
     $parametros = $campos;
     array_push($parametros,$id);

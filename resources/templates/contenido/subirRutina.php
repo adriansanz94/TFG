@@ -3,16 +3,7 @@
  $ejercicios = EjercicioManager::getAll();
  //print_r($ejercicios);
 
- /*$ejercicios_juntos = implode("/",$ejercicios);*/
-
-$ejercicios_json = json_encode($ejercicios);
-
-
-//printf($ejercicios_json);
-print_r($ejercicios_json);
-
-
-
+ $ejercicios_json = json_encode($ejercicios);
 
 ?>
 <style media="screen">
@@ -26,6 +17,9 @@ print_r($ejercicios_json);
   h1{
     text-align: center;
   }
+  .oculto{
+    visibility: none; /*hidden para ocultarlo*/
+  }
 </style>
 
   <h1> Subir rutina de ejercicios</h1>
@@ -37,12 +31,44 @@ print_r($ejercicios_json);
   <div class="cajas">
   <p>Nombre :<?=$fila['NOMBRE']?></p>
   <p>Grupo Muscular: <?=$fila['GRUPOMUSCULAR']?></p>
-  <p>Descripción: <?=$fila['DESCRIPCION']?></p>
-  <span> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>"> <br>
+  <p id="descripcion" class="oculto">Descripción: <?=$fila['DESCRIPCION']?></p>
+  <span> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>" id="rutina"> <br>
   <span> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="">
   </div>
   <?php } ?>
+  <input type="submit" name="enviar" value="Enviar" id="send">
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
-  </script>
+  let enviar = document.getElementById('send');
+  enviar.addEventListener('click',rutina);
+
+
+  function rutina (){
+    let rutinaChecked = document.querySelectorAll('#rutina');
+    let rutinaSeleccionada = [];
+    let padreChecked = [];
+    let rutinaFinalCheck = [];
+    let rutinaFinalText = [];
+    for (var i = 0; i < rutinaChecked.length; i++) {
+        if(rutinaChecked[i].checked){
+          rutinaSeleccionada.push(rutinaChecked[i]);
+          rutinaFinalCheck.push(rutinaChecked[i].value);
+        }
+    }
+    for (var i = 0; i < rutinaSeleccionada.length; i++) {
+        if(rutinaSeleccionada[i].parentElement.lastChild.previousSibling.value.length > 0){
+          padreChecked.push(rutinaSeleccionada[i]);
+          rutinaFinalText.push(rutinaSeleccionada[i].parentElement.lastChild.previousSibling.value);
+        }else{
+          alert("Debes poner el tiempo o repetición en alguno de los seleccionados");
+        }
+    }
+    console.log(rutinaFinalText);
+    console.log(rutinaFinalCheck);
+    if(rutinaSeleccionada.length === padreChecked.length){
+      alert("Felicidades lo has conseguido");
+    }
+  }
+
+</script>
