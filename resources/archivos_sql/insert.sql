@@ -18,11 +18,11 @@ INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO)
  (3,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',2),
  (4,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',3);
 
-INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION)
+INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION,ID_USUARIO)
  VALUES
- (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida'),
- (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses'),
- (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos');
+ (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
+ (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses',3),
+ (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2);
 
 INSERT INTO EJERCICIO (ID,NOMBRE,GRUPOMUSCULAR,DESCRIPCION,IMAGEN)
  VALUES
