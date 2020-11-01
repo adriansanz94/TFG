@@ -30,7 +30,9 @@ if(isset($_POST) && count($_POST) > 0){
 
 
 if(count($errores) == 0 && count($_POST)>0){
-  RutinaManager::insert($nombre,$dificultad,$descripcion);
+  $id =intval($_SESSION['ID']);
+
+  RutinaManager::insert($nombre,$dificultad,$descripcion,$id);
 
   header("Location:subirRutina2.php");
   die();

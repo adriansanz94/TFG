@@ -11,14 +11,14 @@ INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,IMAGEN,ROL,RECETAS_FAVORITAS,RUTINAS_F
  (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','RUTAIMAGENES','USER','','');/*1234*/
  /*aqui pon tu correo german copia la pass que es 1234 *//*1234*/;
 
-INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO)
+INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO_COMENTARIO)
  VALUES
  (1,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',1),
  (2,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',1),
  (3,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',2),
  (4,'loremasdjabnwsdkfjbashdbfisabdfsadjfbih sadjbfhsabdfkjhbsadg f',3);
 
-INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION,ID_USUARIO)
+INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION,ID_USUARIO_RUTINA)
  VALUES
  (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
  (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses',3),
@@ -51,17 +51,17 @@ INSERT INTO EJERCICIO (ID,NOMBRE,GRUPOMUSCULAR,DESCRIPCION,IMAGEN)
  (23,'Flexiones en la pared','pierna','Al igual que en el suelo coloca tus manos a la altura de los hombros y eleva tus piernas esta es la posición inicial del ejercicio. Para realizarlo baja hacia la pared apretando el abdomen y procura que tu espalda no se tuerza.',''),
  (24,'Subida de escalón','pierna','Apoyamos uno de los pies completamente en el cajón y el otro en el suelo. El pie que está en el suelo se eleva y se coloca también en el cajón.',''),
  (25,'Abdominales en bicicleta','pierna','Esta vez, en lugar de apoyar los pies colocándolos a 90 grados y tus dos manos debajo de tu cabeza. Intenta que tu nariz toque tu rodilla izquierda mientras que la pierna derecha está extendida, haz lo mismo, pero al revés.','');
-INSERT INTO EJERCICIORUTINA (ID,ID_RUTINA,ID_EJERCICIO,REPETICIONES)
+INSERT INTO EJERCICIORUTINA (ID,REPETICIONES,ID_RUTINA,ID_EJERCICIO)
  VALUES
- (1,1,1,'10'),
- (2,1,2,'30 segundos'),
- (3,1,3,'20'),
- (4,2,2,'30 segundos'),
- (5,3,3,'20'),
- (6,3,1,'30'),
- (7,2,2,'1 minuto');
+ (1,'10',1,1),
+ (2,'30 segundos',1,2),
+ (3,'20',1,3),
+ (4,'30 segundos',2,2),
+ (5,'20',3,3),
+ (6,'30',3,1),
+ (7,'1 minuto',2,2);
 
-INSERT INTO RECETA (ID,NOMBRE,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO)
+INSERT INTO RECETA (ID,NOMBRE,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_RECETA)
  VALUES
 (1,'pollo a la plancha','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
 (2,'patata cocida','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
