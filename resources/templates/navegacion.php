@@ -32,7 +32,7 @@ echo '</pre>';
         <li><a href="admin.php">Admin</a></li>
       <?php }?>
         <li><a href="subirReceta.php">Subir Receta</a></li>
-        <li><a href="subirRutina.php">Subir Rutina</a></li>
+        <li><a href="subirRutina1.php">Subir Rutina</a></li>
         <li><a href="principal.php?cerrarSesion=true"  id='perfil'>Logout</a></li>
       <?php } elseif($uri != '/login.php'){?>
         <li><a href="login.php">Login</a></li>

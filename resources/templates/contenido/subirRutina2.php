@@ -22,18 +22,15 @@
   }
 </style>
 
-  <h1> Subir rutina de ejercicios</h1>
-  <p>Bienvenido querido Entrenador, estás aquí para poner aprueba tus conocimientos, en el mundo del deporte.
-     Te dejaremos una serie de ejercicios para que tu mismo seas capaz de hacer tus rutinas, para que tu y los
-     demás usuarios podais ponerlos en práctica.
-  </p>
+
+
   <?php foreach ($ejercicios as $fila) { ?>
   <div class="cajas">
   <p>Nombre :<?=$fila['NOMBRE']?></p>
   <p>Grupo Muscular: <?=$fila['GRUPOMUSCULAR']?></p>
   <p id="descripcion" class="oculto">Descripción: <?=$fila['DESCRIPCION']?></p>
   <span> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>" id="rutina"> <br>
-  <span> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="">
+  <span> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="<?=$repeticiones?>">
   </div>
   <?php } ?>
   <input type="submit" name="enviar" value="Enviar" id="send">
@@ -70,5 +67,6 @@
       alert("Felicidades lo has conseguido");
     }
   }
+
 
 </script>
