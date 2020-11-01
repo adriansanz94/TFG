@@ -24,7 +24,7 @@ if(isset($_POST) && count($_POST) > 0){
   }else{
     $errores['error_descripcion'] = "Debes ingresar una descripcion.";
   }
-  print_r($errores);
+  print_r($_POST);
 
 }
 
@@ -41,8 +41,6 @@ if(count($errores) == 0 && count($_POST)>0){
 ?>
 
 
-
-
 <h1> Subir rutina de ejercicios</h1>
 <p>Bienvenido querido Entrenador, estás aquí para poner aprueba tus conocimientos, en el mundo del deporte.
    Te dejaremos una serie de ejercicios para que tu mismo seas capaz de hacer tus rutinas, para que tu y los
@@ -50,7 +48,7 @@ if(count($errores) == 0 && count($_POST)>0){
 </p>
 
 <form action="subirRutina1.php" method="post">
-  <label> Nombre de la rutina: <input type="text" name="rutina" value="<?=$nombre?>"> </label><br>
+  <label> Nombre de la rutina: <input type="text" name="nombre" value=""> </label><br>
   <?php if( isset($errores['error_nombre'])) { ?>
     <br><span class='error'><?=$errores['error_nombre']?></span><br>
   <?php } ?>
@@ -63,7 +61,7 @@ if(count($errores) == 0 && count($_POST)>0){
   <?php if( isset($errores['error_dificultad'])) { ?>
     <br><span class='error'><?=$errores['error_dificultad']?></span><br>
   <?php } ?>
-  <label> Breve descripciónn de la rutina: <input type="text" name="rutina" value="<?=$descripcion?>"> </label>
+  <label> Breve descripciónn de la rutina: <input type="text" name="descripcion" value=""> </label>
   <?php if( isset($errores['error_descripcion'])) { ?>
     <br><span class='error'><?=$errores['error_descripcion']?></span><br>
   <?php } ?>
