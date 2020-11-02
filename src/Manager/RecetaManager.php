@@ -15,7 +15,7 @@ class RecetaManager {
   }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("INSERT INTO RECETA (NOMBRE, DESCRIPCION , TIEMPO ,IMAGEN, ID_USUARIO)
+    $db->ejecuta("INSERT INTO RECETA (NOMBRE, DESCRIPCION , TIEMPO ,IMAGEN, ID_USUARIO_RECETA)
                   VALUES (?, ?, ?, ?, ?)",
                   $campos);
   }
@@ -28,7 +28,7 @@ class RecetaManager {
                       DESCRIPCION = ?,
                       TIEMPO = ?,
                       IMAGEN = ?,
-                      ID_USUARIO = ?
+                      ID_USUARIO_RECETA = ?
                   WHERE ID = ?",
                   $parametros);
   }

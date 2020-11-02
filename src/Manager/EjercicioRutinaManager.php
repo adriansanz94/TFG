@@ -25,10 +25,11 @@ class EjercicioRutinaManager {
   }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("INSERT INTO EJERCICIORUTINA (ID_RUTINA,ID_EJERCICIO,REPETICIONES)
+    $db->ejecuta("INSERT INTO EJERCICIORUTINA (REPETICIONES,ID_RUTINA,ID_EJERCICIO)
                   VALUES (?, ?, ?)",
                   $campos);
   }
+  /*EjercicioRutinaManager::insert(array[i],array2[i]);*/
   public static function update($id, ...$campos){
     $parametros = $campos;
     array_push($parametros,$id);
@@ -44,6 +45,8 @@ class EjercicioRutinaManager {
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("DELETE FROM EJERCICIORUTINA WHERE ID = ?", $id);
   }
+
 }
+
 
 ?>

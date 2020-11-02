@@ -11,7 +11,7 @@ $datosRutiEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
 foreach($datosRutiEjer as $value){
   $datosEjer[] = EjercicioManager::getById($value['ID_EJERCICIO']);
   $rep[]= $value['REPETICIONES'];
-  
+
 }
 /*echo "<pre>";
 print_r($datosRutina);
@@ -36,7 +36,7 @@ print_r($rep);
         <H3><?=$fila['NOMBRE']?></H3>
         <p>Grupo Muscualar:<?=$fila['GRUPOMUSCULAR']?></p>
         <p>Descripción:<?=$fila['DESCRIPCION']?></p>
-        <p>Repeticiones: <?=$rep[0] ?></p>
+        <p>Repeticiones: <?=$rep[0]?></p>
         <p>aqui iria una imagen</p>
 
 
