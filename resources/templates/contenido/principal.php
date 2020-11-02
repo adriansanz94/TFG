@@ -52,9 +52,7 @@ print_r($datosReceta);*/
     alert(recetaUltima);
     /*$.ajax(
     {
-      url : 'respuestaVerMas.php',
-      type: "POST",
-      data : {idP: recetaUltima}
+ 
     })
       .done(function(data) {
         $("#respuesta").html(data);
