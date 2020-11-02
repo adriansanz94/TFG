@@ -1,27 +1,31 @@
-<h3>Bienvenidos a Fitness club página donde subiremos rutinas de ejercicios y recetas.</h3>
+
 <?php
 
-$datosRutina = RutinaManager::getAll();
-$datosReceta = RecetaManager::getAll();
+/*$datosRutina = RutinaManager::getAll();
+$datosReceta = RecetaManager::getAll();*/
+
+$datosRutina = RutinaManager::verMasRutinas(0);
+$datosReceta = RecetaManager::verMasReceta(0);
 
 
-/*echo "<pre>";
+echo "<pre>";
 print_r($datosRutina);
 echo "<pre>";
-print_r($datosReceta);*/
+print_r($datosReceta);
 
 
 ?>
 
 <div class="rutinas">
   <h1>Rutinas:</h1>
-  <?php foreach ($datosRutina as $fila) { ?>
+  <?php foreach ($datosRutina   as $fila) { ?>
     <div class="rutina">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
     </div>
   <?php } ?>
+  <a href="">ver más...</a>
 </div>
 <div class="recetas">
 <h1>Recetas:</h1>
@@ -34,4 +38,5 @@ print_r($datosReceta);*/
     <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
+  <a href="">ver más...</a>
 </div>

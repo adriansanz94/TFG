@@ -36,6 +36,10 @@ class RecetaManager {
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("DELETE FROM RECETA WHERE ID = ?", $id);
   }
+  public static function verMasReceta($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM RECETA where ID limit ? , 3 ",$id);
+  }
 }
 
 ?>

@@ -52,6 +52,12 @@ class RutinaManager {
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM RUTINA WHERE ID = ?", $id);
   }
+  public static function verMasRutinas($id){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM RUTINA where ID limit ? , 3 ",$id);
+  }
+
+
 }
 
 ?>
