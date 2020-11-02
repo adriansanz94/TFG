@@ -18,13 +18,8 @@ print_r($datosReceta);*/
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <div id="rutinas"class="rutinas">
   <h1>Rutinas:</h1>
-<<<<<<< HEAD
-  <?php foreach ($datosRutina  as $fila) { ?>
-    <div class="rutina">
-=======
   <?php foreach ($datosRutina   as $fila) { ?>
     <div id="rutina" class="rutina">
->>>>>>> ea59e8efda7a3fb7baf5a1d7775cab1f92d06db6
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
