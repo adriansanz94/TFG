@@ -38,14 +38,18 @@ print_r($datosReceta);*/
     <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
-  <a id="vermas" href="">ver más...</a>
+  <a id="vermasRecetas" href="">ver más...</a>
 </div>
 
 <script type="text/javascript">
-  $('#vermas').click(function(){
-    let recetas = document.getElementsByClassName('receta');
-    let ultima = recetas.length-1;
-    let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+  
+  let recetas = document.getElementsByClassName('receta');
+  let ultima = recetas.length-1;
+  let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+  let url='respuestaVerMas.php?idP='+recetaUltima;
+  $('#vermasRecetas').click(function(){
+
+    alert(recetaUltima);
     /*$.ajax(
     {
       url : 'respuestaVerMas.php',
@@ -61,7 +65,7 @@ print_r($datosReceta);*/
       .always(function(data) {
         alert( "complete" );
       });*/
-      let url='respuestaVerMas.php?idP='.$recetaUltima;
+      
       $.ajax(
               {
                   //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
