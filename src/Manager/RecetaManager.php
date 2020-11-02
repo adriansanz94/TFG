@@ -39,6 +39,7 @@ class RecetaManager {
   public static function verMasReceta($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM RECETA where ID limit ? , 3 ",$id);
+    return $db->obtenDatos();
   }
 }
 

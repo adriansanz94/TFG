@@ -4,8 +4,8 @@
 /*$datosRutina = RutinaManager::getAll();
 $datosReceta = RecetaManager::getAll();*/
 
-$datosRutina = RutinaManager::verMasRutinas(0);
-$datosReceta = RecetaManager::verMasReceta(0);
+$datosRutina = RutinaManager::verMasRutinas(1);
+$datosReceta = RecetaManager::verMasReceta(1);
 
 
 echo "<pre>";

@@ -70,11 +70,6 @@
     <tbody>
   <?php foreach ($usuarios as $fila) { ?>
     <tr>
-      <!--<td>
-        <a href="/perfilPublico.php?id_user=<?=$fila['ID']?>">
-          <img id=fotoPerfilUser src="imgs/<?=$fila['ID']?>/<?=$fila['foto']?>" alt="">
-        </a>
-      </td>-->
       <td><?=$fila['ID']?></td>
       <td><?=$fila['NOMBRE']?></td>
       <td><?=$fila['PASS']?></td>
@@ -126,7 +121,7 @@
       <td><?=$fila['DESCRIPCION']?></td>
       <td><?=$fila['TIEMPO']?></td>
       <td><?=$fila['IMAGEN']?></td>
-      <td><?=$fila['ID_USUARIO']?></td>
+      <td><?=$fila['ID_USUARIO_RECETA']?></td>
       <td>
         <a href="borrarADMIN.php?id_receta=<?=$fila['ID']?>"><img id="basura" src="imagenes/papelera.png" alt="Borrar usuario"></a>
       </td>
