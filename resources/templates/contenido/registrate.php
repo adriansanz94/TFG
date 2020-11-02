@@ -9,19 +9,36 @@ $contraseña = "";
 $r_contraseña = "";
 $errores = [];
 
+$nombresUsers = UsuarioManager::getAllNom();
+$mailsUsers = UsuarioManager::getAllMail() ;
+
+
 //agregar el post y depurar errores
 if ( isset($_POST) && count($_POST)!=0 ) {
 
 	//NOMBRE
 	if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=3 ) {
-		$usuario = limpiarCadena($_POST['usuario']);
+		foreach($nombresUsers as $fila){
+			if(strtolower( $fila['NOMBRE']) != strtolower($_POST['usuario'])){
+
+				$usuario = limpiarCadena($_POST['usuario']);
+			}else{
+				$errores['error_usuario_duplicado'] = "Ese nombre de usuario ya existe";
+			}
+		}
 	}else{
 		$errores['error_usuario'] = "Nombre muy corto";
 	}
 
 	//CORREO
 	if (isset($_POST['correo']) && filter_var($_POST['correo'],FILTER_VALIDATE_EMAIL) ) {
-		$correo = limpiarCadena($_POST['correo']);
+		foreach($mailsUsers as $fila){
+			if($fila['EMAIL'] != $_POST['correo']){
+				$correo = limpiarCadena($_POST['correo']);
+			}else{
+				$errores['error_correo'] = "Correo invalido";
+			}
+		}
 	}else{
 		$errores['error_correo'] = "Correo invalido";
 	}
@@ -34,7 +51,7 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	}
 
 	//CONFIRMAR CONTRASEÑA
-	if (isset($_POST['r_contraseña']) && contraseñaValida($_POST['r_contraseña'],6) ) {
+	if (isset($_POST['r_contraseña']) && contraseñaValida($_POST['r_contraseña'],4) ) {
 		$r_contraseña = limpiarCadena($_POST['r_contraseña']);
 		if (!strcmp($contraseña, $r_contraseña)==0) {
 			$errores['error_r_contraseña_dif'] = "No coinciden las contraseñas";
@@ -45,14 +62,20 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 		$errores['error_r_contraseña'] = "Contraseña invalida";
 	}
 }
-
+echo'<pre>';
+print_r($errores);
+echo'</pre>';
 //hacer el insert y redirigir a Login
 if (count($errores)==0 && count($_POST)>0) {
+	echo'<pre>';
+print_r('sin errores');
+echo'</pre>';
 	$rol = "USER";
-	UsuarioManager::insert($usuario,$contraseña,$correo,$rol);
+	$imagen = "img";
+	UsuarioManager::insert($usuario,$contraseña,$correo,$imagen,$rol);
 
-	header('Location: login.php');
-	die();
+	//header('Location: login.php');
+	//die();
 }
 
 
@@ -77,6 +100,9 @@ if (count($errores)==0 && count($_POST)>0) {
         <?php if( isset($errores['error_usuario'])) { ?>
           <br><span class='error'><?=$errores['error_usuario']?></span><br>
         <?php } ?>
+				<?php if( isset($errores['error_usuario_duplicado'])) { ?>
+          <br><span class='error'><?=$errores['error_usuario_duplicado']?></span><br>
+        <?php } ?>
 
     		<label for="correo">Correo </label>
     		<input type="email" name="correo" id="correo" placeholder="Escribe tu email" value="<?=$correo?>">
@@ -85,13 +111,13 @@ if (count($errores)==0 && count($_POST)>0) {
         <?php } ?>
 
     		<label for="contraseña">Contraseña </label>
-    		<input type="password" name="contraseña" id="contraseña" placeholder="Escribe tu contraseña" value="<?=$contraseña?>">
+    		<input type="password" name="contraseña" id="contraseña" placeholder="Escribe tu contraseña" value="">
         <?php if( isset($errores['contraseña'])) { ?>
           <br><span class='error'><?=$errores['contraseña']?></span><br>
         <?php } ?>
 
     		<label for="r_contraseña">Confirmar Contraseña </label>
-    		<input type="password" name="r_contraseña" id="r_contraseña" placeholder="Confirma tu contraseña" value="<?=$r_contraseña?>">
+    		<input type="password" name="r_contraseña" id="r_contraseña" placeholder="Confirma tu contraseña" value="">
         <?php if( isset($errores['error_r_contraseña'])) { ?>
           <br><span class='error'><?=$errores['error_r_contraseña']?></span><br>
         <?php } ?>

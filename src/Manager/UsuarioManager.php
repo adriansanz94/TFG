@@ -28,8 +28,8 @@
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, PASS , EMAIL)
-                    VALUES (?, ?, ?)",
+      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, PASS , EMAIL , IMAGEN,ROL ) 
+                    VALUES (?, ?, ?, ?, ?)",
                     $campos);
     }
     public static function update($id, ...$campos){
@@ -57,6 +57,16 @@
     public static function delete($id){
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("DELETE FROM USUARIO WHERE ID = ?", $id);
+    }
+    public static function getAllNom(){
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("SELECT NOMBRE FROM USUARIO ");
+      return $db->obtenDatos();
+    }
+    public static function getAllMail(){
+      $db = DWESBaseDatos::obtenerInstancia();
+      $db->ejecuta("SELECT EMAIL FROM USUARIO ");
+      return $db->obtenDatos();
     }
   }
 

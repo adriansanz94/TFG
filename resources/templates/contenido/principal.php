@@ -59,7 +59,7 @@ print_r($datosReceta);*/
       url : "respuestaVerMas.php",
       type: "POST",
       data : {idReceta: recetaUltima},
-      dataType : "JSON"
+      dataType : "json"
     })
     .done(function(data) {
       $(data);
