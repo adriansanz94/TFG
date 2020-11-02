@@ -4,8 +4,8 @@
 /*$datosRutina = RutinaManager::getAll();
 $datosReceta = RecetaManager::getAll();*/
 
-$datosRutina = RutinaManager::verMasRutinas(0);
-$datosReceta = RecetaManager::verMasReceta(0);
+$datosRutina = RutinaManager::verMasRutinas(1);
+$datosReceta = RecetaManager::verMasReceta(1);
 
 
 /*echo "<pre>";
@@ -30,89 +30,56 @@ print_r($datosReceta);*/
 <div id="recetas" class="recetas">
 <h1>Recetas:</h1>
   <?php foreach ($datosReceta as $fila) { ?>
-    <div id="receta" class="receta" data-id="<?=$fila['ID']?>">
+    <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
     <P><?= $fila['DESCRIPCION']?></P>
     <P><?= $fila['TIEMPO']?></P>
+    <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
-  <!--<a id="vermasRecetas" href="">ver más...</a>-->
-  <input type="submit" name="recetas" value="ver más ..." id="vermasRecetas">
+  <a id="vermasRecetas" href="">ver más...</a>
 </div>
 
-
 <script type="text/javascript">
-
-
+  
+  let recetas = document.getElementsByClassName('receta');
+  let ultima = recetas.length-1;
+  let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+  let url='respuestaVerMas.php?idP='+recetaUltima;
   $('#vermasRecetas').click(function(){
 
-    let recetas = document.getElementsByClassName('receta');
-    let ultima = recetas.length-1;
-    let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
-    let divRecetas = document.getElementById('recetas');
-
-
-
-
-    $.ajax({
-      url : "respuestaVerMas.php",
+    alert(recetaUltima);
+    /*$.ajax(
+    {
+      url : 'respuestaVerMas.php',
       type: "POST",
-      data : {idReceta: recetaUltima},
-      dataType : "JSON"
+      data : {idP: recetaUltima}
     })
-    .done(function(data) {
-      $(data);
-      alert(data);
-      añade(divRecetas,data);
-    })
-    .fail(function(data) {
-      alert( "error" );
-    })
-    .always(function(data) {
-      alert( "complete" );
-    });
+      .done(function(data) {
+        $("#respuesta").html(data);
+      })
+      .fail(function(data) {
+        alert( "error" );
+      })
+      .always(function(data) {
+        alert( "complete" );
+      });*/
+      
+      $.ajax(
+              {
+                  //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
+                  //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
+                  /*success: function( data ) {
+                      alert( 'El servidor devolvio "' + data + '"' );
+                  }*/
+                  success: function(){
+                    $(location).attr('href',url);
+                  }
+              }
+          )
+    
     
   });
-
-  function añade(divRecetas,data){
-    
-for (let index = 0; index < data.length; index++) {
- for (let index1 = 0; index1 < data[index].length; index1++) {
-  let div = document.createElement('div');
-      let h2 = document.createElement('h2');
-      let a = document.createElement('a');
-      a.innerHTML = data[index][index1];
-      h2.appendChild(a);
-      let figure = document.createElement('figure');
-      let imagen = document.createElement('img');
-      figure.appendChild(imagen);
-      let p1 = document.createElement('p');
-      let p2 = document.createElement('p');
-
-      div.appendChild(h2);
-      divRecetas.appendChild(div);
-   
- }
-  
-}
-    
-   /* for (let index = 0; index < data.length; index++) {
-      let div = document.createElement('div');
-      let h2 = document.createElement('h2');
-      let a = document.createElement('a');
-      a.innerHTML = 'hola';
-      h2.appendChild(a);
-      let figure = document.createElement('figure');
-      let imagen = document.createElement('img');
-      figure.appendChild(imagen);
-      let p1 = document.createElement('p');
-      let p2 = document.createElement('p');
-
-      div.appendChild(h2);
-      divRecetas.appendChild(div);
-    }*/
-    
-  }
 
 </script>
