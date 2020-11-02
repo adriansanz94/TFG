@@ -30,7 +30,7 @@ print_r($datosReceta);*/
 <div id="recetas" class="recetas">
 <h1>Recetas:</h1>
   <?php foreach ($datosReceta as $fila) { ?>
-    <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
+    <div id="receta" class="receta" data-id="<?=$fila['ID']?>">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
     <P><?= $fila['DESCRIPCION']?></P>
@@ -38,34 +38,23 @@ print_r($datosReceta);*/
     <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
-  <a id="vermasRecetas" href="">ver más...</a>
+  <!--<a id="vermasRecetas" href="">ver más...</a>-->
+  <input type="submit" name="recetas" value="ver más ..." id="vermasRecetas">
 </div>
 
 <script type="text/javascript">
-  
-  let recetas = document.getElementsByClassName('receta');
-  let ultima = recetas.length-1;
-  let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
-  let url='respuestaVerMas.php?idP='+recetaUltima;
+
+
   $('#vermasRecetas').click(function(){
 
-    alert(recetaUltima);
-    /*$.ajax(
-    {
-      url : 'respuestaVerMas.php',
-      type: "POST",
-      data : {idP: recetaUltima}
-    })
-      .done(function(data) {
-        $("#respuesta").html(data);
-      })
-      .fail(function(data) {
-        alert( "error" );
-      })
-      .always(function(data) {
-        alert( "complete" );
-      });*/
-      
+    let recetas = document.getElementsByClassName('receta');
+    let ultima = recetas.length-1;
+    let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+
+      //if(rutinaSeleccionada.length === padreChecked.length){
+
+    let url='respuestaVerMas.php?idP='+recetaUltima;
+    alert('Enviando!');
       $.ajax(
               {
                   //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
@@ -78,8 +67,8 @@ print_r($datosReceta);*/
                   }
               }
           )
-    
-    
-  });
+      //}
+    }
+  );
 
 </script>
