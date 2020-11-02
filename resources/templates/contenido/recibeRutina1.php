@@ -45,7 +45,7 @@ if(isset($_GET) && count($_GET) > 0){
   $consulta = RutinaManager::consultaExtra($ultimoid);
   print_r($consulta);
 
-  for ($i=0; $i <= count($textArray); $i++) {
+  for ($i=0; $i < count($textArray); $i++) {
       EjercicioRutinaManager::insert($textArray[$i],$ultimoid,intval($checkArray[$i]));
   }
 
