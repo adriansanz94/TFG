@@ -38,7 +38,7 @@ print_r($datosReceta);*/
     <P><?= $fila['IMAGEN']?></P>
     </div>
   <?php } ?>
-  <a id="vermasRecetas" href="">ver más...</a>
+  <input type="submit" name="" id="vermasRecetas">ver más...</a>
 </div>
 
 <script type="text/javascript">
