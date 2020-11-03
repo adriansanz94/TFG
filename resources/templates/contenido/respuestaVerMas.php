@@ -1,14 +1,14 @@
-<?php 
+<?php
 $idReceta = $_POST['idP'];
 
-print_r($idReceta);
+//print_r($idReceta);
 
-$datosReceta =json_encode( RecetaManager::verMasReceta($idReceta));
+$datosReceta = RecetaManager::verMasReceta($idReceta);
 
 
 print_r($datosReceta);
+//echo $datosReceta;
 
 
 
 ?>
-<h1>VER MAS </h1>

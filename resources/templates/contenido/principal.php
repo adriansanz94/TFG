@@ -44,6 +44,56 @@ print_r($datosReceta);*/
 
 <script type="text/javascript">
 
+let recetas = document.getElementsByClassName('receta');
+let ultima = recetas.length-1;
+let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+let divRecetas = document.getElementById('recetas');
+
+//seleccionar botones
+/*let btnEnviar = document.getElementById('vermasRecetas');
+btnEnviar.addEventListener('click',obtenerRecetas);
+
+function obtenerRecetas(){
+    //let numero = compruebaOffset();
+    //let uriNueva = uri + numero;
+    pedirDatos(recetaUltima);
+}
+
+
+
+function pedirDatos(idReceta){
+
+  let xhr = new XMLHttpRequest();
+  //let url = 'http://localhost:9000/respuestaVerMas.php?idP=';
+  let url = 'respuestaVerMas.php?idP=';
+  xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4) {
+            if(xhr.status === 200) {
+              //let ext = exito(xhr);
+              console.log(xhr);
+              rellenarDiv(exito(xhr));
+            }else{
+              console.error(error(xhr));
+            }
+        }
+    }
+  xhr.open('GET',url+idReceta);
+  xhr.send();
+}
+
+function exito(text){
+    return text.response;
+}
+
+function error(xhr){
+    return `Error: ${xhr.status} (${xhr.statusText})`;
+}
+
+function rellenarDiv(datos){
+  alert(datos);
+  console.log(datos);
+}*//////////////////////////////////////////////////////////////////////////////
+
 
   $('#vermasRecetas').click(function(){
 
@@ -52,14 +102,11 @@ print_r($datosReceta);*/
     let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
     let divRecetas = document.getElementById('recetas');
 
-
-
-
     $.ajax({
       url : "respuestaVerMas.php",
       type: "POST",
       data : {idReceta: recetaUltima},
-      dataType : "json"
+      /*dataType : "json"*/
     })
     .done(function(data) {
       $(data);
@@ -72,31 +119,34 @@ print_r($datosReceta);*/
     .always(function(data) {
       alert( "complete" );
     });
-    
+
   });
 
   function añade(divRecetas,data){
-    
-for (let index = 0; index < data.length; index++) {
- for (let index1 = 0; index1 < data[index].length; index1++) {
-  let div = document.createElement('div');
-      let h2 = document.createElement('h2');
-      let a = document.createElement('a');
-      a.innerHTML = data[index][index1];
-      h2.appendChild(a);
-      let figure = document.createElement('figure');
-      let imagen = document.createElement('img');
-      figure.appendChild(imagen);
-      let p1 = document.createElement('p');
-      let p2 = document.createElement('p');
 
-      div.appendChild(h2);
-      divRecetas.appendChild(div);
-   
- }
-  
+    let dataProcess = document.getElementsByTagName(data.body);
+    console.log(dataProcess);
+
+    for (let index = 0; index < data.length; index++) {
+     for (let index1 = 0; index1 < data[index].length; index1++) {
+      let div = document.createElement('div');
+          let h2 = document.createElement('h2');
+          let a = document.createElement('a');
+          a.innerHTML = data[index][index1];
+          h2.appendChild(a);
+          let figure = document.createElement('figure');
+          let imagen = document.createElement('img');
+          figure.appendChild(imagen);
+          let p1 = document.createElement('p');
+          let p2 = document.createElement('p');
+
+          div.appendChild(h2);
+          divRecetas.appendChild(div);
+
+     }
+
 }
-    
+
    /* for (let index = 0; index < data.length; index++) {
       let div = document.createElement('div');
       let h2 = document.createElement('h2');
@@ -112,7 +162,7 @@ for (let index = 0; index < data.length; index++) {
       div.appendChild(h2);
       divRecetas.appendChild(div);
     }*/
-    
+
   }
 
 </script>
