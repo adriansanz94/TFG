@@ -19,13 +19,13 @@ print_r($datosReceta);*/
 <div id="rutinas"class="rutinas">
   <h1>Rutinas:</h1>
   <?php foreach ($datosRutina   as $fila) { ?>
-    <div id="rutina" class="rutina">
+    <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
     </div>
   <?php } ?>
-  <a id="vermas" href="">ver más...</a>
+  <button type="button" id="vermasRutinas">ver más...</button>
 </div>
 <div id="recetas" class="recetas">
 <h1>Recetas:</h1>
@@ -124,6 +124,80 @@ function crearElemento(tipo,atributos,contenido){
   return elemento;
 }
 
+/********************Rutina*********************/
+let rutinas = document.getElementsByClassName('rutina');
+
+$('#vermasRutinas').click(function(){
+
+  let ultima = rutinas.length-1;
+  let rutinaUltima = document.getElementsByClassName('rutina')[ultima].getAttribute('data-id');
+  let url='respuestaVerMasRutina.php?idRutina='+rutinaUltima;
+  $.ajax(
+  {
+    url : 'respuestaVerMasRutina.php',
+    type: "GET",
+    data : {idRutina: rutinaUltima},
+
+  })
+    .done(function(data) {
+      let respuesta = JSON.parse(data.split('body')[1].split('>')[1].split('<')[0]);
+
+      pintarMasRutinas(respuesta);
+
+    })
+    .fail(function(data) {
+      alert( "error" );
+    })
+    .always(function(data){
+
+     });
+});
+
+function pintarMasRutinas(datosJSON){
+
+  let divRutinas = document.getElementById('rutinas');
+  let btn = document.getElementById('vermasRutinas');
+
+  for (var i = 0; i < datosJSON.length; i++) {
+    divRutinas.appendChild(crearRutina(datosJSON[i]));
+  }
+  divRutinas.appendChild(btn);
+}
+
+function crearRutina(rutinaJSON){
+
+  let divRutina = crearElemento('div',{id:'rutina',class:'rutina','data-id':rutinaJSON.ID},null);
+  let h2 = crearElemento('h2',null,null);
+  let a = crearElemento('a',{href:'rutina.php?id='+ rutinaJSON.ID},rutinaJSON.NOMBRE);
+  let pDificultad = crearElemento('p',null,rutinaJSON.DIFICULTAD);
+  let pDescripcion = crearElemento('p',null,rutinaJSON.DESCRIPCION);
+
+  h2.appendChild(a);
+  divRutina.appendChild(h2);
+  divRutina.appendChild(pDificultad);
+  divRutina.appendChild(pDescripcion);
+
+  return divRutina;
+}
 
 
+
+
+/*funcion auxiliar que nos crea los elementos necesarios en el html*/
+function crearElemento(tipo,atributos,contenido){
+  const elemento = document.createElement(tipo);
+  for(let atr in atributos){
+    elemento.setAttribute(atr,atributos[atr]);
+  }
+
+  if(typeof contenido === 'string'){
+    elemento.appendChild(document.createTextNode(contenido));
+  } else if (contenido instanceof HTMLElement){
+    elemento.appendChild(elemento);
+  } else if (Array.isArray(contenido)){
+    contenido.forEach(hijo => elemento.appendChild(hijo));
+  }
+
+  return elemento;
+}
 </script>
