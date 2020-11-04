@@ -65,9 +65,6 @@ print_r($datosReceta);*/
       })
       .fail(function(data) {
         alert( "error" );
-      })
-      .always(function(data) {
-        alert( "complete" );
       });
   });
 
@@ -147,10 +144,7 @@ $('#vermasRutinas').click(function(){
     })
     .fail(function(data) {
       alert( "error" );
-    })
-    .always(function(data){
-
-     });
+    });
 });
 
 function pintarMasRutinas(datosJSON){
