@@ -22,7 +22,13 @@ INSERT INTO RUTINA (ID,NOMBRE,DIFICULTAD,DESCRIPCION,ID_USUARIO_RUTINA)
  VALUES
  (1,'quema grasa','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
  (2,'abdomen de acero','medio','consigue unos abdominales de acero en 2 meses',3),
- (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2);
+ (3,'navy','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2),
+ (4,'rutina 4','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
+ (5,'rutina 5','medio','consigue unos abdominales de acero en 2 meses',3),
+ (6,'rutina 6','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2),
+ (7,'rutina 7','facil','etsa rutina se centra en ejercicios de alta intesidad para quemar grasa de forma rapida',1),
+ (8,'rutina 8','medio','consigue unos abdominales de acero en 2 meses',3),
+ (9,'rutina 9','dificil','la rutina que hacen los navy sheal atrevete a sentirte como ellos',2);
 
 INSERT INTO EJERCICIO (ID,NOMBRE,GRUPOMUSCULAR,DESCRIPCION,IMAGEN)
  VALUES
@@ -66,9 +72,9 @@ INSERT INTO RECETA (ID,NOMBRE,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_RECETA)
 (1,'pollo a la plancha','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
 (2,'patata cocida','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
 (3,'alcachofas al horno','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','',2 ),
-(4,'pollo a la plancha','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
-(5,'patata cocida','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
-(6,'alcachofas al horno','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','',2 ),
-(7,'pollo a la plancha','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
-(8,'patata cocida','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
-(9,'alcachofas al horno','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','',2 );
+(4,'cocido madrileño','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
+(5,'fabada','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
+(6,'ceviche','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','',2 ),
+(7,'fritada','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','',1 ),
+(8,'empanadas de verde','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','',3 ),
+(9,'tallarines','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','',2 );
