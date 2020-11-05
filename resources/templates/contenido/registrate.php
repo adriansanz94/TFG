@@ -71,6 +71,8 @@ if (count($errores)==0 && count($_POST)>0) {
 	echo'<pre>';
 print_r('sin errores');
 echo'</pre>';
+	//guardarImagen($usuario.'/perfil',$_FILES['imagen']['name']);
+
 	$rol = "USER";
 	$imagen = "img";
 	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$imagen,$rol);

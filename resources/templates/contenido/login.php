@@ -13,10 +13,10 @@ if( count($_POST) > 0 ){
         $id = $datos['ID'];
         $_SESSION['autentificado'] = true;
         $_SESSION['ID'] = $id;
-        $_SESSION['ROL'] = '';
         //consulta para sacar el rol de dicho usuario
         $usuario = UsuarioManager::getById($id);
         $_SESSION['ROL'] = $usuario['ROL'];
+
 
         //RECUERDAME
         if( isset($_POST['recuerdame']) && $_POST['recuerdame'] == true ){
