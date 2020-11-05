@@ -9,12 +9,32 @@ $datosReceta = RecetaManager::verMasReceta(0);
 $filtrosBusqueda = ['Receta','Rutina','grupo muscular','dificultad rutina'];
 $filtrosValue = ['receta.NOMBRE','rutina.NOMBRE','rutina.GRUPOMUSCULAR','rutina.DIFICULTAD',];
 
+$grupoMuscular =['pecho','brazo','pierna','abdomen'];
+$dificultad=['facil','media','dificil'];
 $etiquetasSelect = ['Aventura', 'Cultural', 'Romántico', 'Relax', 'Gastronómico', 'Con amig@s', 'LowCost', 'Fiesta', 'Religioso'];
 
 $filtro = '';
 $buscador = '';
 $errores = [];
+//validadción buscador
+if( count($_POST) > 0) {
+  if( isset($_POST['filtro']) && $_POST['filtro'] != ''){
+    $filtro = clear_input($_POST['filtro']);
+  }else{
+    $errores['filtro'] = true;
+  }
 
+  if( isset($_POST['buscador']) && $_POST['buscador'] != ''){
+    $buscador = clear_input($_POST['buscador']);
+  }else{
+    $errores['buscador'] = true;
+  }
+
+  if( count($errores) == 0){
+    header("Location: resultadosBusqueda.php?filtro=$filtro&buscador=$buscador");
+    die();
+  }
+}
 /*echo "<pre>";
 print_r($datosRutina);
 echo "<pre>";
@@ -23,7 +43,8 @@ print_r($datosReceta);*/
 
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<form method="post" action="inicio.php">
+
+<form method="post" action="principal.php">
     <div>
       <label for="filtro">Filtro</label>
       <select id="filtro" name="filtro">
@@ -36,14 +57,22 @@ print_r($datosReceta);*/
     <div>
       <label for="buscador">Buscador</label>
       <input id="buscador" type="text" name='buscador' value="<?=$buscador?>" placeholder="    ¿Qué quieres buscar?">
-      <select id="buscadorEtiquetas" name="buscador" class="oculto">
+      <select id="buscadorGrupoMuscular" name="buscador" class="oculto">
         <option disabled selected>Elige una opción</option>
-        <?php for ($i= 0; $i < count($etiquetasSelect); $i++) {?>
-          <option value="<?=$etiquetasSelect[$i]?>"><?=$etiquetasSelect[$i]?></option>
+        <?php for ($i= 0; $i < count($grupoMuscular); $i++) {?>
+          <option value="<?=$grupoMuscular[$i]?>"><?=$grupoMuscular[$i]?></option>
+        <?php } ?>
+      </select>
+      <select id="buscadorDificultad" name="buscador" class="oculto">
+        <option disabled selected>Elige una opción</option>
+        <?php for ($i= 0; $i < count($dificultad); $i++) {?>
+          <option value="<?=$dificultad[$i]?>"><?=$dificultad[$i]?></option>
         <?php } ?>
       </select>
     </div>
-
+    <div>
+      <input id='buscar' type="submit" name='buscar' value='Buscar'>
+  </div>
     <div class='errores'>
       <?php if( isset($errores['filtro']) && $errores['filtro'] == true) { ?>
       <br><span class="error">Debes selecionar un filtro</span>
@@ -55,6 +84,7 @@ print_r($datosReceta);*/
     </div>
 
   </form>
+
 <div id="rutinas"class="rutinas">
   <h1>Rutinas:</h1>
   <?php foreach ($datosRutina   as $fila) { ?>
