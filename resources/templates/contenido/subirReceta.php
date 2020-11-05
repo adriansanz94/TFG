@@ -37,9 +37,10 @@ if (count($_POST)>0 ) {
     $imagen = limpiarCadena($_FILES['imagen']['name']);
 
     //probar con rutas para ver como guardar las imagenes
+		$nombreUsuario = UsuarioManager::getById($id_usuario);
 
     //esto puede cambiar
-     $rutaImagen = guardarImagen($id_usuario.'/recetas',$nombre,$_FILES['imagen']['name']);
+     $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'].'/recetas',$nombre,$_FILES['imagen']['name']);
   }else{
     $errores['imagen'] = "imagen no valida";
   }

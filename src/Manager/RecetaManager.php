@@ -41,6 +41,13 @@ class RecetaManager {
     $db->ejecuta("SELECT * FROM RECETA where ID limit ?,3",$id);
     return $db->obtenDatos();
   }
+  /*ESTO ES PARA EL BUSCADOR*/
+  public static function getNombreSolo($busqueda){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM RECETA WHERE  NOMBRE LIKE  '%$busqueda%'");
+    return $db->obtenDatos();
+  }
+
 }
 
 ?>
