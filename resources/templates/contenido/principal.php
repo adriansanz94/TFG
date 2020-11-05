@@ -39,7 +39,6 @@ $datosReceta = RecetaManager::verMasReceta(0);
     <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
     <p><?= $fila['DESCRIPCION']?></p>
     <p><?= $fila['TIEMPO']?></p>
-    <p><?= $fila['IMAGEN']?></p>
     </div>
   <?php } ?>
   <button type='button' id="vermasRecetas" >ver más...</button>

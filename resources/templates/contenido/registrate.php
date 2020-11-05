@@ -7,7 +7,7 @@ $usuario = "";
 $correo = "";
 $contraseña = "";
 $r_contraseña = "";
-$descripcion ='cuentanos algo de ti';
+$descripcion ='';
 $errores = [];
 
 $nombresUsers = UsuarioManager::getAllNom();
@@ -62,6 +62,13 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	}else{
 		$errores['error_r_contraseña'] = "Contraseña invalida";
 	}
+	//DESCRIPCION
+	if(isset($_POST['descripcion']) && strlen($_POST['descripcion'])>=1){
+		$descripcion = limpiarCadena($_POST['descripcion']);
+	}else{
+		$errores['error_descripcion'] = "Debes agregar alguna descripción.";
+	}
+
 }
 echo'<pre>';
 print_r($errores);
@@ -69,13 +76,13 @@ echo'</pre>';
 //hacer el insert y redirigir a Login
 if (count($errores)==0 && count($_POST)>0) {
 	echo'<pre>';
-print_r('sin errores');
-echo'</pre>';
+	print_r('sin errores');
+	echo'</pre>';
 	//guardarImagen($usuario.'/perfil',$_FILES['imagen']['name']);
-
+ $rutaImagen = guardarImagen($usuario,'perfil','');
 	$rol = "USER";
-	$imagen = "img";
-	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$imagen,$rol);
+	//$imagen = "img";
+	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);
 
 	//header('Location: login.php');
 	//die();
@@ -98,6 +105,7 @@ echo'</pre>';
     <h1>Bienvenido al Registro de Ponte En Forma</h1>
 
     <form action="registrate.php" method="POST">
+
     		<label for="usuario">Nombre usuario</label>
     		<input type="text" name="usuario" id="nombre" placeholder="Escribe tu nombre de usuario" value="<?=$usuario?>">
         <?php if( isset($errores['error_usuario'])) { ?>
@@ -128,6 +136,12 @@ echo'</pre>';
         <?php if( isset($errores['error_r_contraseña_dif'])) { ?>
           <br><span class='error'><?=$errores['error_r_contraseña_dif']?></span><br>
         <?php } ?>
+				<label for="descripcion">Escribe una descripcion:</label>
+				<textarea type="text" name="descripcion" id="descripcion" placeholder="Escribe una pequeña descripción" value="<?=$descripcion?>"></textarea>
+				<?php if( isset($errores['error_descripcion'])) { ?>
+					<br><span class='error'><?=$errores['error_descripcion']?></span><br>
+				<?php } ?>
+
 
     		<input type="submit" name="enviar" value="Registrarse">
     	</form>

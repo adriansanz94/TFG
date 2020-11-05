@@ -33,8 +33,8 @@
     }
     public static function insert(...$campos){
       $db = DWESBaseDatos::obtenerInstancia();
-      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, PASS , EMAIL , IMAGEN,ROL )
-                    VALUES (?, ?, ?, ?, ?)",
+      $db->ejecuta("INSERT INTO USUARIO (NOMBRE, PASS , EMAIL ,DESCRIPCION, IMAGEN,ROL )
+                    VALUES (?, ?, ?, ?, ?,?)",
                     $campos);
     }
     public static function update($id, ...$campos){

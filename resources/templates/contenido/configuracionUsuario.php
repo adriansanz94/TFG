@@ -65,6 +65,18 @@
 			$errores['descripcion'] = 'algo salio mal';
 		}
 
+		//IMAGEN
+
+		if (isset($_FILES['imagen'])) {
+			$imagen = limpiarCadena($_FILES['imagen']['name']);
+			//probar con rutas para ver como guardar las imagenes
+			$nombreUsuario = UsuarioManager::getById($id_usuario);
+			//esto puede cambiar
+			 $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'],'/perfil',$_FILES['imagen']['name']);
+		}else{
+			$errores['imagen'] = "imagen no valida";
+		}
+
 		if (count($errores)== 0 && count($_POST) > 0) {
 
 			if(isset($_SESSION['ID'])){
@@ -91,8 +103,18 @@
 <main>
 
 	<link rel="stylesheet" href="/css/general.css">
-	<form action="configuracionUsuario.php" method="POST">
+	<form action="configuracionUsuario.php" method="POST" enctype="multipart/form-data">
 		<div class="centrar">
+
+			<div>
+				<label>Subir imagen de perfil:</label> <br>
+				<input type="file" name="imagen" value="Seleccione archivo"> <br>
+				<?php if( isset($errores['imagen'])) { ?>
+					<br><span class='error'><?=$errores['imagen']?></span><br>
+				<?php } ?>
+			</div>
+
+
 			<div>
 				<label>Cambiar Nombre del Usuario:</label><br>
 				<label> Nombre actual: <?=$datos['NOMBRE']?></label><br>
@@ -102,6 +124,8 @@
 					<span class="error"><?=$errores['usuario']?></span><br>
 				<?php } ?>
 			</div>
+
+
 
 			<div>
 				<label>Cambiar Email del Usuario:</label><br>
@@ -129,6 +153,7 @@
 					<span class="error"><?=$errores['contraseña']?></span><br>
 				<?php } ?>
 			</div>
+
 
 			<input type="submit" name="cambiar" value="cambiar"><br>
 
