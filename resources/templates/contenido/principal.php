@@ -7,11 +7,10 @@ $datosReceta = RecetaManager::getAll();*/
 $datosRutina = RutinaManager::verMasRutinas(0);
 $datosReceta = RecetaManager::verMasReceta(0);
 
-<<<<<<< HEAD
-=======
+
 $grupoMuscular =['pecho','brazo','pierna','abdomen'];
 $dificultad=['facil','media','dificil'];
-$etiquetasSelect = ['Aventura', 'Cultural', 'Romántico', 'Relax', 'Gastronómico', 'Con amig@s', 'LowCost', 'Fiesta', 'Religioso'];
+
 
 $filtro = '';
 $buscador = '';
@@ -29,7 +28,7 @@ if( count($_POST) > 0) {
   }else{
     $errores['buscador'] = true;
   }
->>>>>>> 28bde37fd52359135f81079166d009dc95ce8705
+
 
   if( count($errores) == 0){
     header("Location: resultadosBusqueda.php?filtro=$filtro&buscador=$buscador");
@@ -44,22 +43,10 @@ print_r($datosReceta);*/
 
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-<div>
-  <label for="buscador">Buscador</label>
-  <input id="buscador" type="text" name='buscador' value="<?=$buscador?>" placeholder="    ¿Qué quieres buscar?">
-  <select id="buscadorEtiquetas" name="buscador" class="oculto">
-    <option disabled selected>Elige una opción</option>
-    <?php for ($i= 0; $i < count($etiquetasSelect); $i++) {?>
-    <option value="<?=$etiquetasSelect[$i]?>"><?=$etiquetasSelect[$i]?></option>
-    <?php } ?>
-  </select>
-</div>
-<form method="post" action="inicio.php">
-=======
+
 
 <form method="post" action="principal.php">
->>>>>>> 28bde37fd52359135f81079166d009dc95ce8705
+
     <div>
       <label for="filtro">Filtro</label>
       <select id="filtro" name="filtro">
@@ -87,13 +74,10 @@ print_r($datosReceta);*/
     </div>
     <div>
       <input id='buscar' type="submit" name='buscar' value='Buscar'>
-<<<<<<< HEAD
-      <a href="aventura.php" id='aventura'>Aventura</a>
     </div>
 
-=======
   </div>
->>>>>>> 28bde37fd52359135f81079166d009dc95ce8705
+
     <div class='errores'>
       <?php if( isset($errores['filtro']) && $errores['filtro'] == true) { ?>
       <br><span class="error">Debes selecionar un filtro</span>

@@ -5,12 +5,25 @@ $filtrosValue = ['receta.NOMBRE','rutina.NOMBRE','rutina.GRUPOMUSCULAR','rutina.
 
 $grupoMuscular =['pecho','brazo','pierna','abdomen'];
 $dificultad=['facil','media','dificil'];
-$etiquetasSelect = ['Aventura', 'Cultural', 'Romántico', 'Relax', 'Gastronómico', 'Con amig@s', 'LowCost', 'Fiesta', 'Religioso'];
+
 
 $filtro = '';
 $buscador = '';
 $errores = [];
 //validadción buscador
+if( count($_GET) > 0){
+  if ( isset($_GET['filtro'])) {
+    $filtro = clear_input($_GET['filtro']);
+  }
+  if ( isset($_GET['buscador'])) {
+    $buscador = clear_input($_GET['buscador']);
+  }
+  if (isset($_GET['page']) && ($_GET['page']) != '') {
+    $page = $_GET['page'];
+  }
+  
+}
+
 if( count($_POST) > 0) {
   if( isset($_POST['filtro']) && $_POST['filtro'] != ''){
     $filtro = clear_input($_POST['filtro']);
