@@ -7,7 +7,7 @@ $usuario = "";
 $correo = "";
 $contraseña = "";
 $r_contraseña = "";
-$descripcion ='cuentanos algo de ti';
+
 $errores = [];
 
 $nombresUsers = UsuarioManager::getAllNom();
@@ -71,6 +71,7 @@ if (count($errores)==0 && count($_POST)>0) {
 	echo'<pre>';
 print_r('sin errores');
 echo'</pre>';
+	$descripcion ='cuentanos algo de ti';
 	$rol = "USER";
 	$imagen = "img";
 	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$imagen,$rol);
