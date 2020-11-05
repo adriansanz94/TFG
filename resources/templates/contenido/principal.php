@@ -1,50 +1,23 @@
 
 <?php
-
-/*$datosRutina = RutinaManager::getAll();
-$datosReceta = RecetaManager::getAll();*/
-
 $datosRutina = RutinaManager::verMasRutinas(0);
 $datosReceta = RecetaManager::verMasReceta(0);
 
 
-$grupoMuscular =['pecho','brazo','pierna','abdomen'];
-$dificultad=['facil','media','dificil'];
-
-
-$filtro = '';
-$buscador = '';
-$errores = [];
-//validadción buscador
-if( count($_POST) > 0) {
-  if( isset($_POST['filtro']) && $_POST['filtro'] != ''){
-    $filtro = clear_input($_POST['filtro']);
-  }else{
-    $errores['filtro'] = true;
-  }
-
-  if( isset($_POST['buscador']) && $_POST['buscador'] != ''){
-    $buscador = clear_input($_POST['buscador']);
-  }else{
-    $errores['buscador'] = true;
-  }
-
-
-  if( count($errores) == 0){
-    header("Location: resultadosBusqueda.php?filtro=$filtro&buscador=$buscador");
-    die();
-  }
-}
-/*echo "<pre>";
-print_r($datosRutina);
-echo "<pre>";
-print_r($datosReceta);*/
-
-
 ?>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+<form method="post" action="resultadosBusqueda.php">
 
+  <select class="" name="selectBuscador">
+    <option disabled selected value="">Elige una opción</option>
+    <option value="nombre_receta">Nombre de Receta</option>
+    <option value="nombre_rutina">Nombre de Rutina</option>
+  </select>
+  <p> Buscar: <input type="text" name="busqueda"> </p>
+  <input type="submit" name="buscar" value="buscar">
+</form>
 
 
 <div id="rutinas"class="rutinas">

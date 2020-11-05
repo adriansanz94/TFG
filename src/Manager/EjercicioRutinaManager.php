@@ -21,7 +21,7 @@ class EjercicioRutinaManager {
   public static function getByIdEjercicio($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM EJERCICIORUTINA WHERE ID_EJERCICIO = ?",$id);
-    return $db->obtenDatos()[0];
+    return $db->obtenDatos();
   }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();

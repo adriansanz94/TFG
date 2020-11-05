@@ -58,6 +58,12 @@ class RutinaManager {
     return $db->obtenDatos();
   }
 
+  /*ESTO ES PARA EL BUSCADOR*/
+  public static function getNombreSolo($busqueda){
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("SELECT * FROM RUTINA WHERE  NOMBRE LIKE  '%$busqueda%'");
+    return $db->obtenDatos();
+  }
 
 }
 

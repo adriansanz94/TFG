@@ -1,29 +1,48 @@
 <?php
 global $ROOT;
 global $config;
+
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
 ///esta consulta tiene que ser en una sola
 $datosRutina = RutinaManager::getById($id);
-$datosRutiEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
+//$datosDeRutina = EjercicioRutinaManager::getByIdRutina($id);
 
-foreach($datosRutiEjer as $value){
-  $datosEjer[] = EjercicioManager::getById($value['ID_EJERCICIO']);
-  $rep[]= $value['REPETICIONES'];
+echo "id de la rutina";
+echo $datosRutina['NOMBRE'];
 
+//$datosEjerCompleto = EjercicioRutinaManager::getByIdEjercicio($datosRutina[]);
+$datosEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
+
+$ejercicio = [];
+for ($i=0; $i < count($datosEjer); $i++) {
+    $id = $datosEjer[$i]['ID_EJERCICIO'];
+    $ejercicio[$i]= EjercicioManager::getById($id);
 }
-/*echo "<pre>";
-print_r($datosRutina);
+
+
+
+//$datosRutiEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
 echo "<pre>";
-print_r($datosRutiEjer);*/
+print_r($datosRutina);
+echo "</pre>";
+
 echo "<pre>";
 print_r($datosEjer);
+echo "</pre>";
+
 echo "<pre>";
-print_r($rep);
+print_r($ejercicio);
+echo "</pre>";
 
 
 ?>
+<style media="screen">
+  .ejercicio{
+    border:1px solid red;
+  }
+</style>
 <div class="rutina">
   <div class="rutinaCabecera">
     <h1><?= $datosRutina['NOMBRE']?></h1>
@@ -31,17 +50,15 @@ print_r($rep);
     <p><?= $datosRutina['DESCRIPCION']?></p>
   </div>
   <div class="ejerGlobal">
-    <?php foreach($datosEjer as  $fila ) {?>
+        <?php for ($i=0; $i < count($ejercicio); $i++) { ?>
       <div class="ejercicio">
-        <H3><?=$fila['NOMBRE']?></H3>
-        <p>Grupo Muscualar:<?=$fila['GRUPOMUSCULAR']?></p>
-        <p>Descripción:<?=$fila['DESCRIPCION']?></p>
-        <p>Repeticiones: <?=$rep[0]?></p>
+          <p>Nombre Ejercicio:<?=$ejercicio[$i]['NOMBRE']?></p>
+          <p>Grupo Muscular:<?=$ejercicio[$i]['GRUPOMUSCULAR']?></p>
+          <p>Descripción:<?=$ejercicio[$i]['DESCRIPCION']?></p>
+          <p>Repeticiones: <?= $datosEjer[$i]['REPETICIONES']?></p>
         <p>aqui iria una imagen</p>
-
-
+        <?php } ?>
       </div>
-    <?php }?>
   </div>
 </div>
 <h1>una rutina seleccionada</h1>
