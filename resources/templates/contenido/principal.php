@@ -6,7 +6,14 @@ $datosReceta = RecetaManager::getAll();*/
 
 $datosRutina = RutinaManager::verMasRutinas(0);
 $datosReceta = RecetaManager::verMasReceta(0);
+$filtrosBusqueda = ['Receta','Rutina','grupo muscular','dificultad rutina'];
+$filtrosValue = ['receta.NOMBRE','rutina.NOMBRE','rutina.GRUPOMUSCULAR','rutina.DIFICULTAD',];
 
+$etiquetasSelect = ['Aventura', 'Cultural', 'Romántico', 'Relax', 'Gastronómico', 'Con amig@s', 'LowCost', 'Fiesta', 'Religioso'];
+
+$filtro = '';
+$buscador = '';
+$errores = [];
 
 /*echo "<pre>";
 print_r($datosRutina);
@@ -16,16 +23,6 @@ print_r($datosReceta);*/
 
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<div>
-  <label for="buscador">Buscador</label>
-  <input id="buscador" type="text" name='buscador' value="<?=$buscador?>" placeholder="    ¿Qué quieres buscar?">
-  <select id="buscadorEtiquetas" name="buscador" class="oculto">
-    <option disabled selected>Elige una opción</option>
-    <?php for ($i= 0; $i < count($etiquetasSelect); $i++) {?>
-    <option value="<?=$etiquetasSelect[$i]?>"><?=$etiquetasSelect[$i]?></option>
-    <?php } ?>
-  </select>
-</div>
 <form method="post" action="inicio.php">
     <div>
       <label for="filtro">Filtro</label>
@@ -45,10 +42,6 @@ print_r($datosReceta);*/
           <option value="<?=$etiquetasSelect[$i]?>"><?=$etiquetasSelect[$i]?></option>
         <?php } ?>
       </select>
-    </div>
-    <div>
-      <input id='buscar' type="submit" name='buscar' value='Buscar'>
-      <a href="aventura.php" id='aventura'>Aventura</a>
     </div>
 
     <div class='errores'>
