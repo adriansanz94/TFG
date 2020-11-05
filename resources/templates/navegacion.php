@@ -27,7 +27,7 @@ echo '</pre>';
     <ul>
         <li><a href="principal.php">Inicio</a></li>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
-        <li><a href="configuracionUsuario.php">Perfil</a></li>
+        <li><a href="perfil.php">Perfil</a></li>
       <?php if(isset($_SESSION['ROL']) && $_SESSION['ROL'] == $admin ){ ?>
         <li><a href="admin.php">Admin</a></li>
       <?php }?>
