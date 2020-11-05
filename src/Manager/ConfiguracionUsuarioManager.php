@@ -33,6 +33,13 @@ class ConfiguracionUsuarioManager {
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("UPDATE USUARIO SET EMAIL = ? WHERE ID = ? " ,$parametros);
   }
+  // modificar la descripcion
+  public static function updateDescripcion($id,...$campo){
+    $parametros = $campo;
+    array_push($parametros,$id);
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("UPDATE USUARIO SET DESCRIPCION = ? WHERE ID = ? " , $parametros);
+  }
 
 
 

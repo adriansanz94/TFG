@@ -28,6 +28,7 @@
 	$usuarioComprueba="";
 	$emailComprueba="";
 	$contraseñaComprueba="";
+	$descripcion = '';
 	$errores = [];
 
 	if ( isset($_POST) && count($_POST)!=0 ) {
@@ -58,6 +59,11 @@
 				$errores['contraseña'] = ' Deben coincidir las contraseñas.';
 			}
 		}
+		if(isset($_POST['descripcion']) ){
+			$descripcion = limpiarCadena($_POST['descripcion']);
+		}else{
+			$errores['descripcion'] = 'algo salio mal';
+		}
 
 		if (count($errores)== 0 && count($_POST) > 0) {
 
@@ -72,6 +78,9 @@
 						$contraseñaHash = password_hash($contraseña, PASSWORD_DEFAULT);
 						ConfiguracionUsuarioManager::updateContraseña($_SESSION['ID'],$contraseñaHash);
 				}
+				if($_POST['descripcion']){
+					ConfiguracionUsuarioManager::updateDescripcion($_SESSION['ID'],$descripcion);
+			}
 			}
 			header('Location: configuracionUsuario.php');
 			die();
@@ -101,6 +110,14 @@
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
 				<?php if(isset($errores['email'])) { ?>
 					<span class="error"><?=$errores['email']?></span><br>
+				<?php } ?>
+			</div>
+			<div>
+				<label>Cambiar tu descripcion:</label><br>
+				<label> descripcion actual: <?=$datos['DESCRIPCION']?></label><br>
+				<input type="text" name="descripcion" placeholder="Escriba la descripcion nuevo" value="<?=$descripcion?>"><br>
+				<?php if(isset($errores['descripcion'])) { ?>
+					<span class="error"><?=$errores['descripcion']?></span><br>
 				<?php } ?>
 			</div>
 

@@ -7,6 +7,7 @@ $usuario = "";
 $correo = "";
 $contraseña = "";
 $r_contraseña = "";
+$descripcion ='cuentanos algo de ti';
 $errores = [];
 
 $nombresUsers = UsuarioManager::getAllNom();
@@ -72,7 +73,7 @@ print_r('sin errores');
 echo'</pre>';
 	$rol = "USER";
 	$imagen = "img";
-	UsuarioManager::insert($usuario,$contraseña,$correo,$imagen,$rol);
+	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$imagen,$rol);
 
 	//header('Location: login.php');
 	//die();
