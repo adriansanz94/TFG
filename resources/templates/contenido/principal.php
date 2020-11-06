@@ -123,7 +123,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let ingreSolos = ingre.split(',');
 
     for (let i = 0; i < ingreSolos.length; i++) {
-        let pIngredientes = crearElemento('p',null,ingreSolos[i]);
+        let pIngredientes = ' - '+crearElemento('p',null,ingreSolos[i]);
         divReceta.appendChild(pIngredientes);
     }
 
