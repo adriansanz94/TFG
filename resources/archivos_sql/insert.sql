@@ -67,14 +67,14 @@ INSERT INTO EJERCICIORUTINA (ID,REPETICIONES,ID_RUTINA,ID_EJERCICIO)
  (6,'30',3,1),
  (7,'1 minuto',2,2);
 
-INSERT INTO RECETA (ID,NOMBRE,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_RECETA)
+INSERT INTO RECETA (ID,NOMBRE,INGREDIENTES,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_RECETA)
  VALUES
-(1,'pollo a la plancha','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/pollo a la plancha/pollo.jpg',1 ),
-(2,'patata cocida','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/patata cocida/patata.jpg',3 ),
-(3,'alcachofas al horno','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/alcachofas al horno/alcachofas.jpg',2 ),
-(4,'cocido madrileño','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/cocido madrileño/cocido.jpg',1 ),
-(5,'fabada','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/fabada/fabada.jpg',3 ),
-(6,'ceviche','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/ceviche/ceviche.jpg',2 ),
-(7,'fritada','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/fritada/fritada.jpg',1 ),
-(8,'empanadas de verde','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/empanadas de verde/empanadas.jpg',3 ),
-(9,'tallarines','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/tallarines/tallarines.jpg',2 );
+(1,'pollo a la plancha','1 Pollo entero,Sal,Pimienta,Guarnición','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/pollo a la plancha/pollo.jpg',1 ),
+(2,'patata cocida','5 Patatas,Aceite Oliva','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/patata cocida/patata.jpg',3 ),
+(3,'alcachofas al horno','Alcachofas,Aceite','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/alcachofas al horno/alcachofas.jpg',2 ),
+(4,'cocido madrileño','Garbanzos,Chorizo,Morcilla,Repollo,Pollo','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/cocido madrileño/cocido.jpg',1 ),
+(5,'fabada','Judias,Chorizo,Morcilla','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/fabada/fabada.jpg',3 ),
+(6,'ceviche','Camarones,Chifles,Cebolla,Tomates','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/ceviche/ceviche.jpg',2 ),
+(7,'fritada','Costillas de cerdo,Mote,','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/fritada/fritada.jpg',1 ),
+(8,'empanadas de verde','Platano macho,Queso','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/empanadas de verde/empanadas.jpg',3 ),
+(9,'tallarines','Tallarines,Carne,Pimienta,Sal','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/tallarines/tallarines.jpg',2 );

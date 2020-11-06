@@ -3,6 +3,24 @@
 $datosRutina = RutinaManager::verMasRutinas(0);
 $datosReceta = RecetaManager::verMasReceta(0);
 
+$ingredientes = "";
+
+$ingredientesSolos = [];
+
+for ($i=0; $i < count($datosReceta); $i++) {
+  $ingredientes = $datosReceta[$i]['INGREDIENTES'];
+  $ingredientesSolos[$i] = explode(',',$ingredientes);
+}
+
+
+echo "<pre>";
+print_r($datosReceta);
+echo "</pre>";
+
+echo "<pre>";
+print_r($ingredientesSolos);
+echo "</re>";
+
 
 ?>
 
@@ -33,13 +51,17 @@ $datosReceta = RecetaManager::verMasReceta(0);
 </div>
 <div id="recetas" class="recetas">
 <h1>Recetas:</h1>
-  <?php foreach ($datosReceta as $fila) { ?>
-    <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
-    <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
-    <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
-    <p><?= $fila['DESCRIPCION']?></p>
-    <p><?= $fila['TIEMPO']?></p>
+  <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
+    <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
+    <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
+    <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
+    <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
+    <p><?= $datosReceta[$i]['TIEMPO']?></p>
+    <p>Ingredientes:</p>
+  <?php for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
+          <p> - <?=$ingredientesSolos[$i][$k]?></p>
     </div>
+  <?php  } ?>
   <?php } ?>
   <button type='button' id="vermasRecetas" >ver más...</button>
 </div>
@@ -95,6 +117,7 @@ $datosReceta = RecetaManager::verMasReceta(0);
     let img = crearElemento('img',{src:recetaJSON.IMAGEN},null);
     let pDescripcion = crearElemento('p',null,recetaJSON.DESCRIPCION);
     let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
+    let pTituloIngredientes = crearElemento('p',null,'Ingredientes:');
 
     h2.appendChild(a);
     figure.appendChild(img);
@@ -102,6 +125,21 @@ $datosReceta = RecetaManager::verMasReceta(0);
     divReceta.appendChild(figure);
     divReceta.appendChild(pDescripcion);
     divReceta.appendChild(pTiempo);
+    divReceta.appendChild(pTituloIngredientes);
+
+    let ingre = recetaJSON.INGREDIENTES;
+    let ingreSolos = ingre.split(',');
+
+    console.log('ingredientes en cadena');
+    console.log(ingre);
+    console.log('array de ingredientes');
+    console.log(ingreSolos);
+
+    for (let i = 0; i < ingreSolos.length; i++) {
+        let pIngredientes = crearElemento('p',null,ingreSolos[i]);
+        divReceta.appendChild(pIngredientes);
+    }
+
 
     return divReceta;
   }
