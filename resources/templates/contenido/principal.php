@@ -48,10 +48,10 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
     <p><?= $datosReceta[$i]['TIEMPO']?></p>
     <p>Ingredientes:</p>
-    
+
     <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
             <p> - <?=$ingredientesSolos[$i][$k]?></p>
-     
+
     <?php   } ?>
      </div>
   <?php } ?>
@@ -123,7 +123,11 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let ingreSolos = ingre.split(',');
 
     for (let i = 0; i < ingreSolos.length; i++) {
-        let pIngredientes = ' - '+crearElemento('p',null,ingreSolos[i]);
+
+        let pIngredientes = crearElemento('p',null,ingreSolos[i]);
+
+        let pIngredientes = crearElemento('p',null,'- '+ingreSolos[i]);
+
         divReceta.appendChild(pIngredientes);
     }
 

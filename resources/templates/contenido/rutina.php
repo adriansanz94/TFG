@@ -42,6 +42,10 @@ echo "</pre>";
   .ejercicio{
     border:1px solid red;
   }
+  img{
+    width:100%;
+    height: 100%;
+  }
 </style>
 <div class="rutina">
   <div class="rutinaCabecera">
@@ -53,6 +57,9 @@ echo "</pre>";
         <?php for ($i=0; $i < count($ejercicio); $i++) { ?>
       <div class="ejercicio">
           <p>Nombre Ejercicio:<?=$ejercicio[$i]['NOMBRE']?></p>
+          <figure>
+            <img src="<?= $ejercicio[$i]['IMAGEN']?>" alt="">
+          </figure>
           <p>Grupo Muscular:<?=$ejercicio[$i]['GRUPOMUSCULAR']?></p>
           <p>Descripción:<?=$ejercicio[$i]['DESCRIPCION']?></p>
           <p>Repeticiones: <?= $datosEjer[$i]['REPETICIONES']?></p>
