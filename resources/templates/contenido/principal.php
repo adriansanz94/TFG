@@ -12,16 +12,6 @@ for ($i=0; $i < count($datosReceta); $i++) {
   $ingredientesSolos[$i] = explode(',',$ingredientes);
 }
 
-
-echo "<pre>";
-print_r($datosReceta);
-echo "</pre>";
-
-echo "<pre>";
-print_r($ingredientesSolos);
-echo "</re>";
-
-
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -58,10 +48,12 @@ echo "</re>";
     <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
     <p><?= $datosReceta[$i]['TIEMPO']?></p>
     <p>Ingredientes:</p>
-  <?php for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
-          <p> - <?=$ingredientesSolos[$i][$k]?></p>
-    </div>
-  <?php  } ?>
+    
+    <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
+            <p> - <?=$ingredientesSolos[$i][$k]?></p>
+     
+    <?php   } ?>
+     </div>
   <?php } ?>
   <button type='button' id="vermasRecetas" >ver más...</button>
 </div>
@@ -84,7 +76,6 @@ echo "</re>";
     })
       .done(function(data) {
         let respuesta = JSON.parse(data.split('body')[1].split('script')[0].split('\n')[1]);
-        console.log(respuesta);
         pintarMasRecetas(respuesta);
 
       })
@@ -105,6 +96,7 @@ echo "</re>";
     }
     //let btnNuevo = crearElemento('button',{type:'button',id:'vermasRecetas'},'ver más ...');
     //divRecetas.appendChild(btnNuevo);
+
     divRecetas.appendChild(btn);
   }
 
@@ -129,11 +121,6 @@ echo "</re>";
 
     let ingre = recetaJSON.INGREDIENTES;
     let ingreSolos = ingre.split(',');
-
-    console.log('ingredientes en cadena');
-    console.log(ingre);
-    console.log('array de ingredientes');
-    console.log(ingreSolos);
 
     for (let i = 0; i < ingreSolos.length; i++) {
         let pIngredientes = crearElemento('p',null,ingreSolos[i]);
