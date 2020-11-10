@@ -25,8 +25,8 @@ class RecetaFavoritaManager implements IDWESEntidadManager{
   }
   public static function insert(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("INSERT INTO RECETAFAVORITA (ID,ID_RECETA,ID_USUARIO )
-                  VALUES (?, ?, ?)",
+    $db->ejecuta("INSERT INTO RECETAFAVORITA (ID_RECETA,ID_USUARIO )
+                  VALUES ( ?, ?)",
                   $campos);
   }
   public static function delete($id){

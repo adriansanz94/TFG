@@ -15,7 +15,6 @@ if($fav == null){
   $favoritos = $fav['ID'];
 }
 echo "favoritos";
-print_r( $fav);
 
 //$datosEjerCompleto = EjercicioRutinaManager::getByIdEjercicio($datosRutina[]);
 $datosEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
@@ -82,7 +81,7 @@ function agregarQuitar(e){
   
   let id_rutina = <?=$datosRutina['ID']?>;
   let id_user = <?=$id_user?>;
-  //console.log(fav);
+  console.log(id_user);
   let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
   alert('Enviando!');
   $.ajax({
