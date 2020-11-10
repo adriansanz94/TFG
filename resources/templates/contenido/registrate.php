@@ -7,8 +7,9 @@ $usuario = "";
 $correo = "";
 $contraseña = "";
 $r_contraseña = "";
+
 $descripcion ='';
-$rutaImagen ='';
+
 $errores = [];
 
 $nombresUsers = UsuarioManager::getAllNom();
@@ -69,27 +70,17 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	}else{
 		$errores['error_descripcion'] = "Debes agregar alguna descripción.";
 	}
-	//IMAGEN
-
-  if (isset($_FILES['imagen'])) {
-    $imagen = limpiarCadena($_FILES['imagen']['name']);
-
-    //para guardar imagen
-     $rutaImagen = guardarImagen($usuario,'perfil',$_FILES['imagen']['name']);
-  }else{
-    $errores['imagen'] = "imagen no valida";
-  }
 
 }
-echo'<pre>';
-print_r($errores);
-echo'</pre>';
 //hacer el insert y redirigir a Login
 if (count($errores)==0 && count($_POST)>0) {
 	echo'<pre>';
 	print_r('sin errores');
 	echo'</pre>';
- 
+
+	$rutaImagen = guardarImagen($usuario,'perfil','');
+
+
 	$rol = "USER";
 
 	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);

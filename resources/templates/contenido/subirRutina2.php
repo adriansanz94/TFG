@@ -20,6 +20,10 @@
   .oculto{
     visibility: none; /*hidden para ocultarlo*/
   }
+  img{
+    width:100%;
+    height: 100%;
+  }
 </style>
 
 
@@ -27,6 +31,9 @@
   <?php foreach ($ejercicios as $fila) { ?>
   <div class="cajas">
   <p>Nombre :<?=$fila['NOMBRE']?></p>
+  <figure>
+    <img src="<?=$fila['IMAGEN']?>" alt="">
+  </figure>
   <p>Grupo Muscular: <?=$fila['GRUPOMUSCULAR']?></p>
   <p id="descripcion" class="oculto">Descripción: <?=$fila['DESCRIPCION']?></p>
   <span> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>" id="rutina"> <br>
