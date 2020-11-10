@@ -9,6 +9,11 @@ $id_user = $_SESSION['ID'];
 ///esta consulta tiene que ser en una sola
 $datosRutina = RutinaManager::getById($id);
 $fav = RutinaFavoritaManager::getByIdRutina($id,$id_user);
+if($fav == null){
+  $favoritos = 'null';
+}else{
+  $favoritos = $fav['ID'];
+}
 echo "favoritos";
 print_r( $fav);
 
@@ -67,10 +72,17 @@ favorito.addEventListener('click',agregarQuitar);
 
 function agregarQuitar(e){
   console.log('me has pulsado');
-  let fav = <?=$fav['ID']?>;
-  let id_rutina = <?=$id?>;
+  let favoritos = <?=$favoritos?>;
+  let fav;
+  if(favoritos == 'null'){
+    fav = 'null';
+  }else{
+    fav = <?=$favoritos?>;
+  }
+  
+  let id_rutina = <?=$datosRutina['ID']?>;
   let id_user = <?=$id_user?>;
-  console.log(fav);
+  //console.log(fav);
   let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
   alert('Enviando!');
   $.ajax({
