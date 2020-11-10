@@ -4,7 +4,8 @@ global $config;
 if(isset($_GET['id'])){
   $id = $_GET['id'];
 }
-$fav = RrecetaFavoritaManager::getByIdReceta($id,$id_user);
+$id_user = $_SESSION['ID'];
+$fav = RecetaFavoritaManager::getByIdReceta($id,$id_user);
 if($fav == null){
   $favoritos = 'null';
 }else{
@@ -13,10 +14,10 @@ if($fav == null){
 echo "favoritos";
 print_r( $fav);
 
-$recetas = RecetaManager::getById($id);
-$no = $recetas['IMAGEN'];
+$datosreceta = RecetaManager::getById($id);
+$no = $datosreceta['IMAGEN'];
 echo "<pre>";
-print_r($recetas);
+print_r($datosreceta);
 
 echo "</pre>";
 ?>
@@ -29,10 +30,10 @@ echo "</pre>";
     <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
   <?php }?>
   <div>
-    <h1><?= $recetas['NOMBRE']?></h1>
-    <figure><img src="<?=$recetas['IMAGEN'] ?>"></figure>
-    <p><?= $recetas['TIEMPO']?></p>
-    <p><?= $recetas['DESCRIPCION']?></p>
+    <h1><?= $datosreceta['NOMBRE']?></h1>
+    <figure><img src="<?=$datosreceta['IMAGEN'] ?>"></figure>
+    <p><?= $datosreceta['TIEMPO']?></p>
+    <p><?= $datosreceta['DESCRIPCION']?></p>
   </div>
 
 </div>
@@ -52,7 +53,7 @@ function agregarQuitar(e){
     fav = <?=$favoritos?>;
   }
   
-  let id_rutina = <?=$datosRutina['ID']?>;
+  let id_receta = <?=$datosreceta['ID']?>;
   let id_user = <?=$id_user?>;
   //console.log(fav);
   let url = 'AJAXRecetaFav.php?fav='+fav+'&id_user='+id_user+'&id_receta='+id_receta;
