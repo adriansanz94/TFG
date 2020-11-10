@@ -26,6 +26,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
 }
 
 ?>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <style media="screen">
   .ejercicio{
     border:1px solid red;
@@ -63,13 +64,13 @@ for ($i=0; $i < count($datosEjer); $i++) {
       </div>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
 let favorito = document.querySelector('label');
 
-favorito.addEventListener('click',agregarQuitar);
+//favorito.addEventListener('click',agregarQuitar);
 
-function agregarQuitar(e){
+/*function agregarQuitar(e){
   console.log('me has pulsado');
   let favoritos = <?=$favoritos?>;
   let fav;
@@ -82,19 +83,52 @@ function agregarQuitar(e){
   let id_rutina = <?=$datosRutina['ID']?>;
   let id_user = <?=$id_user?>;
   console.log(id_user);
-  let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
+  //let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
   alert('Enviando!');
-  $.ajax({
+ */ 
+  $(favorito).click(function(){
+  //$.ajax({
     //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
     //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
     /*success: function( data ) {
     alert( 'El servidor devolvio "' + data + '"' );
   }*/
-  success: function(){
+  
+
+  /*success: function(){
     $(location).attr('href',url);
     }
-  });
-  favorito = document.querySelector('label');
-}
+  });*/
+  console.log('me has pulsado');
+  let favoritos = <?=$favoritos?>;
+  let fav;
+  if(favoritos == 'null'){
+    fav = 'null';
+  }else{
+    fav = <?=$favoritos?>;
+  }
+  
+  let id_rutina = <?=$datosRutina['ID']?>;
+  let id_user = <?=$id_user?>;
+  console.log(id_user);
+  //let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
+  alert('Enviando!');
+  $.ajax(
+    {
+      url : 'AJAXRutinaFav.php',
+      type: "GET",
+      data : {fav: fav, id_user:id_user, id_rutina: id_rutina},
+
+    })
+      .done(function(data) {
+        console.log('conseguido');
+        favorito = document.querySelector('label');
+      })
+      .fail(function(data) {
+        alert( "error" );
+      });
+
+  
+});
 
 </script>

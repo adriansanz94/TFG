@@ -28,9 +28,7 @@ Son necesarias las variables
     <?php
         require("$ROOT/resources/templates/contenido$ruta_contenido");
      ?>
-     <script>
-
-     </script>
+     
   </body>
   <?php
           require("$ROOT/resources/templates/pie.php");
