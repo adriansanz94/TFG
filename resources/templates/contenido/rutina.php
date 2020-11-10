@@ -5,10 +5,10 @@ global $config;
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
+$id_user = $_SESSION['ID'];
 ///esta consulta tiene que ser en una sola
 $datosRutina = RutinaManager::getById($id);
-//$datosDeRutina = EjercicioRutinaManager::getByIdRutina($id);
-
+$fav = RutinaFavoritaManager::getByIdReceta($id,$id_user);
 echo "id de la rutina";
 echo $datosRutina['NOMBRE'];
 
@@ -48,6 +48,13 @@ echo "</pre>";
   }
 </style>
 <div class="rutina">
+  <?php if($fav == null){ ?>
+    <label for="agregar">agregar a fav </label>
+    <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito"> 
+  <?php }else{?>
+    <label for="quitar">quitar de fav</label>
+    <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
+  <?php }?>
   <div class="rutinaCabecera">
     <h1><?= $datosRutina['NOMBRE']?></h1>
     <p><?= $datosRutina['DIFICULTAD']?></p>
@@ -68,4 +75,14 @@ echo "</pre>";
       </div>
   </div>
 </div>
-<h1>una rutina seleccionada</h1>
+
+<script>
+let favorito = document.querySelectorAll('label');
+
+favorito.addEventListener('click',agregarQuitar);
+
+function agregarQuitar(e){
+  console.log('me has pulsado');
+}
+
+</script>
