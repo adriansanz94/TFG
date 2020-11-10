@@ -2,9 +2,9 @@
 global $ROOT;
 global $config;
 
-  if(isset($_GET['id'])){
-    $id = $_GET['id'];
-  }
+if(isset($_GET['id'])){
+  $id = $_GET['id'];
+}
 $id_user = $_SESSION['ID'];
 ///esta consulta tiene que ser en una sola
 $datosRutina = RutinaManager::getById($id);
