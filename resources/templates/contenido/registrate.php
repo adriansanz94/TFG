@@ -8,6 +8,7 @@ $correo = "";
 $contraseña = "";
 $r_contraseña = "";
 $descripcion ='';
+$rutaImagen ='';
 $errores = [];
 
 $nombresUsers = UsuarioManager::getAllNom();
@@ -68,6 +69,16 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	}else{
 		$errores['error_descripcion'] = "Debes agregar alguna descripción.";
 	}
+	//IMAGEN
+
+  if (isset($_FILES['imagen'])) {
+    $imagen = limpiarCadena($_FILES['imagen']['name']);
+
+    //para guardar imagen
+     $rutaImagen = guardarImagen($usuario,'perfil',$_FILES['imagen']['name']);
+  }else{
+    $errores['imagen'] = "imagen no valida";
+  }
 
 }
 echo'<pre>';
@@ -78,14 +89,13 @@ if (count($errores)==0 && count($_POST)>0) {
 	echo'<pre>';
 	print_r('sin errores');
 	echo'</pre>';
-	//guardarImagen($usuario.'/perfil',$_FILES['imagen']['name']);
- $rutaImagen = guardarImagen($usuario,'perfil','');
+ 
 	$rol = "USER";
-	//$imagen = "img";
+
 	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);
 
-	//header('Location: login.php');
-	//die();
+	header('Location: login.php');
+	die();
 }
 
 
@@ -104,7 +114,7 @@ if (count($errores)==0 && count($_POST)>0) {
   <body>
     <h1>Bienvenido al Registro de Ponte En Forma</h1>
 
-    <form action="registrate.php" method="POST">
+    <form action="registrate.php" method="POST" enctype="multipart/form-data">
 
     		<label for="usuario">Nombre usuario</label>
     		<input type="text" name="usuario" id="nombre" placeholder="Escribe tu nombre de usuario" value="<?=$usuario?>">
@@ -120,6 +130,12 @@ if (count($errores)==0 && count($_POST)>0) {
         <?php if( isset($errores['error_correo'])) { ?>
           <br><span class='error'><?=$errores['error_correo']?></span><br>
         <?php } ?>
+
+				<label>Subir imagen de perfil:</label> <br>
+ 				<input type="file" name="imagen" value="Seleccione archivo"> <br>
+				<?php if( isset($errores['imagen'])) { ?>
+				<br><span class='error'><?=$errores['imagen']?></span><br>
+				<?php } ?>
 
     		<label for="contraseña">Contraseña </label>
     		<input type="password" name="contraseña" id="contraseña" placeholder="Escribe tu contraseña" value="">
