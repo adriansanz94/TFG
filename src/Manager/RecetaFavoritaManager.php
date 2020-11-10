@@ -33,6 +33,7 @@ class RecetaFavoritaManager implements IDWESEntidadManager{
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("DELETE FROM RECETAFAVORITA WHERE ID = ?", $id);
   }
+  public static function update($id, ...$campos){}
 
 }
 
