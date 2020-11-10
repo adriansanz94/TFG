@@ -74,19 +74,19 @@
       console.log(rutinaFinalCheck);
       if(rutinaSeleccionada.length === padreChecked.length){
 
-      let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;
-  alert('Enviando!');
-      $.ajax(
-              {
-                  //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
-                  //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
-                  /*success: function( data ) {
-                      alert( 'El servidor devolvio "' + data + '"' );
-                  }*/
-                  success: function(){
-                    $(location).attr('href',url);
-                  }
+        let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;
+        alert('Enviando!');
+          $.ajax(
+            {
+              //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
+              //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
+              /*success: function( data ) {
+              alert( 'El servidor devolvio "' + data + '"' );
+              }*/
+              success: function(){
+              $(location).attr('href',url);
               }
+            }
           )
       }
     }

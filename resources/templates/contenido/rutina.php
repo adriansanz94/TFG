@@ -8,9 +8,9 @@ global $config;
 $id_user = $_SESSION['ID'];
 ///esta consulta tiene que ser en una sola
 $datosRutina = RutinaManager::getById($id);
-$fav = RutinaFavoritaManager::getByIdReceta($id,$id_user);
-echo "id de la rutina";
-echo $datosRutina['NOMBRE'];
+$fav = RutinaFavoritaManager::getByIdRutina($id,$id_user);
+echo "favoritos";
+print_r( $fav);
 
 //$datosEjerCompleto = EjercicioRutinaManager::getByIdEjercicio($datosRutina[]);
 $datosEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
@@ -20,22 +20,6 @@ for ($i=0; $i < count($datosEjer); $i++) {
     $id = $datosEjer[$i]['ID_EJERCICIO'];
     $ejercicio[$i]= EjercicioManager::getById($id);
 }
-
-
-
-//$datosRutiEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
-echo "<pre>";
-print_r($datosRutina);
-echo "</pre>";
-
-echo "<pre>";
-print_r($datosEjer);
-echo "</pre>";
-
-echo "<pre>";
-print_r($ejercicio);
-echo "</pre>";
-
 
 ?>
 <style media="screen">
@@ -75,14 +59,31 @@ echo "</pre>";
       </div>
   </div>
 </div>
-
-<script>
-let favorito = document.querySelectorAll('label');
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+let favorito = document.querySelector('label');
 
 favorito.addEventListener('click',agregarQuitar);
 
 function agregarQuitar(e){
   console.log('me has pulsado');
+  let fav = <?=$fav['ID']?>;
+  let id_rutina = <?=$id?>;
+  let id_user = <?=$id_user?>;
+  console.log(fav);
+  let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
+  alert('Enviando!');
+  $.ajax({
+    //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
+    //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
+    /*success: function( data ) {
+    alert( 'El servidor devolvio "' + data + '"' );
+  }*/
+  success: function(){
+    $(location).attr('href',url);
+    }
+  });
+  favorito = document.querySelector('label');
 }
 
 </script>

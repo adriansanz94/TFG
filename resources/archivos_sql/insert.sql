@@ -78,3 +78,4 @@ INSERT INTO RECETA (ID,NOMBRE,INGREDIENTES,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_
 (7,'fritada','Costillas de cerdo,Mote,','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/fritada/fritada.jpg',1 ),
 (8,'empanadas de verde','Platano macho,Queso','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/empanadas de verde/empanadas.jpg',3 ),
 (9,'tallarines','Tallarines,Carne,Pimienta,Sal','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/tallarines/tallarines.jpg',2 );
+

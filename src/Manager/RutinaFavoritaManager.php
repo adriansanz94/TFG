@@ -17,7 +17,7 @@ class RutinaFavoritaManager implements IDWESEntidadManager{
     $db->ejecuta("SELECT * FROM RUTINAFAVORITA WHERE ID_USUARIO = ?",$id);
     return $db->obtenDatos()[0];
   }
-  public static function getByIdReceta(...$campos){
+  public static function getByIdRutina(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM RUTINAFAVORITA WHERE ID_RUTINA = ? AND 
                   ID_USUARIO = ? ",$campos);
