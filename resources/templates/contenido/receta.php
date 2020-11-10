@@ -41,34 +41,31 @@ echo "</pre>";
 <script type="text/javascript">
 let favorito = document.querySelector('label');
 
-favorito.addEventListener('click',agregarQuitar);
-
-function agregarQuitar(e){
-  console.log('me has pulsado');
-  let favoritos = <?=$favoritos?>;
-  let fav;
-  if(favoritos == 'null'){
-    fav = 'null';
-  }else{
-    fav = <?=$favoritos?>;
-  }
+  $(favorito).click(function(){
   
+  let favoritos = <?=$favoritos?>;
+  
+  let fav = favoritos || 'null';
   let id_receta = <?=$datosreceta['ID']?>;
   let id_user = <?=$id_user?>;
-  //console.log(fav);
-  let url = 'AJAXRecetaFav.php?fav='+fav+'&id_user='+id_user+'&id_receta='+id_receta;
-  alert('Enviando!');
-  $.ajax({
-    //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
-    //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
-    /*success: function( data ) {
-    alert( 'El servidor devolvio "' + data + '"' );
-  }*/
-  success: function(){
-    $(location).attr('href',url);
-    }
-  });
-  favorito = document.querySelector('label');
-}
+   
+  $.ajax(
+    {
+      url : 'AJAXRecetaFav.php',
+      type: "GET",
+      data : {"fav": fav,"id_user": id_user,"id_receta": id_receta},
+    })
+      .done(function(data) {
+        alert("enviado!");
+        favorito = document.querySelector('label');
+      })
+      .fail(function(data) {
+        alert( "error" );
+      });
+
+  
+});
+
+
 
 </script>

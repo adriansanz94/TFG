@@ -1,6 +1,6 @@
 <?php 
- if(isset($_GET)){
-  
+ 
+  print_r($_GET);
   $id_user= clear_input($_GET['id_user']);
   $id_rutina= clear_input($_GET['id_rutina']);
   $fav= clear_input($_GET['fav']);
@@ -17,7 +17,7 @@
     
   }
 
-}
+
 
 
 

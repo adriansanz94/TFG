@@ -68,60 +68,22 @@ for ($i=0; $i < count($datosEjer); $i++) {
 <script type="text/javascript">
 let favorito = document.querySelector('label');
 
-//favorito.addEventListener('click',agregarQuitar);
-
-/*function agregarQuitar(e){
-  console.log('me has pulsado');
-  let favoritos = <?=$favoritos?>;
-  let fav;
-  if(favoritos == 'null'){
-    fav = 'null';
-  }else{
-    fav = <?=$favoritos?>;
-  }
-  
-  let id_rutina = <?=$datosRutina['ID']?>;
-  let id_user = <?=$id_user?>;
-  console.log(id_user);
-  //let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
-  alert('Enviando!');
- */ 
   $(favorito).click(function(){
-  //$.ajax({
-    //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
-    //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
-    /*success: function( data ) {
-    alert( 'El servidor devolvio "' + data + '"' );
-  }*/
   
-
-  /*success: function(){
-    $(location).attr('href',url);
-    }
-  });*/
-  console.log('me has pulsado');
   let favoritos = <?=$favoritos?>;
-  let fav;
-  if(favoritos == 'null'){
-    fav = 'null';
-  }else{
-    fav = <?=$favoritos?>;
-  }
   
+  let fav = favoritos || 'null';
   let id_rutina = <?=$datosRutina['ID']?>;
   let id_user = <?=$id_user?>;
-  console.log(id_user);
-  //let url = 'AJAXRutinaFav.php?fav='+fav+'&id_user='+id_user+'&id_rutina='+id_rutina;
-  alert('Enviando!');
+   
   $.ajax(
     {
       url : 'AJAXRutinaFav.php',
       type: "GET",
-      data : {fav: fav, id_user:id_user, id_rutina: id_rutina},
-
+      data : {"fav": fav,"id_user": id_user,"id_rutina": id_rutina},
     })
       .done(function(data) {
-        console.log('conseguido');
+        alert("enviado!");
         favorito = document.querySelector('label');
       })
       .fail(function(data) {
