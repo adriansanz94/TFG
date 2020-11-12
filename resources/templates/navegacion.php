@@ -8,9 +8,6 @@ if(isset($_GET['ID'])){
 
 $admin = "ADMIN";
 
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
 
 //token
 

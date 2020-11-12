@@ -6,16 +6,17 @@
   $fav= clear_input($_GET['fav']);
   
   if($fav != 'null'){
-    echo $fav;
     RecetaFavoritaManager::delete($fav);
-    print_r('quitado');
-    
   }else{
     RecetaFavoritaManager::insert(intval($id_receta),intval($id_user));
-    print_r('insertado');
-
-    
   }
+  $res = RecetaFavoritaManager::getByIdReceta($id_receta,$id_user);
+  if($res == null){
+    $resultado = 'null';
+  }else{
+    $resultado = $res['ID'];
+  }
+  print_r($resultado);
 
 }
 
