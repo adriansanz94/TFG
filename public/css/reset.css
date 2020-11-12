@@ -8,4 +8,11 @@
 body{
   margin:0;
   padding:0;
+  background-color: var(--color2);
+}
+
+.receta{
+    border:var(--color2) 2px solid;
+    margin-bottom: 1em;
+    background-color: white;
 }
