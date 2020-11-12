@@ -1,0 +1,11 @@
+:root{
+  --color1: #18121E;
+  --color2: #233237;
+  --color3: #984B43;
+  --color4: #EAC67A;
+
+}
+body{
+  margin:0;
+  padding:0;
+}

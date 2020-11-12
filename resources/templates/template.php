@@ -17,8 +17,7 @@ Son necesarias las variables
     <meta charset="utf-8">
     <title><?=$titulo?></title>
   </head>
-  <!-- <link rel="stylesheet" href="/css/principal.css">  // Esto jode todo el rato, ya que se aplica a todas las paginas
--->
+  <link rel="stylesheet" href="/css/reset.css">
 <?php
       require("$ROOT/resources/templates/autentificacion.php");
       require("$ROOT/resources/templates/navegacion.php");
@@ -28,7 +27,7 @@ Son necesarias las variables
     <?php
         require("$ROOT/resources/templates/contenido$ruta_contenido");
      ?>
-     
+
   </body>
   <?php
           require("$ROOT/resources/templates/pie.php");
