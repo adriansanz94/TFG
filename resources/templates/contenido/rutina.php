@@ -33,7 +33,6 @@ for ($i=0; $i < count($datosEjer); $i++) {
   }
   img{
     cursor: pointer;
-    background-image: url('../../public/imagenes/');
   }
   .ejercicio{
     border:1px solid red;
@@ -71,10 +70,10 @@ for ($i=0; $i < count($datosEjer); $i++) {
 <script type="text/javascript">
   let favorito = document.querySelector('label');
   let favoritos = <?=$favoritos?>;
-
+  let fav = favoritos || 'null';
   $(favorito).click(function(){
 
-    let fav = favoritos || 'null';
+    
     let id_rutina = <?=$datosRutina['ID']?>;
     let id_user = <?=$id_user?>;
 
@@ -85,16 +84,11 @@ for ($i=0; $i < count($datosEjer); $i++) {
         data : {"fav": fav,"id_user": id_user,"id_rutina": id_rutina},
       })
         .done(function(data) {
-          console.log(data);
-          let da;
-          if (data.split('body')[1].split(' ')[4] !== 'null') {
-            favoritos = data.split('body')[1].split(' ')[4];
-          }else{
-            favoritos = 'null';
-          }
+          fav = data.split('body')[1].split(' ')[4].split('\n')[0];
+          console.log(fav);
           let im =  document.getElementById('imagen');
           let span = document.querySelector('span');
-          if (fav === 'null') {
+          if (fav != 'null') {
             im.src="imagenes/favorito.jpg";
             span.innerHTML = "Esta en favoritos";
           }else{

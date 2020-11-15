@@ -86,5 +86,5 @@ $admin = "ADMIN";
       }else{
         menu.setAttribute('class','show');
       }
-    }
+    } 
 </script>

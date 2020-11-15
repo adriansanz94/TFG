@@ -32,7 +32,7 @@ Son necesarias las variables
 
   </body>
   <?php
-          require("$ROOT/resources/templates/pie.php");
+        require("$ROOT/resources/templates/pie.php");
   ?>
 <button class='scroll'>
         <svg class="icon" viewBox="0 0 16 16">
