@@ -69,14 +69,10 @@ if (count($_POST)>0 ) {
 }
 
 ?>
-<style>
-  .error{
-    color:red;
-  }
-</style>
 
-
+<link rel="stylesheet" href="/css/subirReceta.css">
 <form action="subirReceta.php" method="post" enctype="multipart/form-data">
+	<h1>Subir receta</h1>
   <label>Nombre de la receta:</label> <br>
   <input type="text" name="nombre" value=""> <br>
   <?php if( isset($errores['nombre'])) { ?>

@@ -6,39 +6,23 @@
  $ejercicios_json = json_encode($ejercicios);
 
 ?>
-<style media="screen">
-  .cajas{
-    width: 250px;
-    height: auto;
-    border: 1px solid red;
-    margin:5px;
-    display:inline-block;
-  }
-  h1{
-    text-align: center;
-  }
-  .oculto{
-    visibility: none; /*hidden para ocultarlo*/
-  }
-  img{
-    width:100%;
-    height: 100%;
-  }
-</style>
 
 
 
+  <link rel="stylesheet" href="/css/subirRutina2.css">
+  <link rel="stylesheet" href="/css/cssComun.css">
+  <h1>Seleccionar ejercicios</h1>
   <?php foreach ($ejercicios as $fila) { ?>
   <div class="cajas">
-  <p>Nombre :<?=$fila['NOMBRE']?></p>
+  <p> <span class="negrita">Nombre :</span><?=$fila['NOMBRE']?></p>
   <figure>
     <img src="<?=$fila['IMAGEN']?>" alt="">
   </figure>
-  <p>Grupo Muscular: <?=$fila['GRUPOMUSCULAR']?></p>
-  <p id="descripcion" class="oculto">Descripción: <?=$fila['DESCRIPCION']?></p>
-  <span> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>" id="rutina"> <br>
-  <span> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="">
-  </div>
+  <p><span class="negrita">Grupo Muscular:</span> <?=$fila['GRUPOMUSCULAR']?></p>
+  <p id="descripcion" class="oculto"><span class="negrita">Descripción: </span><?=$fila['DESCRIPCION']?></p>
+  <span class="negrita"> Seleccionar: </span>  <input type="checkbox" name="<?=$fila['NOMBRE']?>" value="<?=$fila['ID']?>" id="rutina"> <br>
+  <span class="negrita"> Repeticiones o tiempo: </span> <input type="text" name="<?=$fila['ID']?>" value="">
+</div> <br>
   <?php } ?>
   <input type="submit" name="enviar" value="Enviar" id="send">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

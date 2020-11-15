@@ -15,21 +15,21 @@ for ($i=0; $i < count($datosReceta); $i++) {
 ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<form method="post" action="resultadosBusqueda.php">
+<link rel="stylesheet" href="css/principal.css">
+<form method="post" action="resultadosBusqueda.php" class="buscador">
 
   <select class="" name="selectBuscador">
     <option disabled selected value="">Elige una opción</option>
     <option value="nombre_receta">Nombre de Receta</option>
     <option value="nombre_rutina">Nombre de Rutina</option>
   </select>
-  <p> Buscar: <input type="text" name="busqueda"> </p>
-  <input type="submit" name="buscar" value="buscar">
+  <p><input type="text" name="busqueda" placeholder="¿Qué quieres buscar?"> </p>
+  <input type="submit" name="buscar" value="Buscar">
 </form>
 
 
 <div id="rutinas"class="rutinas">
-  <h1> <a href="rutinas.php"> Rutinas:</a></h1>
+  <h1> <a href="rutinas.php"> Rutinas</a></h1>
   <?php foreach ($datosRutina   as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
@@ -40,14 +40,16 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <button type="button" id="vermasRutinas">ver más...</button>
 </div>
 <div id="recetas" class="recetas">
-<h1><a href="recetas.php">Recetas:</a></h1>
+<h1><a href="recetas.php">Recetas</a></h1>
   <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
     <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
     <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
     <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
+    <p class="negrita">Descripción:</p>
     <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
+    <p class="negrita">Tiempo:</p>
     <p><?= $datosReceta[$i]['TIEMPO']?></p>
-    <p>Ingredientes:</p>
+    <p class="negrita">Ingredientes:</p>
 
     <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
             <p> - <?=$ingredientesSolos[$i][$k]?></p>

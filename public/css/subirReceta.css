@@ -1,8 +1,6 @@
-.error {
-    color : red;
-    font-size:2 vmin ;
+.error{
+  color:red;
 }
-
 
 label, input, textarea{
   width: 100%;
@@ -11,11 +9,9 @@ label, input, textarea{
 label{
   font-size: 1.2em;
 }
-textarea{
-  height: 50px;
-}
+
 input[type='submit']{
-  width: 100px;
+  width: 125px;
 }
 
 

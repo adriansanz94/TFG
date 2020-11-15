@@ -43,14 +43,8 @@
      die();
    }
 ?>
-<style media="screen">
-  img{
-    background-color: white;
-    width: 70px;
-    height: 75px;
-  }
-</style>
 
+<link rel="stylesheet" href="/css/admin.css">
 <div> <h2>Usuarios</h2>
   <div>
     <div class="usuarios">
@@ -59,9 +53,9 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Contraseña</th>
-        <th>Email</th>
-        <th>Imagen</th>
+        <th class="ocultar">Contraseña</th>
+        <th class="ocultar">Email</th>
+        <th class="ocultar">Imagen</th>
         <th>Rol</th>
         <th>Cambiar Rol</th>
         <th>Borrar Usuario</th>
@@ -72,9 +66,9 @@
     <tr>
       <td><?=$fila['ID']?></td>
       <td><?=$fila['NOMBRE']?></td>
-      <td><?=$fila['PASS']?></td>
-      <td><?=$fila['EMAIL']?></td>
-      <td><?=$fila['IMAGEN']?></td>
+      <td class="ocultar"><?=$fila['PASS']?></td>
+      <td class="ocultar"><?=$fila['EMAIL']?></td>
+      <td class="ocultar"><?=$fila['IMAGEN']?></td>
       <td><?=$fila['ROL']?></td>
       <td>
         <?php
@@ -87,7 +81,7 @@
         <?php
               if($_SESSION['ID'] != $fila['ID']){
         ?>
-        <a href="borrarADMIN.php?id_usuario=<?=$fila['ID']?>"><img id="basura" src="papelera.png" alt="Borrar usuario"></a>
+        <a href="borrarADMIN.php?id_usuario=<?=$fila['ID']?>"><img id="basura" src="imagenes/papelera.png"></a>
       <?php } ?>
     </td>
     </tr>
@@ -106,9 +100,9 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Tiempo</th>
-        <th>Imagen</th>
+        <th class="ocultar">Descripcion</th>
+        <th class="ocultar">Tiempo</th>
+        <th class="ocultar">Imagen</th>
         <th>Id_usuario</th>
         <th>Borrar Receta</th>
       </tr>
@@ -118,9 +112,9 @@
     <tr>
       <td><?=$fila['ID']?></td>
       <td><?=$fila['NOMBRE']?></td>
-      <td><?=$fila['DESCRIPCION']?></td>
-      <td><?=$fila['TIEMPO']?></td>
-      <td><?=$fila['IMAGEN']?></td>
+      <td class="ocultar"><?=$fila['DESCRIPCION']?></td>
+      <td class="ocultar"><?=$fila['TIEMPO']?></td>
+      <td class="ocultar"><?=$fila['IMAGEN']?></td>
       <td><?=$fila['ID_USUARIO_RECETA']?></td>
       <td>
         <a href="borrarADMIN.php?id_receta=<?=$fila['ID']?>"><img id="basura" src="imagenes/papelera.png" alt="Borrar usuario"></a>
@@ -141,9 +135,9 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Grupo Muscular</th>
-        <th>Descripcion</th>
-        <th>Imagen</th>
+        <th class="ocultar">Grupo Muscular</th>
+        <th class="ocultar">Descripcion</th>
+        <th class="ocultar">Imagen</th>
         <th>Borrar Receta</th>
       </tr>
     </thead>
@@ -152,9 +146,9 @@
     <tr>
       <td><?=$fila['ID']?></td>
       <td><?=$fila['NOMBRE']?></td>
-      <td><?=$fila['GRUPOMUSCULAR']?></td>
-      <td><?=$fila['DESCRIPCION']?></td>
-      <td><?=$fila['IMAGEN']?></td>
+      <td class="ocultar"><?=$fila['GRUPOMUSCULAR']?></td>
+      <td class="ocultar"><?=$fila['DESCRIPCION']?></td>
+      <td class="ocultar"><?=$fila['IMAGEN']?></td>
       <td>
         <a href="borrarADMIN.php?id_ejercicio=<?=$fila['ID']?>"><img id="basura" src="imagenes/papelera.png" alt="Borrar usuario"></a>
       </td>
@@ -176,7 +170,6 @@
         <th>ID</th>
         <th>ID_Rutina</th>
         <th>ID_Ejercicio</th>
-        <th>Repetición</th>
         <th>Borrar Rutina</th>
       </tr>
     </thead>
@@ -186,7 +179,6 @@
       <td><?=$fila['ID']?></td>
       <td><?=$fila['NOMBRE']?></td>
       <td><?=$fila['DIFICULTAD']?></td>
-      <td><?=$fila['DESCRIPCION']?></td>
       <td>
         <a href="borrarADMIN.php?id_rutina=<?=$fila['ID']?>"><img id="basura" src="imagenes/papelera.png" alt="Borrar usuario"></a>
       </td>

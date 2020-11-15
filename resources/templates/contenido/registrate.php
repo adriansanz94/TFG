@@ -103,10 +103,10 @@ if (count($errores)==0 && count($_POST)>0) {
   </head>
   <link rel="stylesheet" href="/css/registro.css">
   <body>
-    <h1>Bienvenido al Registro de Ponte En Forma</h1>
+
 
     <form action="registrate.php" method="POST" enctype="multipart/form-data">
-
+				<h1>Darse de alta</h1>
     		<label for="usuario">Nombre usuario</label>
     		<input type="text" name="usuario" id="nombre" placeholder="Escribe tu nombre de usuario" value="<?=$usuario?>">
         <?php if( isset($errores['error_usuario'])) { ?>
@@ -148,7 +148,6 @@ if (count($errores)==0 && count($_POST)>0) {
 				<?php if( isset($errores['error_descripcion'])) { ?>
 					<br><span class='error'><?=$errores['error_descripcion']?></span><br>
 				<?php } ?>
-
 
     		<input type="submit" name="enviar" value="Registrarse">
     	</form>

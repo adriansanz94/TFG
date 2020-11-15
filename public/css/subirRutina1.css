@@ -1,0 +1,21 @@
+h1,p{
+  text-align: center;
+}
+
+label, input ,select,textarea{
+  width: 100%;
+}
+
+input[type='submit']{
+  width: 100px;
+}
+
+.error{
+  color:red;
+}
+input:nth-last-of-type(1){
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}

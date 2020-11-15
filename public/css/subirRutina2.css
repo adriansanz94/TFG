@@ -1,0 +1,30 @@
+.cajas{
+  border: 1px solid red;
+  padding:5px;
+  background-color: white;
+}
+
+h1{
+  text-align: center;
+}
+.oculto{
+  visibility: none; /*hidden para ocultarlo*/
+}
+img{
+  width:100%;
+}
+
+body{
+  background-color: skyblue;
+}
+input[type='submit']{
+  width: 100px;
+}
+
+
+input:nth-last-of-type(1) , h1{
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}
