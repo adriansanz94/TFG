@@ -42,7 +42,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
 <div class="rutina">
   <?php if($fav == null){ ?>
     <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
-    <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito"> 
+    <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
   <?php }else{?>
     <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/favorito.jpg" id="imagen"></figure></label>
     <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
@@ -73,11 +73,11 @@ for ($i=0; $i < count($datosEjer); $i++) {
   let favoritos = <?=$favoritos?>;
 
   $(favorito).click(function(){
-  
+
     let fav = favoritos || 'null';
     let id_rutina = <?=$datosRutina['ID']?>;
     let id_user = <?=$id_user?>;
-     
+
     $.ajax(
       {
         url : 'AJAXRutinaFav.php',
@@ -106,7 +106,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
           alert( "error" );
         });
 
-    
+
 });
 
 </script>

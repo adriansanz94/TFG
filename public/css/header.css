@@ -3,7 +3,7 @@
   color:white;
 }
 /*colocacion general de los elementos*/
-header{
+/*header{
   height: 10em;
   padding-top:1em;
   background-color:var(--color2);
@@ -37,7 +37,7 @@ nav  a{
   font-size: 1.2em;
 }*/
 
-header img{
+/*header img{
   width:50%;
   height:50%;
 }
@@ -70,4 +70,63 @@ header nav ul li a:hover {
 #logo{
   width:100px;
   height: 100px;
+}*/
+/***ARRIBA ES LO ANTERIOR***/
+
+header{
+  width:100%;
+  background-color: var(--color2);
+}
+.navigation{
+  width: 100%;
+  margin:1rem;
+}
+.navigation ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+  display: none;
+}
+.navigation ul.show{
+  display: block;
+}
+.navigation ul li{
+  display:block;
+}
+
+.navigation ul li a {
+  font-size: 25px;
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: all 0.4s linear;
+  border-radius: 5px;
+}
+.navigation ul li a:hover{
+  background-color: var(--color3);
+}
+.menu-icon{
+  cursor:pointer;
+  margin: 0 auto;
+  width:100%;
+  text-align: center;
+}
+
+#general{
+  text-align: center;
+}
+#imagenMenu img{
+  width: 100px;
+  height: 120px;
+}
+#texto{
+  text-align: center;
+  color:white;
+}
+
+@media only screen and (min-width: 767px) {
+
+
 }

@@ -15,6 +15,7 @@ Son necesarias las variables
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?=$titulo?></title>
   </head>
   <link rel="stylesheet" href="/css/reset.css">

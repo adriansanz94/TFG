@@ -66,7 +66,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
   $('#vermasRecetas').click(function(){
     let ultima = recetas.length-1;
     let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
-    //let url='respuestaVerMas.php?idP='+recetaUltima;
+    let url='respuestaVerMas.php?idP='+recetaUltima;
     $.ajax(
     {
       url : 'respuestaVerMas.php',

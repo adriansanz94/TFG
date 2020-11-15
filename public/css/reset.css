@@ -1,18 +1,13 @@
 :root{
-  --color1: #18121E;
-  --color2: #233237;
-  --color3: #984B43;
-  --color4: #EAC67A;
+  --color1: #18121E; /*Navy Blue*/
+  --color2: #233237; /*Gun Metal*/
+  --color3: #984B43; /*Rusty Red*/
+  --color4: #EAC67A; /*Warm Yellow*/
 
 }
+
 body{
   margin:0;
   padding:0;
-  background-color: var(--color2);
-}
-
-.receta{
-    border:var(--color2) 2px solid;
-    margin-bottom: 1em;
-    background-color: white;
+  /*background-color: var(--color2);*/
 }
