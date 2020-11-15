@@ -1,0 +1,8 @@
+input{
+  position: absolute;
+  left: -10000px;
+}
+img{
+  cursor: pointer;
+  width: 100%;
+}

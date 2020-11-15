@@ -26,18 +26,9 @@ for ($i=0; $i < count($datosEjer); $i++) {
 
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<style type="text/css">
-  input{
-    position: absolute;
-    left: -10000px;
-  }
-  img{
-    cursor: pointer;
-  }
-  .ejercicio{
-    border:1px solid red;
-  }
-</style>
+
+<link rel="stylesheet" href="/css/rutina.css">
+<link rel="stylesheet" href="/css/cssComun.css">
 <div class="rutina">
   <?php if($fav == null){ ?>
     <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
@@ -48,20 +39,19 @@ for ($i=0; $i < count($datosEjer); $i++) {
   <?php }?>
   <div class="rutinaCabecera">
     <h1><?= $datosRutina['NOMBRE']?></h1>
-    <p><?= $datosRutina['DIFICULTAD']?></p>
-    <p><?= $datosRutina['DESCRIPCION']?></p>
+    <p><span class="negrita">Dificultad:</span><?= $datosRutina['DIFICULTAD']?></p>
+    <p> <span class="negrita">Descripción:</span><?= $datosRutina['DESCRIPCION']?></p>
   </div>
   <div class="ejerGlobal">
         <?php for ($i=0; $i < count($ejercicio); $i++) { ?>
       <div class="ejercicio">
-          <p>Nombre Ejercicio:<?=$ejercicio[$i]['NOMBRE']?></p>
+          <p><span class="negrita">Nombre Ejercicio:</span><?=$ejercicio[$i]['NOMBRE']?></p>
           <figure>
             <img src="<?= $ejercicio[$i]['IMAGEN']?>" alt="">
           </figure>
-          <p>Grupo Muscular:<?=$ejercicio[$i]['GRUPOMUSCULAR']?></p>
-          <p>Descripción:<?=$ejercicio[$i]['DESCRIPCION']?></p>
-          <p>Repeticiones: <?= $datosEjer[$i]['REPETICIONES']?></p>
-        <p>aqui iria una imagen</p>
+          <p><span class="negrita">Grupo Muscular:</span><?=$ejercicio[$i]['GRUPOMUSCULAR']?></p>
+          <p><span class="negrita">Descripción:</span><?=$ejercicio[$i]['DESCRIPCION']?></p>
+          <p><span class="negrita">Repeticiones:</span> <?= $datosEjer[$i]['REPETICIONES']?></p>
         <?php } ?>
       </div>
   </div>
@@ -73,7 +63,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
   let fav = favoritos || 'null';
   $(favorito).click(function(){
 
-    
+
     let id_rutina = <?=$datosRutina['ID']?>;
     let id_user = <?=$id_user?>;
 

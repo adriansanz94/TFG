@@ -47,14 +47,14 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
     <p class="negrita">Descripción:</p>
     <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
-    <p class="negrita">Tiempo:</p>
+    <!--<p class="negrita">Tiempo:</p>
     <p><?= $datosReceta[$i]['TIEMPO']?></p>
     <p class="negrita">Ingredientes:</p>
 
     <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
             <p> - <?=$ingredientesSolos[$i][$k]?></p>
 
-    <?php   } ?>
+    <?php   } ?>-->
      </div>
   <?php } ?>
   <button type='button' id="vermasRecetas" >ver más...</button>
@@ -110,26 +110,30 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let figure = crearElemento('figure',null,null);
     let img = crearElemento('img',{src:recetaJSON.IMAGEN},null);
     let pDescripcion = crearElemento('p',null,recetaJSON.DESCRIPCION);
-    let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
-    let pTituloIngredientes = crearElemento('p',null,'Ingredientes:');
+    let pTituloDescripcion = crearElemento('p',{'class':'negrita'},'Descripción: ');
+    /*let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
+    let pTituloIngredientes = crearElemento('p',null,'Ingredientes:');*/
 
     h2.appendChild(a);
     figure.appendChild(img);
     divReceta.appendChild(h2);
     divReceta.appendChild(figure);
+    divReceta.appendChild(pTituloDescripcion);
     divReceta.appendChild(pDescripcion);
-    divReceta.appendChild(pTiempo);
-    divReceta.appendChild(pTituloIngredientes);
+
+
+    /*divReceta.appendChild(pTiempo);
+    divReceta.appendChild(pTituloIngredientes);*/
 
     let ingre = recetaJSON.INGREDIENTES;
     let ingreSolos = ingre.split(',');
 
-    for (let i = 0; i < ingreSolos.length; i++) {
+    /*for (let i = 0; i < ingreSolos.length; i++) {
 
         let pIngredientes = crearElemento('p',null,'- '+ingreSolos[i]);
 
         divReceta.appendChild(pIngredientes);
-    }
+    }*/
 
 
     return divReceta;
