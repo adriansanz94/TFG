@@ -29,7 +29,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
 
 <div id="rutinas"class="rutinas">
-  <h1>Rutinas:</h1>
+  <h1> <a href="rutinas.php"> Rutinas:</a></h1>
   <?php foreach ($datosRutina   as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
@@ -40,7 +40,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <button type="button" id="vermasRutinas">ver más...</button>
 </div>
 <div id="recetas" class="recetas">
-<h1>Recetas:</h1>
+<h1><a href="recetas.php">Recetas:</a></h1>
   <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
     <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
     <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>

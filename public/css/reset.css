@@ -11,3 +11,26 @@ body{
   padding:0;
   /*background-color: var(--color2);*/
 }
+
+.scroll {
+  position: fixed;
+  right: 40px;
+  bottom: 160px;
+  width: 50px;
+  display: none;
+  cursor: pointer;
+}
+
+.scroll:hover {
+  background-color: var(--colorScroll);
+}
+.visible {
+  display: block;
+}
+
+
+@media screen and (min-width: 40.5em) {
+  .scroll {
+      bottom: 10vh;
+  }
+}
