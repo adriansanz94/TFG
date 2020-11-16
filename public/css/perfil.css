@@ -1,8 +1,24 @@
+.perfil{
+  width: 50%;
+  margin: 0 auto;
+  background-color: var(--color2);
+  color: white;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  padding: 0.5em;
+}
+.perfil a{
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+}
 h1,p{
   text-align: center;
 }
 img{
-  width: 100%;
-  border-radius: 25px;
-  margin:0 auto;
+  margin: 0 auto;
+  
+  width: 20%;
+  border-radius: 50%;
+ 
 }
