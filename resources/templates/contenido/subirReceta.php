@@ -64,37 +64,39 @@ if (count($_POST)>0 ) {
 ?>
 
 <link rel="stylesheet" href="/css/subirReceta.css">
-<form action="subirReceta.php" method="post" enctype="multipart/form-data">
-	<h1>Subir receta</h1>
-  <label>Nombre de la receta:</label> <br>
-  <input type="text" name="nombre" value="<?=$nombre?>"> <br>
-  <?php if( isset($errores['nombre'])) { ?>
-    <br><span class='error'><?=$errores['nombre']?></span><br>
-  <?php } ?>
+<div class="subirReceta">
+  <form action="subirReceta.php" method="post" enctype="multipart/form-data">
+    <h1>Subir receta</h1>
+    <label>Nombre de la receta:</label> <br>
+    <input type="text" name="nombre" value="<?=$nombre?>"> <br>
+    <?php if( isset($errores['nombre'])) { ?>
+      <br><span class='error'><?=$errores['nombre']?></span><br>
+    <?php } ?>
 
-	<label>Ingredientes (separalos por , ):</label> <br>
-	<input type="text" name="ingredientes" value="<?=$ingredientes?>"> <br>
-	<?php if( isset($errores['ingredientes'])) { ?>
-		<br><span class='error'><?=$errores['ingredientes']?></span><br>
-	<?php } ?>
+    <label>Ingredientes (separalos por , ):</label> <br>
+    <input type="text" name="ingredientes" value="<?=$ingredientes?>"> <br>
+    <?php if( isset($errores['ingredientes'])) { ?>
+      <br><span class='error'><?=$errores['ingredientes']?></span><br>
+    <?php } ?>
 
-  <label>Descripción de la receta (Ingredientes y preparación):</label> <br>
-  <input type="textarea" name="descripcion" value="<?=$descripcion?>"> <br>
-  <?php if( isset($errores['descripcion'])) { ?>
-    <br><span class='error'><?=$errores['descripcion']?></span><br>
-  <?php } ?>
+    <label>Descripción de la receta (Ingredientes y preparación):</label> <br>
+    <input type="textarea" name="descripcion" value="<?=$descripcion?>"> <br>
+    <?php if( isset($errores['descripcion'])) { ?>
+      <br><span class='error'><?=$errores['descripcion']?></span><br>
+    <?php } ?>
 
-  <label>Tiempo de preparación:</label> <br>
-  <input type="text" name="tiempo" value="<?=$tiempo?>"> <br>
-  <?php if( isset($errores['tiempo'])) { ?>
-    <br><span class='error'><?=$errores['tiempo']?></span><br>
-  <?php } ?>
+    <label>Tiempo de preparación:</label> <br>
+    <input type="text" name="tiempo" value="<?=$tiempo?>"> <br>
+    <?php if( isset($errores['tiempo'])) { ?>
+      <br><span class='error'><?=$errores['tiempo']?></span><br>
+    <?php } ?>
 
-  <label>Subir imagen de receta:</label> <br>
-  <input type="file" name="imagen" value="Seleccione archivo"> <br>
-  <?php if( isset($errores['imagen'])) { ?>
-    <br><span class='error'><?=$errores['imagen']?></span><br>
-  <?php } ?>
+    <label>Subir imagen de receta:</label> <br>
+    <input type="file" name="imagen" value="Seleccione archivo"> <br>
+    <?php if( isset($errores['imagen'])) { ?>
+      <br><span class='error'><?=$errores['imagen']?></span><br>
+    <?php } ?>
 
-  <input type="submit" name="enviar" value="Subir Receta">
-</form>
+    <input type="submit" name="enviar" value="Subir Receta">
+  </form>
+</div>
