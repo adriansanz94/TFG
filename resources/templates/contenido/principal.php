@@ -25,41 +25,49 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <input type="submit" name="buscar" value="Buscar">
 </form>
 
-<h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
-<div id="rutinas"class="rutinas">
-  <?php foreach ($datosRutina   as $fila) { ?>
-    <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
-    <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
-    <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
-    <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
-    </div>
-  <?php } ?>
+<!-- RUTINAS -->
+<div id="rutinasPadre"> 
+  <h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
+  <div id="rutinas"class="rutinas">
+    <?php foreach ($datosRutina   as $fila) { ?>
+      <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
+      <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
+      <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
+      <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
+      </div>
+    <?php } ?>
+  </div>
+  <button type="button" id="vermasRutinas">ver más...</button>
 </div>
-<button type="button" id="vermasRutinas">ver más...</button>
+
 <!-- RECETAS -->
+<div id="recetasPadre">
 <h1 class="titulo"><a href="recetas.php">Recetas</a></h1>
-<div id="recetas" class="recetas">
-  <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
-    <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
-    <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
-    <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
-    <!--<p class="negrita">Descripción:</p>-->
-    <!--<p><?= $datosReceta[$i]['DESCRIPCION']?></p>-->
-    <p class="negrita">Tiempo:</p>
-    <p><?= $datosReceta[$i]['TIEMPO']?></p>
-    <!--<p class="negrita">Ingredientes:</p>
+  <div id="recetas" class="recetas">
+    <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
+      <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
+      <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
+      <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
+      <!--<p class="negrita">Descripción:</p>-->
+      <!--<p><?= $datosReceta[$i]['DESCRIPCION']?></p>-->
+      <p class="negrita">Tiempo:</p>
+      <p><?= $datosReceta[$i]['TIEMPO']?></p>
+      <!--<p class="negrita">Ingredientes:</p>
 
-    <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
-            <p> - <?=$ingredientesSolos[$i][$k]?></p>
+      <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
+              <p> - <?=$ingredientesSolos[$i][$k]?></p>
 
-    <?php   } ?>-->
-     </div>
-  <?php } ?>
+      <?php   } ?>-->
+      </div>
+    <?php } ?>
+  </div>
+  <button type='button' id="vermasRecetas" >ver más...</button>
 </div>
-<button type='button' id="vermasRecetas" >ver más...</button>
+
 <script type="text/javascript">
 
   let recetas = document.getElementsByClassName('receta');
+  let contenedorRecetas = document.getElementById('recetaPadre');
 
 
   $('#vermasRecetas').click(function(){
@@ -96,11 +104,11 @@ for ($i=0; $i < count($datosReceta); $i++) {
     //let btnNuevo = crearElemento('button',{type:'button',id:'vermasRecetas'},'ver más ...');
     //divRecetas.appendChild(btnNuevo);
 
-    divRecetas.appendChild(btn);
+    contenedorRecetas.appendChild(btn);
   }
 
   function crearReceta(recetaJSON){
-
+    
     let divReceta = crearElemento('div',{id:'receta',class:'receta','data-id':recetaJSON.ID},null);
     let h2 = crearElemento('h2',null,null);
     let a = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID},recetaJSON.NOMBRE);
@@ -156,9 +164,9 @@ function crearElemento(tipo,atributos,contenido){
 
 /********************Rutina*********************/
 let rutinas = document.getElementsByClassName('rutina');
-
+let contenedorRutinas = document.getElementById('rutinaPadre');
 $('#vermasRutinas').click(function(){
-
+  
   let ultima = rutinas.length-1;
   let rutinaUltima = document.getElementsByClassName('rutina')[ultima].getAttribute('data-id');
   let url='respuestaVerMasRutina.php?idRutina='+rutinaUltima;
@@ -188,7 +196,7 @@ function pintarMasRutinas(datosJSON){
   for (var i = 0; i < datosJSON.length; i++) {
     divRutinas.appendChild(crearRutina(datosJSON[i]));
   }
-  divRutinas.appendChild(btn);
+  contenedorRutinas.appendChild(btn);
 }
 
 function crearRutina(rutinaJSON){
