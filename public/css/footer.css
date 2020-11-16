@@ -68,8 +68,6 @@ footer > div > a{
 
 footer > div > a:hover{
   opacity: 1;
-  /*transform: rotate(-25deg);
-  transform-origin: 50;*/
 }
 
 footer > div > a:nth-of-type(1){
@@ -103,14 +101,6 @@ footer > div > a:nth-of-type(4){
 footer > div > a:nth-of-type(4):hover{
   background-position: -96px 0;
 }
-
-/*footer > div > a:nth-of-type(5){
-  background-position: -128px -32px;
-}
-
-footer > div > a:nth-of-type(5):hover{
-  background-position: -128px 0;
-}*/
 
 footer > div > a:nth-of-type(5){
   background-position: -160px -32px;

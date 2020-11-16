@@ -102,9 +102,7 @@
 ?>
 <main>
 
-	<link rel="stylesheet" href="/css/configuracionUsuario.css">
-	<link rel="stylesheet" href="/css/cssComun.css">
-
+<div class="configuracion">
 	<form action="configuracionUsuario.php" method="POST" enctype="multipart/form-data">
 		<div>
 			<h1>Editar Perfil </h1>
@@ -162,5 +160,5 @@
 		</div>
 
 	</form>
-
+</div>
 </main>

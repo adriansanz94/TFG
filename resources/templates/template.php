@@ -21,11 +21,13 @@ Son necesarias las variables
   <style type="text/css">
     body{
       padding-top: 5000px;
-      margin-top: 50px;
+      margin-top: 60px;
     }
   </style>
 
   <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="css/cssGeneral.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="JS/scroll.js"></script>
 <?php
       require("$ROOT/resources/templates/autentificacion.php");
@@ -49,5 +51,5 @@ Son necesarias las variables
                 </polyline>
             </g>
         </svg>
-    </button>
+</button>
 </html>

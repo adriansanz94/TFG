@@ -40,7 +40,7 @@ if (count($_POST)>0 ) {
   }
 
   //IMAGEN
-  if (isset($_FILES['name']) && $_FILES['name'] != '') {
+  if (isset($_FILES['imagen']['name']) && $_FILES['imagen']['name'] != '') {
     $imagen = limpiarCadena($_FILES['imagen']['name']);
 
     //probar con rutas para ver como guardar las imagenes
@@ -55,9 +55,14 @@ if (count($_POST)>0 ) {
   if (count($errores) == 0) {
 
       RecetaManager::insert($nombre,$ingredientes,$descripcion,$tiempo,$rutaImagen,$id_usuario);
-
-      /*header("Location:principal.php");
-      die();*/
+			$nombre = "";
+			$ingredientes ="";
+			$descripcion = "";
+			$tiempo = "";
+			$imagen = "";
+			$errores = [];
+      header("Location:principal.php");
+      die();
   }
 }
 

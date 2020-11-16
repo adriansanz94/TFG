@@ -10,11 +10,9 @@
 
 
 ?>
-  <link rel="stylesheet" href="/css/cssComun.css">
-  <link rel="stylesheet" href="/css/perfil.css">
+
   <div class="perfil">
     <?php foreach ($usuario  as $fila) { ?>
-
       <h1> <?=$fila['NOMBRE']?></h1>
       <p> <img src="<?=$fila['IMAGEN']?>" alt=""></p>
       <p class="negrita"> Correo </p>
@@ -24,6 +22,5 @@
       <p class="negrita"> Rol </p>
       <p><?=$fila['ROL']?> </p>
       <a href="configuracionUsuario.php">Editar Perfil</a>
-
     <?php } ?>
   </div>

@@ -1,0 +1,132 @@
+/*CLASES COMUNES*/
+.negrita{
+  font-weight: bold;
+}
+
+
+/*BUSCADOR- PRINCIPAL*/
+.buscador{
+  border-radius:25px;
+  text-align: center;
+  padding: 0.5em;
+  margin:0.5em 0;
+  background-color: var(--color2);
+}
+/*RUTINAS RECETAS - PRINCIPAL*/
+
+.rutinas , .recetas , .titulo{
+  text-align: center;
+}
+
+.rutinas a, .recetas a ,.titulo a{
+  text-decoration: none;
+  color:black;
+}
+
+.titulo{
+  background-color: var(--color3);
+  color:white;
+}
+
+.rutina, .receta{
+  border-bottom:solid 2px var(--color1);
+  margin:0.5em 0;
+}
+
+.rutina:nth-last-of-type(1), .receta:nth-last-of-type(1){
+  border-bottom:none;
+}
+
+.receta img{
+  width: 100%;
+}
+
+#vermasRecetas, #vermasRutinas{
+  margin-bottom: 1em;
+}
+/*PERFIL*/
+.perfil{
+  width: 85%;
+  margin: 0 auto;
+  background-color: var(--color2);
+  color: white;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  padding: 0.5em;
+}
+.perfil a{
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+}
+.perfil h1, .perfil p{
+  text-align: center;
+}
+.perfil img{
+  margin: 0 auto;
+  width: 35%;
+  border-radius: 50%;
+}
+/*CONFIGURACION USUARIO*/
+.configuracion {
+  width: 85%;
+  margin: 25px auto;
+  background-color: var(--color2);
+  color: white;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  padding: 0.5em;
+}
+
+.configuracion label, .configuracion input{
+  width: 90%;
+  margin:0.5em 0;
+}
+
+.configuracion input[type='submit']{
+  width: 100px;
+}
+
+.configuracion input:nth-last-of-type(1){
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}
+
+
+
+
+/*MEDIAS QUERYS*/
+@media only screen and (min-width: 767px) {
+
+/* RUTINAS Y RECETAS - PRINCIPAL*/
+  #rutinas, #recetas{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+  }
+  .rutina , .receta{
+    flex-basis: 33%;
+  }
+
+  .receta{
+    display: flex;
+    flex-direction: column;
+  }
+  .receta figure {
+    flex-basis: 70%;
+  }
+  .rutinas{
+    background-color: var(--color4);
+  }
+  .rutina{
+    background-color: white;
+  }
+
+  /*PERFIL*/
+
+  /*CONFIGURACION PERFIL*/
+}
