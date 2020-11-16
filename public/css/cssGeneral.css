@@ -77,10 +77,12 @@
   border-radius: 25px;
   padding: 1em ;
 }
-
+.configuracion div > div{
+  width: 90%;
+}
 .configuracion label, .configuracion input{
   width: 100%;
-  margin:0 auto;
+  
 }
 
 .configuracion input[type='submit']{
@@ -90,7 +92,7 @@
 .configuracion input:nth-last-of-type(1){
   text-align: center;
   display: block;
-  margin:auto;
+  margin: 0 auto;
   margin-bottom:0.5em;
 }
 
