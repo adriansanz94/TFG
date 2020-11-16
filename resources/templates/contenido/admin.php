@@ -5,33 +5,13 @@
      $id = $_SESSION['ID'];
      $user = UsuarioManager::getByID($id);
 
-     echo '<pre>';
-     print_r($user);
-     echo '</pre>';
-
      //SI es ADMIN
      if( isset($user) && $user['ROL'] === 'ADMIN') {
-       //$rutaImgProfile = (explode('.', $user->getFoto())[0] == 'profileDefault'? $user->getFoto():$user->getId().'/'.$user->getFoto());
 
        $usuarios = UsuarioManager::getAll();
        $recetas = RecetaManager::getAll();
        $ejercicios = EjercicioManager::getAll();
        $rutinas = RutinaManager::getAll();
-
-
-     /*echo '<pre>';
-     print_r($usuarios);
-     echo '</pre>';
-     echo '<pre>';
-     print_r($recetas);
-     echo '</pre>';
-     echo '<pre>';
-     print_r($rutinas);
-     echo '</pre>';
-     echo '<pre>';
-     print_r($ejercicios);
-     echo '</pre>';*/
-
 
      //SINO AL INICIO
      }else{

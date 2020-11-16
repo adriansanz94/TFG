@@ -102,13 +102,7 @@ if (count($errores)==0 && count($_POST)>0) {
 	die();
 }
 
-
-
-
 ?>
-
-
-
 
 <div class="registro">
     <form action="registrate.php" method="POST" enctype="multipart/form-data">

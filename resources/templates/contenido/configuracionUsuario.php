@@ -1,9 +1,5 @@
 <?php
 	require("$ROOT/src/validar_formulario.php");
-?>
-
-<?php
-
 	areaPrivada();
 	if(isset($_SESSION['ID'])){
 		$id = $_SESSION['ID'];
@@ -121,12 +117,8 @@
 					<span class="error"><?=$errores['contraseña']?></span><br>
 				<?php } ?>
 			</div>
-
-
 			<input type="submit" name="cambiar" value="Cambiar"><br>
-
 		</div>
-
 	</form>
 </div>
 </main>

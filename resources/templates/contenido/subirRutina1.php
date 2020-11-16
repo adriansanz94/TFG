@@ -28,10 +28,7 @@ if(isset($_POST) && count($_POST) > 0){
 
 }
 
-
 if(count($errores) == 0 && count($_POST)>0){
-
-
   print_r($errores);
   $id =intval($_SESSION['ID']);
 
@@ -40,7 +37,6 @@ if(count($errores) == 0 && count($_POST)>0){
   header("Location:subirRutina2.php");
   die();
 }
-
 
 
 ?>

@@ -26,6 +26,4 @@ if(isset($_GET['id_rutina'])){
 header("Location:admin.php");
 die();
 
-
-
 ?>

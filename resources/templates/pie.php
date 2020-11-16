@@ -10,7 +10,6 @@
         <a href="https://twitter.com/?lang=es" ></a>
         <a href="https://mail.google.com" ></a>
         <a href="https://www.instagram.com/?hl=es" ></a>
-        <!-- <a href="#" ></a> -->
         <a href="https://www.pinterest.es/" ></a>
       </div>
 </footer>

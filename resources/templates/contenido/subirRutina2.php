@@ -1,13 +1,9 @@
 <?php
 areaPrivada();
  $ejercicios = EjercicioManager::getAll();
- //print_r($ejercicios);
 
  $ejercicios_json = json_encode($ejercicios);
-
 ?>
-
-
 
 <div class="subirRutina2">
   <h1>Seleccionar ejercicios</h1>
@@ -27,11 +23,6 @@ areaPrivada();
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-
-  /*let enviar = document.getElementById('send');
-  enviar.addEventListener('click',rutina);*/
-
-
 
   $('#send').click( function() {
 
@@ -62,11 +53,6 @@ areaPrivada();
         alert('Enviando!');
           $.ajax(
             {
-              //url: 'recibeRutina1.php?rutinaText=rutinaFinalText&rutinaCheck=rutinaFinalCheck;',
-              //url: 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+';',
-              /*success: function( data ) {
-              alert( 'El servidor devolvio "' + data + '"' );
-              }*/
               success: function(){
               $(location).attr('href',url);
               }
@@ -75,7 +61,5 @@ areaPrivada();
       }
     }
   );
-
-
 
 </script>

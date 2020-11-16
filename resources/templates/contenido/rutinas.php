@@ -4,7 +4,6 @@ global $config;
 
 $datosRutina = RutinaManager::getAll();
 
-
 ?>
 <div id="rutinas"class="rutinas">
   <h1> <a href="rutinas.php"> Rutinas:</a></h1>
@@ -15,5 +14,5 @@ $datosRutina = RutinaManager::getAll();
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
     </div>
   <?php } ?>
-  
+
 </div>

@@ -8,13 +8,6 @@
     $email = $_POST['emailOculto'];
     $token = $_POST['tokenOculto'];
 
-    /*if(isset($_POST['emailOculto']) && $_POST['emailOculto'] != null){
-      $emailOculto = $_POST['emailOculto'];
-    }
-    if(isset($_POST['tokenOculto']) && $_POST['tokenOculto'] != null){
-      $tokenOculto = $_POST['tokenOculto'];
-    }*/
-
     $tokenBD = TokenManager::getByEmail($email);
 
     // TODO: Verificar tokenOculto e email con base de datos
@@ -54,11 +47,7 @@
 
       $email = $_GET['email'];
       $token = $_GET['token'];
-
       $tokenBD = TokenManager::getByEmail($email);
-      /*print_r($tokenBD);
-      print_r("posicion token");
-      print_r($tokenBD[0]['TOKEN']);*/
 
      if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
         $tokenCorrecto =  true;
@@ -85,16 +74,10 @@
         <br>
         <label for="password2">Repita la contraseña</label>
         <input type="password" name="password2">
-
-        <!--
-          TODO: Quitar lo campos email y token visible
-        -->
-
         <br>
 
         <input type="hidden" name="emailOculto" value="<?=$email?>">
         <input type="hidden" name="tokenOculto" value="<?=$token?>">
-
 
         <?php if( isset($errores) && $errores != null) { ?>
           <span class="error"><?=$errores?></span>
