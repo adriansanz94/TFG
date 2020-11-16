@@ -2,6 +2,9 @@
 .negrita{
   font-weight: bold;
 }
+.error{
+  color:red;
+}
 
 
 /*BUSCADOR- PRINCIPAL*/
@@ -82,7 +85,6 @@
 }
 .configuracion label, .configuracion input{
   width: 100%;
-  
 }
 
 .configuracion input[type='submit']{
@@ -96,6 +98,85 @@
   margin-bottom:0.5em;
 }
 
+/*SUBIR RECETA*/
+
+.subirReceta{
+  margin: 25px auto;
+  text-align: center;
+  width: 80%;
+  background-color: var(--color2);
+  color:white;
+  border-radius: 25px;
+}
+.subirReceta label, .subirReceta input, .subirReceta textarea{
+  width: 90%;
+  margin:0.5em 0;
+}
+.subirReceta label{
+  font-size: 1.2em;
+}
+
+.subirReceta input[type='submit']{
+  width: 125px;
+}
+
+.subirReceta input:nth-last-of-type(1) , h1{
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}
+
+/*SUBIR RUTINA 1*/
+.subirRutina{
+  width: 90%;
+  margin:25px auto;
+  background-color: var(--color2);
+  color:white;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.subirRutina label,.subirRutina input , .subirRutina select, .subirRutina textarea{
+  width: 90%;
+}
+
+.subirRutina input[type='submit']{
+  width: 100px;
+}
+
+.subirRutina input:nth-last-of-type(1){
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}
+
+/*SUBIR RUTINA 2*/
+.cajas{
+  border: 1px solid red;
+  padding:5px;
+  background-color: white;
+}
+
+.subirRutina2 h1{
+  text-align: center;
+}
+
+.subirRutina2 img{
+  width:100%;
+}
+
+.subirRutina2 input[type='submit']{
+  width: 100px;
+}
+
+.subirRutina2 input:nth-last-of-type(1) , h1{
+  text-align: center;
+  display: block;
+  margin:auto;
+  margin-bottom:0.5em;
+}
 
 
 
@@ -131,4 +212,10 @@
   /*PERFIL*/
 
   /*CONFIGURACION PERFIL*/
+
+  /*SUBIR RECETA*/
+
+  /*SUBIR RUTINA 1*/
+
+  /*SUBIR RUTINA 2*/
 }

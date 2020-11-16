@@ -29,6 +29,7 @@
 	$emailComprueba="";
 	$contraseñaComprueba="";
 	$descripcion = '';
+	$id_usuario = $_SESSION['ID'];
 	$errores = [];
 
 	if ( isset($_POST) && count($_POST)!=0 ) {
@@ -72,7 +73,7 @@
 			//probar con rutas para ver como guardar las imagenes
 			$nombreUsuario = UsuarioManager::getById($id_usuario);
 			//esto puede cambiar
-			 $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'],'/perfil',$_FILES['imagen']['name']);
+			 $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'],'perfil',$_FILES['imagen']['name']);
 		}else{
 			$errores['imagen'] = "imagen no valida";
 		}
@@ -92,9 +93,12 @@
 				}
 				if($_POST['descripcion']){
 					ConfiguracionUsuarioManager::updateDescripcion($_SESSION['ID'],$descripcion);
+				}
+				if($_FILES['imagen']){
+					ConfiguracionUsuarioManager::updateImagen($_SESSION['ID'],$rutaImagen);
+				}
 			}
-			}
-			header('Location: configuracionUsuario.php');
+			header('Location: perfil.php');
 			die();
  		}
 }

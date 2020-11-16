@@ -41,7 +41,13 @@ class ConfiguracionUsuarioManager {
     $db->ejecuta("UPDATE USUARIO SET DESCRIPCION = ? WHERE ID = ? " , $parametros);
   }
 
-
+  // modificar la Imagen
+  public static function updateImagen($id,...$campo){
+    $parametros = $campo;
+    array_push($parametros,$id);
+    $db = DWESBaseDatos::obtenerInstancia();
+    $db->ejecuta("UPDATE USUARIO SET IMAGEN = ? WHERE ID = ? " ,$parametros);
+  }
 
 }
 

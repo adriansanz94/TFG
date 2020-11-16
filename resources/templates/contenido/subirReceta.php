@@ -61,6 +61,7 @@ if (count($_POST)>0 ) {
 			$tiempo = "";
 			$imagen = "";
 			$errores = [];
+			$rutaImagen="";
       header("Location:principal.php");
       die();
   }
@@ -68,7 +69,6 @@ if (count($_POST)>0 ) {
 
 ?>
 
-<link rel="stylesheet" href="/css/subirReceta.css">
 <div class="subirReceta">
   <form action="subirReceta.php" method="post" enctype="multipart/form-data">
     <h1>Subir receta</h1>

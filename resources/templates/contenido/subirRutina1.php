@@ -45,7 +45,6 @@ if(count($errores) == 0 && count($_POST)>0){
 
 ?>
 
-<link rel="stylesheet" href="/css/subirRutina1.css">
 <div class="subirRutina">
   <h1> Subir rutina de ejercicios</h1>
   <p>Bienvenido querido Entrenador, estás aquí para poner aprueba tus conocimientos, en el mundo del deporte.
