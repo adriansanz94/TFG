@@ -5,7 +5,7 @@
 
   $usuario = UsuarioManager::getByIdPerfil($id);
 
-  print_r($usuario);
+  
 
 
 
