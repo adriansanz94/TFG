@@ -30,8 +30,6 @@ require("src/validar_formulario.php");
     if($selectBuscador == 'nombre_receta'){
       $cadbusca = RecetaManager::getNombreSolo($busqueda);
       $clase = "receta";
-
-
     }
     if($selectBuscador == 'nombre_rutina'){
       $cadbusca = RutinaManager::getNombreSolo($busqueda);
@@ -40,7 +38,6 @@ require("src/validar_formulario.php");
   }
 
 ?>
-
 
 <?php if($clase == "rutina") {?>
 <div id="rutinas"class="rutinas">

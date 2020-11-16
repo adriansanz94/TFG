@@ -26,7 +26,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 </form>
 
 <!-- RUTINAS -->
-<div id="rutinasPadre"> 
+<div id="rutinasPadre">
   <h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
   <div id="rutinas"class="rutinas">
     <?php foreach ($datosRutina   as $fila) { ?>
@@ -108,7 +108,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
   }
 
   function crearReceta(recetaJSON){
-    
+
     let divReceta = crearElemento('div',{id:'receta',class:'receta','data-id':recetaJSON.ID},null);
     let h2 = crearElemento('h2',null,null);
     let a = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID},recetaJSON.NOMBRE);
@@ -134,22 +134,18 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let ingreSolos = ingre.split(',');
 
     /*for (let i = 0; i < ingreSolos.length; i++) {
-
         let pIngredientes = crearElemento('p',null,'- '+ingreSolos[i]);
-
         divReceta.appendChild(pIngredientes);
     }*/
 
-
     return divReceta;
   }
-
 
 /********************Rutina*********************/
 let rutinas = document.getElementsByClassName('rutina');
 let contenedorRutinas = document.getElementById('rutinaPadre');
 $('#vermasRutinas').click(function(){
-  
+
   let ultima = rutinas.length-1;
   let rutinaUltima = document.getElementsByClassName('rutina')[ultima].getAttribute('data-id');
   let url='respuestaVerMasRutina.php?idRutina='+rutinaUltima;

@@ -75,7 +75,9 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
     })
       .done(function(data) {
 
-        fav = data.split('body')[2].split(' ')[4].split('\n')[0];
+        let da = data.split('body');
+        console.log(da);
+        fav = data.split('body')[0].split(' ')[4].split('\n')[0];
 
         let im =  document.getElementById('imagen');
         let span = document.querySelector('span');

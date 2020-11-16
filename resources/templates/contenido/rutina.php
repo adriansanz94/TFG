@@ -87,8 +87,6 @@ for ($i=0; $i < count($datosEjer); $i++) {
         .fail(function(data) {
           alert( "error" );
         });
-
-
 });
 
 </script>
