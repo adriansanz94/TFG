@@ -67,7 +67,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 <script type="text/javascript">
 
   let recetas = document.getElementsByClassName('receta');
-  let contenedorRecetas = document.getElementById('recetaPadre');
+  let contenedorRecetas = document.getElementById('recetasPadre');
 
 
   $('#vermasRecetas').click(function(){
@@ -82,7 +82,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
     })
       .done(function(data) {
-        let respuesta = JSON.parse(data.split('body')[2].split('script')[0].split('\n')[1]);
+        let respuesta = JSON.parse(data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1]);
         pintarMasRecetas(respuesta);
 
       })
@@ -143,7 +143,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
 /********************Rutina*********************/
 let rutinas = document.getElementsByClassName('rutina');
-let contenedorRutinas = document.getElementById('rutinaPadre');
+let contenedorRutinas = document.getElementById('rutinasPadre');
 $('#vermasRutinas').click(function(){
 
   let ultima = rutinas.length-1;
@@ -157,7 +157,8 @@ $('#vermasRutinas').click(function(){
 
   })
     .done(function(data) {
-      let respuesta = JSON.parse(data.split('body')[2].split('>')[1].split('<')[0]);
+
+      let respuesta = JSON.parse(data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1]);
 
       pintarMasRutinas(respuesta);
 

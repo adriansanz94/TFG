@@ -72,8 +72,8 @@ for ($i=0; $i < count($datosEjer); $i++) {
         data : {"fav": fav,"id_user": id_user,"id_rutina": id_rutina},
       })
         .done(function(data) {
-
-          fav = data.split('body')[2].split(' ')[4].split('\n')[0];
+          
+          fav = data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1];
           let im =  document.getElementById('imagen');
           let span = document.querySelector('span');
           if (fav != 'null') {

@@ -16,6 +16,7 @@
   }else{
     $resultado = $res['ID'];
   }
+  print_r($resultado);
 }
 
 ?>

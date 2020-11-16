@@ -74,10 +74,7 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
       data : {"fav": fav,"id_user": id_user,"id_receta": id_receta},
     })
       .done(function(data) {
-
-        let da = data.split('body');
-        console.log(da);
-        fav = data.split('body')[0].split(' ')[4].split('\n')[0];
+        fav = data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1];
 
         let im =  document.getElementById('imagen');
         let span = document.querySelector('span');
