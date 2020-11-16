@@ -7,6 +7,7 @@ $usuario = "";
 $correo = "";
 $contraseña = "";
 $r_contraseña = "";
+$imagen = '';
 
 $descripcion ='';
 
@@ -70,6 +71,12 @@ if ( isset($_POST) && count($_POST)!=0 ) {
 	}else{
 		$errores['error_descripcion'] = "Debes agregar alguna descripción.";
 	}
+	//DESCRIPCION
+	if(isset($_FILES['imagen']) && $_FILES['imagen']['name']!=''){
+		$imagen = limpiarCadena($_FILES['imagen']['name']);
+	}else{
+		$imagen = '';
+	}
 
 }
 //hacer el insert y redirigir a Login
@@ -78,13 +85,19 @@ if (count($errores)==0 && count($_POST)>0) {
 	print_r('sin errores');
 	echo'</pre>';
 
-	$rutaImagen = guardarImagen($usuario,'perfil','');
+	$rutaImagen = guardarImagen($usuario,'perfil',$imagen);
 
 
 	$rol = "USER";
 
 	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);
 
+	$usuario = '';
+	$contraseña = '';
+	$correo ='';
+	$descripcion='';
+	$rutaImagen='';
+	$rol='';
 	header('Location: login.php');
 	die();
 }
