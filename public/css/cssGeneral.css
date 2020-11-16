@@ -69,18 +69,18 @@
 }
 /*CONFIGURACION USUARIO*/
 .configuracion {
-  width: 85%;
+  width: 70%;
   margin: 25px auto;
   background-color: var(--color2);
   color: white;
   margin-bottom: 25px;
   border-radius: 25px;
-  padding: 0.5em;
+  padding: 1em ;
 }
 
 .configuracion label, .configuracion input{
-  width: 90%;
-  margin:0.5em 0;
+  width: 100%;
+  margin:0 auto;
 }
 
 .configuracion input[type='submit']{
