@@ -75,8 +75,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
       })
         .done(function(data) {
 
-          fav = data.split('body')[1].split(' ')[4].split('\n')[0];
-          console.log(data.split('body')[1]);
+          fav = data.split('body')[2].split(' ')[4].split('\n')[0];
           let im =  document.getElementById('imagen');
           let span = document.querySelector('span');
           if (fav != 'null') {

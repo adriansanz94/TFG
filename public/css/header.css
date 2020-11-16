@@ -87,10 +87,8 @@ header{
   display: none;
 }
 .navigation ul.show{
-  display: block;
-}
-.navigation ul li{
-  display:block;
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation ul li a {
@@ -143,10 +141,13 @@ header{
   .menu-icon{
     display: none;
   }
+.navigation ul.show{
+  flex-direction: inherit;
+}
+
   .navigation ul{
     width:100%;
-    margin:0 auto;
-    display: inline-block;
+    display: flex;
   }
   .navigation ul li{
     display:inline-block;
@@ -156,7 +157,6 @@ header{
 
   .navigation ul li a{
     display: block;
-    margin:0 1.5em;
     padding:0.5em 1em;
   }
 
