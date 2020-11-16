@@ -125,8 +125,6 @@ header{
 }
 
 @media only screen and (min-width: 767px) {
-
-
   #general{
     padding-top: 50px;
   }
@@ -137,14 +135,12 @@ header{
     right: 0;
     background-color: var(--color2);
   }
-
   .menu-icon{
     display: none;
   }
-.navigation ul.show{
-  flex-direction: inherit;
-}
-
+  .navigation ul.show{
+    flex-direction: inherit;
+  }
   .navigation ul{
     width:100%;
     display: flex;
@@ -152,9 +148,7 @@ header{
   .navigation ul li{
     display:inline-block;
     margin: 0 auto;
-
   }
-
   .navigation ul li a{
     display: block;
     padding:0.5em 1em;
