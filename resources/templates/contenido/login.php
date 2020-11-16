@@ -36,9 +36,8 @@ if( count($_POST) > 0 ){
 
 
 ?>
-<link rel="stylesheet" href="/css/login.css">
- <div class="centrar">
- <form class="" action="login.php" method="post">
+ <div class="login">
+   <form class="" action="login.php" method="post">
      <input type="text" name="USUARIO" value="<?=$info['USUARIO']?>" placeholder="Introduce tu nombre">
      <?php if( isset($errores['USUARIO'])) { ?>
        <br><span class='error'><?=$errores['USUARIO']?></span><br>

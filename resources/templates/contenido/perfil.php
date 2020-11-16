@@ -5,9 +5,6 @@
 
   $usuario = UsuarioManager::getByIdPerfil($id);
 
-  
-
-
 
 ?>
 

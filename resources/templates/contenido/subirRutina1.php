@@ -1,6 +1,6 @@
 <?php
   require("src/validar_formulario.php");
-
+  areaPrivada();
 $nombre= "";
 $dificultad = "";
 $descripcion= "";
