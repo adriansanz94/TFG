@@ -30,13 +30,15 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
 <link rel="stylesheet" href="/css/receta.css">
 <link rel="stylesheet" href="/css/cssComun.css">
 <div class="receta">
-  <?php if($fav == null){ ?>
-    <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/corazon-roto.png" id="imagen"></figure> </label>
-    <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
-  <?php }else{?>
-    <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/corazon.png" id="imagen"></figure></label>
-    <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
-  <?php }?>
+  <div class="icono">
+    <?php if($fav == null){ ?>
+      <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/corazon-roto.png" id="imagen"></figure> </label>
+      <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
+    <?php }else{?>
+      <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/corazon.png" id="imagen"></figure></label>
+      <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
+    <?php }?>
+  </div>
   <div>
       <div id="receta" class="receta" data-id="<?=$datosReceta['ID']?> ">
       <h2><a href="receta.php?id=<?= $datosReceta['ID']?>"><?= $datosReceta['NOMBRE']?></a></h2>

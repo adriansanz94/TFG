@@ -177,6 +177,28 @@
   margin:auto;
   margin-bottom:0.5em;
 }
+/*RECETA*/
+.receta input{
+  position: absolute;
+  left: -10000px;
+}
+.receta img{
+  cursor: pointer;
+  width: 100%;
+}
+.receta img{
+  cursor: pointer;
+  width: 100%;
+}
+.receta .icono figure{
+  width: 15%;
+}
+.receta .icono label{
+  width: auto;
+}
+.receta .icono{
+  display: flex;
+}
 
 
 

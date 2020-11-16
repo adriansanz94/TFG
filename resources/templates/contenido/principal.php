@@ -144,23 +144,6 @@ for ($i=0; $i < count($datosReceta); $i++) {
     return divReceta;
   }
 
-  /*funcion auxiliar que nos crea los elementos necesarios en el html*/
-function crearElemento(tipo,atributos,contenido){
-  const elemento = document.createElement(tipo);
-  for(let atr in atributos){
-    elemento.setAttribute(atr,atributos[atr]);
-  }
-
-  if(typeof contenido === 'string'){
-    elemento.appendChild(document.createTextNode(contenido));
-  } else if (contenido instanceof HTMLElement){
-    elemento.appendChild(elemento);
-  } else if (Array.isArray(contenido)){
-    contenido.forEach(hijo => elemento.appendChild(hijo));
-  }
-
-  return elemento;
-}
 
 /********************Rutina*********************/
 let rutinas = document.getElementsByClassName('rutina');
