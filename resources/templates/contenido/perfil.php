@@ -5,6 +5,7 @@
 
   $usuario = UsuarioManager::getByIdPerfil($id);
 
+
 ?>
 
   <div class="perfil">
