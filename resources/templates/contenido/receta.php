@@ -62,7 +62,7 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
   let fav = favoritos || 'null';
   $(favorito).click(function(){
 
-  let id_receta = <?=$datosreceta['ID']?>;
+  let id_receta = <?=$datosReceta['ID']?>;
   let id_user = <?=$id_user?>;
   $.ajax(
     {

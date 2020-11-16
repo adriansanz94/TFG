@@ -3,12 +3,12 @@ use tfg;
 /*INSERT DE USUARIOS*/
 INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,DESCRIPCION,IMAGEN,ROL,RECETAS_FAVORITAS,RUTINAS_FAVORITAS)
  VALUES
- (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','cuentanos algo de ti','RUTAIMAGENES','ADMIN','',''),/*1234*/
- (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','cuentanos algo de ti','RUTAIMAGENES','ADMIN','',''),/*1234*/
- (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','cuentanos algo de ti','RUTAIMAGENES','ADMIN','',''),/*1234*/
- (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','cuentanos algo de ti','RUTAIMAGENES','USER','',''),/*1234*/
- (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','cuentanos algo de ti','RUTAIMAGENES','USER','',''),/*1234*/
- (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','cuentanos algo de ti','RUTAIMAGENES','USER','','');/*1234*/
+ (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/adrian.jpg','ADMIN','',''),/*1234*/
+ (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/steven.jpg','ADMIN','',''),/*1234*/
+ (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/german.jpg','ADMIN','',''),/*1234*/
+ (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/pablo.jpg','USER','',''),/*1234*/
+ (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/soraya.jpg','USER','',''),/*1234*/
+ (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','cuentanos algo de ti','/imagenes/Perfiles/lucia.jpg','USER','','');/*1234*/
  /*aqui pon tu correo german copia la pass que es 1234 *//*1234*/;
 
 INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO_COMENTARIO)
@@ -78,4 +78,3 @@ INSERT INTO RECETA (ID,NOMBRE,INGREDIENTES,DESCRIPCION,TIEMPO,IMAGEN,ID_USUARIO_
 (7,'fritada','Costillas de cerdo,Mote,','se cogeran los filetes de pollo , se sazonaran al gusto y en una sarten sin aceite se espera a que esten dorados','15 mintuos','/imgs/Adrian/recetas/fritada/fritada.jpg',1 ),
 (8,'empanadas de verde','Platano macho,Queso','se limpian las patatas bien bajo el grifo, se ponene en una holla con agua y sal y se espera una media hora a que cuezan','30 minutos','/imgs/German/recetas/empanadas de verde/empanadas.jpg',3 ),
 (9,'tallarines','Tallarines,Carne,Pimienta,Sal','se hierven a fuego lento durante 15 o 20 minutos mientras se precalienta el horno a 150 grados , y despues se meten al horno otros 15 o 20 minutos hasta que esten doradas','40 minutos','/imgs/Steven/recetas/tallarines/tallarines.jpg',2 );
-

@@ -102,12 +102,14 @@
 ?>
 <main>
 
-	<link rel="stylesheet" href="/css/general.css">
-	<form action="configuracionUsuario.php" method="POST" enctype="multipart/form-data">
-		<div class="centrar">
+	<link rel="stylesheet" href="/css/configuracionUsuario.css">
+	<link rel="stylesheet" href="/css/cssComun.css">
 
+	<form action="configuracionUsuario.php" method="POST" enctype="multipart/form-data">
+		<div>
+			<h1>Editar Perfil </h1>
 			<div>
-				<label>Subir imagen de perfil:</label> <br>
+				<label class="negrita">Subir imagen de perfil:</label> <br>
 				<input type="file" name="imagen" value="Seleccione archivo"> <br>
 				<?php if( isset($errores['imagen'])) { ?>
 					<br><span class='error'><?=$errores['imagen']?></span><br>
@@ -116,7 +118,7 @@
 
 
 			<div>
-				<label>Cambiar Nombre del Usuario:</label><br>
+				<label class="negrita">Cambiar Nombre del Usuario:</label><br>
 				<label> Nombre actual: <?=$datos['NOMBRE']?></label><br>
 				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
 				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
@@ -128,7 +130,7 @@
 
 
 			<div>
-				<label>Cambiar Email del Usuario:</label><br>
+				<label class="negrita">Cambiar Email del Usuario:</label><br>
 				<label> Nombre actual: <?=$datos['EMAIL']?></label><br>
 				<input type="text" name="email" placeholder="Escriba el email nuevo" value="<?=$email?>"><br>
 				<input type="text" name="emailComprueba" placeholder="Repita el email" value="<?=$emailComprueba?>"><br>
@@ -137,16 +139,16 @@
 				<?php } ?>
 			</div>
 			<div>
-				<label>Cambiar tu descripcion:</label><br>
-				<label> descripcion actual: <?=$datos['DESCRIPCION']?></label><br>
-				<input type="text" name="descripcion" placeholder="Escriba la descripcion nuevo" value="<?=$descripcion?>"><br>
+				<label class="negrita">Cambiar tu descripcion:</label><br>
+				<label> Descripcion actual: <?=$datos['DESCRIPCION']?></label><br>
+				<input type="text" name="descripcion" placeholder="Escriba la nueva descripción" value="<?=$descripcion?>"><br>
 				<?php if(isset($errores['descripcion'])) { ?>
 					<span class="error"><?=$errores['descripcion']?></span><br>
 				<?php } ?>
 			</div>
 
 			<div>
-				<label>Cambiar contraseña</label><br>
+				<label class="negrita">Cambiar contraseña</label><br>
 				<input type="text" name="contraseña" placeholder="Escriba su contraseña" value="<?=$contraseña?>"><br>
 				<input type="text" name="contraseñaComprueba" placeholder="Repita la contraseña" value="<?=$contraseñaComprueba?>"><br>
 				<?php if(isset($errores['contraseña'])) { ?>
@@ -155,7 +157,7 @@
 			</div>
 
 
-			<input type="submit" name="cambiar" value="cambiar"><br>
+			<input type="submit" name="cambiar" value="Cambiar"><br>
 
 		</div>
 

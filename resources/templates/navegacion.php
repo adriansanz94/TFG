@@ -50,7 +50,7 @@ $admin = "ADMIN";
       <h1>PONTE EN FORMA</h1>
     </div>
   </div>
-  <p class="menu-icon">ver menú</p>
+  <p class="menu-icon"> MENÚ</p>
   <nav class="navigation">
     <ul>
       <li><a href="principal.php">Inicio</a></li>
@@ -86,5 +86,5 @@ $admin = "ADMIN";
       }else{
         menu.setAttribute('class','show');
       }
-    } 
+    }
 </script>

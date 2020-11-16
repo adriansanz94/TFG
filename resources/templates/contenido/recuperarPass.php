@@ -79,7 +79,6 @@
 
   ?>
 
-<link rel="stylesheet" href="/css/general.css">
 <div class="centrar">
   <?php if( isset($respuesta) && $respuesta != null) { ?>
     <h4><?=$respuesta?></h4>
