@@ -128,9 +128,6 @@ header{
 
 @media only screen and (min-width: 767px) {
 
-  body{
-    background-color: skyblue;
-  }
 
   #general{
     padding-top: 50px;
@@ -138,7 +135,7 @@ header{
   .navigation{
     position:fixed;
     left:0;
-    top:0px;
+    top:0;
     right: 0;
     background-color: var(--color2);
   }
@@ -153,12 +150,14 @@ header{
   }
   .navigation ul li{
     display:inline-block;
-    margin: 0 2em;
+    margin: 0 auto;
+
   }
 
   .navigation ul li a{
     display: block;
-    margin:0 25px;
+    margin:0 1.5em;
+    padding:0.5em 1em;
   }
 
 }
