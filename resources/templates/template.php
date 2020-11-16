@@ -18,6 +18,13 @@ Son necesarias las variables
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?=$titulo?></title>
   </head>
+  <style type="text/css">
+    body{
+      padding-top: 5000px;
+      margin-top: 50px;
+    }
+  </style>
+
   <link rel="stylesheet" href="/css/reset.css">
   <script type="text/javascript" src="JS/scroll.js"></script>
 <?php

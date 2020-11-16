@@ -87,10 +87,8 @@ header{
   display: none;
 }
 .navigation ul.show{
-  display: block;
-}
-.navigation ul li{
-  display:block;
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation ul li a {
@@ -107,6 +105,7 @@ header{
   background-color: var(--color3);
 }
 .menu-icon{
+  color:white;
   cursor:pointer;
   margin: 0 auto;
   width:100%;
@@ -126,6 +125,33 @@ header{
 }
 
 @media only screen and (min-width: 767px) {
-
+  #general{
+    padding-top: 50px;
+  }
+  .navigation{
+    position:fixed;
+    left:0;
+    top:0;
+    right: 0;
+    background-color: var(--color2);
+  }
+  .menu-icon{
+    display: none;
+  }
+  .navigation ul.show{
+    flex-direction: inherit;
+  }
+  .navigation ul{
+    width:100%;
+    display: flex;
+  }
+  .navigation ul li{
+    display:inline-block;
+    margin: 0 auto;
+  }
+  .navigation ul li a{
+    display: block;
+    padding:0.5em 1em;
+  }
 
 }

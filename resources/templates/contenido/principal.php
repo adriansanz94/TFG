@@ -27,9 +27,8 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <input type="submit" name="buscar" value="Buscar">
 </form>
 
-
+<h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
 <div id="rutinas"class="rutinas">
-  <h1> <a href="rutinas.php"> Rutinas</a></h1>
   <?php foreach ($datosRutina   as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
@@ -37,19 +36,20 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
     </div>
   <?php } ?>
-  <button type="button" id="vermasRutinas">ver más...</button>
 </div>
+<button type="button" id="vermasRutinas">ver más...</button>
+<!-- RECETAS -->
+<h1 class="titulo"><a href="recetas.php">Recetas</a></h1>
 <div id="recetas" class="recetas">
-<h1><a href="recetas.php">Recetas</a></h1>
   <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
     <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
     <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
     <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
-    <p class="negrita">Descripción:</p>
-    <p><?= $datosReceta[$i]['DESCRIPCION']?></p>
-    <!--<p class="negrita">Tiempo:</p>
+    <!--<p class="negrita">Descripción:</p>-->
+    <!--<p><?= $datosReceta[$i]['DESCRIPCION']?></p>-->
+    <p class="negrita">Tiempo:</p>
     <p><?= $datosReceta[$i]['TIEMPO']?></p>
-    <p class="negrita">Ingredientes:</p>
+    <!--<p class="negrita">Ingredientes:</p>
 
     <?php  for ($k=0; $k < count($ingredientesSolos[$i]); $k++) { ?>
             <p> - <?=$ingredientesSolos[$i][$k]?></p>
@@ -57,9 +57,8 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <?php   } ?>-->
      </div>
   <?php } ?>
-  <button type='button' id="vermasRecetas" >ver más...</button>
 </div>
-
+<button type='button' id="vermasRecetas" >ver más...</button>
 <script type="text/javascript">
 
   let recetas = document.getElementsByClassName('receta');
@@ -77,7 +76,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
     })
       .done(function(data) {
-        let respuesta = JSON.parse(data.split('body')[1].split('script')[0].split('\n')[1]);
+        let respuesta = JSON.parse(data.split('body')[2].split('script')[0].split('\n')[1]);
         pintarMasRecetas(respuesta);
 
       })
@@ -109,21 +108,21 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let a = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID},recetaJSON.NOMBRE);
     let figure = crearElemento('figure',null,null);
     let img = crearElemento('img',{src:recetaJSON.IMAGEN},null);
-    let pDescripcion = crearElemento('p',null,recetaJSON.DESCRIPCION);
-    let pTituloDescripcion = crearElemento('p',{'class':'negrita'},'Descripción: ');
-    /*let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
-    let pTituloIngredientes = crearElemento('p',null,'Ingredientes:');*/
+    /*let pDescripcion = crearElemento('p',null,recetaJSON.DESCRIPCION);
+    let pTituloDescripcion = crearElemento('p',{'class':'negrita'},'Descripción: ');*/
+    let pTituloTiempo = crearElemento('p',{'class':'negrita'},'Tiempo: ');
+    let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
+    //let pTituloIngredientes = crearElemento('p',null,'Ingredientes:');
 
     h2.appendChild(a);
     figure.appendChild(img);
     divReceta.appendChild(h2);
     divReceta.appendChild(figure);
-    divReceta.appendChild(pTituloDescripcion);
-    divReceta.appendChild(pDescripcion);
-
-
-    /*divReceta.appendChild(pTiempo);
-    divReceta.appendChild(pTituloIngredientes);*/
+    //divReceta.appendChild(pTituloDescripcion);
+    //divReceta.appendChild(pDescripcion);
+    divReceta.appendChild(pTituloTiempo);
+    divReceta.appendChild(pTiempo);
+    //divReceta.appendChild(pTituloIngredientes);*/
 
     let ingre = recetaJSON.INGREDIENTES;
     let ingreSolos = ingre.split(',');
@@ -173,7 +172,7 @@ $('#vermasRutinas').click(function(){
 
   })
     .done(function(data) {
-      let respuesta = JSON.parse(data.split('body')[1].split('>')[1].split('<')[0]);
+      let respuesta = JSON.parse(data.split('body')[2].split('>')[1].split('<')[0]);
 
       pintarMasRutinas(respuesta);
 
