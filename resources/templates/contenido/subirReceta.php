@@ -1,5 +1,6 @@
 <?php
 require("$ROOT/src/validar_formulario.php");
+areaPrivada();
 $nombre = "";
 $ingredientes ="";
 $descripcion = "";

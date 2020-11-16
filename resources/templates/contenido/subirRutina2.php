@@ -1,5 +1,5 @@
 <?php
-
+areaPrivada();
  $ejercicios = EjercicioManager::getAll();
  //print_r($ejercicios);
 

@@ -4,17 +4,6 @@
 
 <?php
 
-	/*
-	-> filter_var — Filtra una variable con el filtro que se indique
-			filter_var ( mixed $variable [, int $filter = FILTER_DEFAULT [, mixed $options ]] ) : mixed
-
-	-> password_hash — Crea un hash de contraseña
-			password_hash ( string $password , integer $algo [, array $options ] ) : string
-
-	-> password_verify — Comprueba que la contraseña coincida con un hash
-			password_verify ( string $password , string $hash ) : bool
-	*/
-
 	areaPrivada();
 	if(isset($_SESSION['ID'])){
 		$id = $_SESSION['ID'];
@@ -22,7 +11,6 @@
 
 	$datos = UsuarioManager::getById($id);
 
-	$usuario="";
 	$email="";
 	$contraseña="";
 	$usuarioComprueba="";
@@ -34,15 +22,6 @@
 
 	if ( isset($_POST) && count($_POST)!=0 ) {
 
-		if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=1 ) {
-			$usuario = limpiarCadena($_POST['usuario']);
-			if (isset($_POST['usuarioComprueba']) && strlen($_POST['usuarioComprueba'])>=1 ) {
-				$usuarioComprueba = limpiarCadena($_POST['usuarioComprueba']);
-			}
-			if(!($_POST['usuario'] === $_POST['usuarioComprueba'])){
-				$errores['usuario'] = 'Deben coincidir los usuarios.';
-			}
-		}
 		if (isset($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL )) {
 			$email = limpiarCadena($_POST['email']);
 			if (isset($_POST['emailComprueba']) && filter_var($_POST['emailComprueba'],FILTER_VALIDATE_EMAIL )) {
@@ -81,9 +60,7 @@
 		if (count($errores)== 0 && count($_POST) > 0) {
 
 			if(isset($_SESSION['ID'])){
-				if($_POST['usuario']){
-						ConfiguracionUsuarioManager::updateNombre($_SESSION['ID'],$usuario);
-				}
+
 				if($_POST['email']){
 						ConfiguracionUsuarioManager::updateEmail($_SESSION['ID'],$email);
 				}
@@ -117,19 +94,6 @@
 					<br><span class='error'><?=$errores['imagen']?></span><br>
 				<?php } ?>
 			</div>
-
-
-			<div>
-				<label class="negrita">Cambiar Nombre del Usuario:</label><br>
-				<label> Nombre actual: <?=$datos['NOMBRE']?></label><br>
-				<input type="text" name="usuario" placeholder="Escriba el usuario nuevo" value="<?=$usuario?>"><br>
-				<input type="text" name="usuarioComprueba" placeholder="Repita el usuario" value="<?=$usuarioComprueba?>"><br>
-				<?php if(isset($errores['usuario'])) { ?>
-					<span class="error"><?=$errores['usuario']?></span><br>
-				<?php } ?>
-			</div>
-
-
 
 			<div>
 				<label class="negrita">Cambiar Email del Usuario:</label><br>

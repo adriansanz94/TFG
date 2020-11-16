@@ -108,16 +108,9 @@ if (count($errores)==0 && count($_POST)>0) {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Registrate</title>
-  </head>
-  <link rel="stylesheet" href="/css/registro.css">
-  <body>
 
 
+<div class="registro">
     <form action="registrate.php" method="POST" enctype="multipart/form-data">
 				<h1>Darse de alta</h1>
     		<label for="usuario">Nombre usuario</label>
@@ -164,6 +157,4 @@ if (count($errores)==0 && count($_POST)>0) {
 
     		<input type="submit" name="enviar" value="Registrarse">
     	</form>
-
-  </body>
-</html>
+</div>

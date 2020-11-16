@@ -27,8 +27,6 @@ for ($i=0; $i < count($datosEjer); $i++) {
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="/css/rutina.css">
-<link rel="stylesheet" href="/css/cssComun.css">
 <div class="rutina">
   <?php if($fav == null){ ?>
     <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>

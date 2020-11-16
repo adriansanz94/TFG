@@ -5,10 +5,6 @@
 
   $usuario = UsuarioManager::getByIdPerfil($id);
 
-  print_r($usuario);
-
-
-
 ?>
 
   <div class="perfil">
