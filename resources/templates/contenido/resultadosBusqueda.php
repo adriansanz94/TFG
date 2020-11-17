@@ -35,6 +35,9 @@ require("src/validar_formulario.php");
       $cadbusca = RutinaManager::getNombreSolo($busqueda);
       $clase = "rutina";
     }
+  }else{
+    header("Location:page404.php");
+    die();
   }
 
 ?>

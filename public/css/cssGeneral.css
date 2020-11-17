@@ -316,6 +316,30 @@ crecerá para ocupar el maximo espacio del contenido*/
 /*MEDIAS QUERYS*/
 @media only screen and (min-width: 767px) {
 
+/* BUSCADOR */
+  .buscador{
+    display: flex;
+    flex-direction: row;
+  }
+  .buscador select{
+    flex-basis: 20%;
+    height: 35px;
+    margin-top:12px;
+  }
+
+  .buscador p{
+    flex-basis: 60%;
+  }
+
+  .buscador p input{
+    text-align: center;
+    width: 90%;
+  }
+  .buscador > input{
+    flex-basis: 20%;
+    height: 35px;
+    margin-top:12px;
+  }
 /* RUTINAS Y RECETAS - PRINCIPAL*/
   #rutinas, #recetas{
     width: 100%;
@@ -358,13 +382,40 @@ crecerá para ocupar el maximo espacio del contenido*/
     border-radius: 50%;
   }
 
+  /* REGISTRATE*/
+  .registro{
+    width: 60%;
+  }
+  .registro label,.registro input,.registro textarea{
+    width: 90%;
+    margin:0.5em;
+  }
   /*CONFIGURACION PERFIL*/
+
 
   /*SUBIR RECETA*/
 
   /*SUBIR RUTINA 1*/
 
   /*SUBIR RUTINA 2*/
+
+  .subirRutina2{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+  }
+  .subirRutina2 .cajas{
+    flex-basis: 20%;
+    margin: 1em auto;
+  }
+
+  #subirRutinaBtn{
+    margin:25px auto;
+    width: 100%;
+    text-align: center;
+  }
 
   /*RECETA*/
 
