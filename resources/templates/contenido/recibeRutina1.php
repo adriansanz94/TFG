@@ -49,5 +49,7 @@ if(isset($_GET) && count($_GET) > 0){
       EjercicioRutinaManager::insert($textArray[$i],$ultimoid,intval($checkArray[$i]));
   }
 
+  header('Location:principal.php');
+  die();
 
 ?>
