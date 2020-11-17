@@ -50,7 +50,7 @@ areaPrivada();
       if(rutinaSeleccionada.length === padreChecked.length){
 
         let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;
-        alert('Enviando!');
+        //alert('Enviando!');
           $.ajax(
             {
               success: function(){

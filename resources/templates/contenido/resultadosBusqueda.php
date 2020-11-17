@@ -59,9 +59,8 @@ require("src/validar_formulario.php");
     <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
-    <p><?= $fila['DESCRIPCION']?></p>
+    <p>Tiempo:</p>
     <p><?= $fila['TIEMPO']?></p>
-    <p><?= $fila['IMAGEN']?></p>
     </div>
   <?php } ?>
 </div>
