@@ -2,7 +2,7 @@
 <footer class="pie">
       <div>
         <p>DAW 2020</p>
-        <p>Codificado por Steven, Adrián y Germán</p>
+        <p id="quienesSomos"><a href="/quienesSomos.php">¿Quienes somos?</a></p>
       </div>
       <!-- Sociales -->
       <div>

@@ -293,6 +293,11 @@ crecerá para ocupar el maximo espacio del contenido*/
   height: 75px;
 }
 
+/*QUIENES SOMOS*/
+.quienesSomos{
+  margin: 0 auto;
+  width: 80%;
+}
 
 
 /*MEDIAS QUERYS*/

@@ -111,3 +111,8 @@ footer > div > a:nth-of-type(5){
 footer > div > a:nth-of-type(5):hover{
   background-position: -160px 0;
 }
+
+#quienesSomos a{
+  text-emphasis: none;
+  color: white;
+}
