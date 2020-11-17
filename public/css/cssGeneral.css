@@ -10,9 +10,16 @@
   display:none;
 }
 
+/*hechas estas dos clases para poner el footer abajo, una dice que es flex el padre, y otra que el contenedor del template
+crecerá para ocupar el maximo espacio del contenido*/
+#container{
+  display: flex;
+  flex-direction: column;
+}
 
-
-
+.grow{
+  flex-grow: 1;
+}
 /*BUSCADOR- PRINCIPAL*/
 .buscador{
   border-radius:25px;
@@ -317,8 +324,7 @@
   /*PERFIL*/
 
   .perfil{
-    width: 30%;
-    height: 100%;
+    width: 30%;/*quitado el height:100%;*/
     margin-bottom: 3%;
     margin-top: 3%;
     border-radius: 25px;

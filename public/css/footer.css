@@ -32,7 +32,7 @@
 
 html { box-sizing: border-box; }
 
-
+/*agregada posicion relativa y boton 0*/
 footer{
   font-size:calc(var(--txt-size) * 0.7);
   color: white;
@@ -41,6 +41,8 @@ footer{
   padding: var(--relleno);
   height: 75px;
   width: 100%;
+  position: relative;
+  bottom: 0;
 }
 /*footer*/
 /*posicionar con float el footer*/

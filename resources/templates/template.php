@@ -24,10 +24,17 @@ Son necesarias las variables
       <?php
           require("$ROOT/resources/templates/autentificacion.php");
           require("$ROOT/resources/templates/navegacion.php");
+      ?>
+      <div class="grow">
+        <?php
+            
           require("$ROOT/resources/templates/contenido$ruta_contenido");
-          require("$ROOT/resources/templates/pie.php");
-       ?>
-
+        ?>
+      </div>
+      <?php
+        require("$ROOT/resources/templates/pie.php");
+      ?>
+     </div>
     <button class='scroll'>
             <svg class="icon" viewBox="0 0 16 16">
                 <title>Flecha</title>

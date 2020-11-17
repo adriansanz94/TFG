@@ -6,10 +6,15 @@
   --colorTexto1: black;
 
 }
-
+/*agregada el height al 100% porque no llegaba hasta abajo si era corta la pag*/
+body,html{
+  height: 100%;
+}
 body{
   margin:0;
   padding:0;
+  display: flex;
+  flex-direction: column;
   /*background-color: var(--color2);*/
 }
 
