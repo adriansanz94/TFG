@@ -40,8 +40,8 @@ require("src/validar_formulario.php");
 ?>
 
 <?php if($clase == "rutina") {?>
+<h1>Rutinas:</h1>
 <div id="rutinas"class="rutinas">
-  <h1>Rutinas:</h1>
   <?php foreach ($cadbusca  as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
@@ -53,8 +53,8 @@ require("src/validar_formulario.php");
 <?php } ?>
 
 <?php if($clase == "receta") {?>
-<div id="recetas" class="recetas">
 <h1>Recetas:</h1>
+<div id="recetas" class="recetas">
   <?php foreach ($cadbusca as $fila) { ?>
     <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>

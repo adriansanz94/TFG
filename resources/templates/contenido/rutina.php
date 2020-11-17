@@ -32,7 +32,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
     <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
     <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
   <?php }else{?>
-    <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/favorito.jpg" id="imagen"></figure></label>
+    <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/favorito.png" id="imagen"></figure></label>
     <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
   <?php }?>
   <div class="rutinaCabecera">
@@ -72,12 +72,12 @@ for ($i=0; $i < count($datosEjer); $i++) {
         data : {"fav": fav,"id_user": id_user,"id_rutina": id_rutina},
       })
         .done(function(data) {
-          
+
           fav = data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1];
           let im =  document.getElementById('imagen');
           let span = document.querySelector('span');
           if (fav != 'null') {
-            im.src="imagenes/favorito.jpg";
+            im.src="imagenes/favorito.png";
             span.innerHTML = "Esta en favoritos";
           }else{
             im.src="imagenes/noFav.png";
