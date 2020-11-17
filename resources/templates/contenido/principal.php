@@ -32,8 +32,10 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <?php foreach ($datosRutina   as $fila) { ?>
       <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
       <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
-      <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
-      <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
+      <p class="negrita">Dificultad:</p>
+      <p><?= $fila['DIFICULTAD']?></p>
+      <p class="negrita"> Descripcion</p>
+      <p><?= $fila['DESCRIPCION']?></p>
       </div>
     <?php } ?>
   </div>

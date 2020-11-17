@@ -45,8 +45,10 @@ require("src/validar_formulario.php");
   <?php foreach ($cadbusca  as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
-    <P>Dificultad:<?= $fila['DIFICULTAD']?></P>
-    <P>Descripcion <br><?= $fila['DESCRIPCION']?></P>
+    <p class="negrita">Dificultad:</p>
+    <p><span class="negrita">Dificultad:</span> <?= $fila['DIFICULTAD']?></p>
+    <p class="negrita">Descripcion:</p>
+    <p> <br><?= $fila['DESCRIPCION']?></p>
     </div>
   <?php } ?>
 </div>
@@ -59,7 +61,7 @@ require("src/validar_formulario.php");
     <div id="receta" class="receta" data-id="<?=$fila['ID']?> ">
     <h2><a href="receta.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
     <figure><img src="<?=$fila['IMAGEN'] ?>"></figure>
-    <p>Tiempo:</p>
+    <p class="negrita">Tiempo:</p>
     <p><?= $fila['TIEMPO']?></p>
     </div>
   <?php } ?>

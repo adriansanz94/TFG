@@ -64,8 +64,7 @@
   }
 
 ?>
-<link rel="stylesheet" href="/css/general.css">
-<div class="centrar">
+<div class="recuperaPass">
   <?php if ($tokenCorrecto){ ?>
       <h2>Recupera tu contraseña</h2>
       <form action="recuperarPassword.php" method="post">

@@ -122,6 +122,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   background-color: var(--color2);
   color:white;
   border-radius: 25px;
+  padding: 1em;
 }
 .subirReceta label, .subirReceta input, .subirReceta textarea{
   width: 90%;
@@ -144,12 +145,13 @@ crecerá para ocupar el maximo espacio del contenido*/
 
 /*SUBIR RUTINA 1*/
 .subirRutina{
-  width: 90%;
+  width: 80%;
   margin:25px auto;
   background-color: var(--color2);
   color:white;
   border-radius: 25px;
   text-align: center;
+  padding: 1em;
 }
 
 .subirRutina label,.subirRutina input , .subirRutina select, .subirRutina textarea{
@@ -263,7 +265,8 @@ crecerá para ocupar el maximo espacio del contenido*/
   border-radius: 25px;
   text-align: center;
   margin: 25px auto;
-  width: 85%;
+  width: 80%;
+  padding:1em;
 }
 
 .registro label,.registro input,.registro textarea{
@@ -287,8 +290,16 @@ crecerá para ocupar el maximo espacio del contenido*/
   margin-bottom:0.5em;
 }
 
-
-
+/*RECUPERA PASS*/
+.recuperaPass{
+  margin:2em auto;
+  text-align: center;
+  width: 80%;
+  padding: 1em;
+  background-color: var(--color2);
+  color:white;
+  border-radius: 25px;
+}
 /*ADMIN*/
 .tablas img{
   width: 70px;

@@ -44,6 +44,7 @@ footer{
   position: relative;
   bottom: 0;
 }
+
 /*footer*/
 /*posicionar con float el footer*/
 footer > div:nth-of-type(1){
@@ -113,6 +114,11 @@ footer > div > a:nth-of-type(5):hover{
 }
 
 #quienesSomos a{
-  text-emphasis: none;
+  text-decoration: none;
   color: white;
+}
+@media only screen and (min-width: 767px) {
+  p{
+    font-size: 15px;
+  }
 }

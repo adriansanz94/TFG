@@ -79,7 +79,7 @@
 
   ?>
 
-<div class="centrar">
+<div class="recuperaPass">
   <?php if( isset($respuesta) && $respuesta != null) { ?>
     <h4><?=$respuesta?></h4>
   <?php }else{ ?>
