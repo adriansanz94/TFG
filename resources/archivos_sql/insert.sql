@@ -1,14 +1,14 @@
 use tfg;
 
 /*INSERT DE USUARIOS*/
-INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,DESCRIPCION,IMAGEN,ROL,RECETAS_FAVORITAS,RUTINAS_FAVORITAS)
+INSERT INTO USUARIO (ID,NOMBRE,PASS,EMAIL,DESCRIPCION,IMAGEN,ROL)
  VALUES
- (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','cuentanos algo de ti','/imgs/Adrian/perfil/adrian.jpg','ADMIN','',''),/*1234*/
- (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','cuentanos algo de ti','/imgs/Steven/perfil/steven.jpg','ADMIN','',''),/*1234*/
- (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','cuentanos algo de ti','/imgs/German/perfil/german.jpg','ADMIN','',''),/*1234*/
- (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','cuentanos algo de ti','/imgs/Pablo/perfil/pablo.jpg','USER','',''),/*1234*/
- (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','cuentanos algo de ti','/imgs/Soraya/perfil/soraya.jpg','USER','',''),/*1234*/
- (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','cuentanos algo de ti','/imgs/Lucia/perfil/lucia.jpg','USER','','');/*1234*/
+ (1,'Adrian','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','adriansanzclase@gmail.com','cuentanos algo de ti','/imgs/Adrian/perfil/adrian.jpg','ADMIN'),/*1234*/
+ (2,'Steven','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','steven.cadena.giler@gmail.com','cuentanos algo de ti','/imgs/Steven/perfil/steven.jpg','ADMIN'),/*1234*/
+ (3,'German','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','germancarab@gmail.com','cuentanos algo de ti','/imgs/German/perfil/german.jpg','ADMIN'),/*1234*/
+ (4,'Pablo','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','pablo@gmail.com','cuentanos algo de ti','/imgs/Pablo/perfil/pablo.jpg','USER'),/*1234*/
+ (5,'Soraya','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','soraya@gmail.com','cuentanos algo de ti','/imgs/Soraya/perfil/soraya.jpg','USER'),/*1234*/
+ (6,'Lucia','$2y$10$nbm5Inx.l3F/ik5RuZa0Qu49NaFtC5i6nyYvCFLcCye6xh6GeoV3O','lucia@gmail.com','cuentanos algo de ti','/imgs/Lucia/perfil/lucia.jpg','USER');/*1234*/
  /*aqui pon tu correo german copia la pass que es 1234 *//*1234*/;
 
 INSERT INTO COMENTARIO (ID,CONTENIDO,ID_USUARIO_COMENTARIO)

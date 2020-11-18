@@ -9,6 +9,10 @@
 .ocultar{
   display: none;
 }
+.tituloR a{
+  text-decoration: none;
+  color:black;
+}
 
 /*hechas estas dos clases para poner el footer abajo, una dice que es flex el padre, y otra que el contenedor del template
 crecerá para ocupar el maximo espacio del contenido*/
@@ -228,6 +232,18 @@ crecerá para ocupar el maximo espacio del contenido*/
 .rutina img{
   cursor: pointer;
   width: 100%;
+}
+.rutina .icono figure{
+  margin-top:0;
+  width: 15%;
+}
+
+.rutina .icono label{
+  display: flex;
+  width: auto;
+}
+.rutina .icono{
+  display: flex;
 }
 .ejercicio{
   border:1px solid red;

@@ -55,7 +55,7 @@ if(count($usuario) != 0){
 </header>
 <script type="text/javascript">
 
-    let menuBtn = document.querySelectorAll('p')[2];
+    let menuBtn = document.getElementsByClassName('menu-icon')[0];
     let menu = document.querySelector('ul');
 
     console.log(menuBtn);

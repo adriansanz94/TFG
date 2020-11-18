@@ -28,13 +28,15 @@ for ($i=0; $i < count($datosEjer); $i++) {
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <div class="rutina">
-  <?php if($fav == null){ ?>
-    <label for="agregar"><span>No está en favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
-    <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
-  <?php }else{?>
-    <label for="quitar"><span>Está en favoritos</span><figure><img src="imagenes/favorito.png" id="imagen"></figure></label>
-    <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
-  <?php }?>
+  <div class="icono">
+    <?php if($fav == null){ ?>
+      <label for="agregar"><span>Agregar a favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
+      <input type="checkbox" id="agregar" name="noFavorito" value="noFavorito" class="noFavorito">
+    <?php }else{?>
+      <label for="quitar"><span>Quitar de favoritos</span><figure><img src="imagenes/favorito.png" id="imagen"></figure></label>
+      <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
+    <?php }?>
+  </div>
   <div class="rutinaCabecera">
     <h1><?= $datosRutina['NOMBRE']?></h1>
     <p><span class="negrita">Dificultad:</span><?= $datosRutina['DIFICULTAD']?></p>
@@ -73,15 +75,16 @@ for ($i=0; $i < count($datosEjer); $i++) {
       })
         .done(function(data) {
 
-          fav = data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1];
+          fav = data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim();
+          //console.log(fav);
           let im =  document.getElementById('imagen');
           let span = document.querySelector('span');
           if (fav != 'null') {
             im.src="imagenes/favorito.png";
-            span.innerHTML = "Esta en favoritos";
+            span.innerHTML = "Quitar de favoritos";
           }else{
             im.src="imagenes/noFav.png";
-            span.innerHTML = "No esta en favoritos";
+            span.innerHTML = "Agregar a favoritos";
           }
         })
         .fail(function(data) {

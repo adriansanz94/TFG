@@ -36,7 +36,7 @@ html { box-sizing: border-box; }
 footer{
   font-size:calc(var(--txt-size) * 0.7);
   color: white;
-  background-color: black;
+  background-color: var(--color2);
   text-align: center;
   padding: var(--relleno);
   height: 75px;

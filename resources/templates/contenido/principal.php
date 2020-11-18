@@ -84,7 +84,8 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
     })
       .done(function(data) {
-        let respuesta = JSON.parse(data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1]);
+
+        let respuesta = JSON.parse(data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim());
         pintarMasRecetas(respuesta);
 
       })
@@ -159,8 +160,7 @@ $('#vermasRutinas').click(function(){
 
   })
     .done(function(data) {
-
-      let respuesta = JSON.parse(data.split('script')[8].split('>')[1].split('<')[0].split('\n')[1]);
+      let respuesta = JSON.parse(data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim());
 
       pintarMasRutinas(respuesta);
 

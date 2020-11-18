@@ -26,6 +26,7 @@
       $db->ejecuta("SELECT * FROM USUARIO WHERE ID = ?",$id);
       return $db->obtenDatos()[0];
     }
+
     public static function getByIdPerfil($id){
       $db = DWESBaseDatos::obtenerInstancia();
       $db->ejecuta("SELECT * FROM USUARIO WHERE ID = ?",$id);

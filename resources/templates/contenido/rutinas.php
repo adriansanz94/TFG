@@ -5,8 +5,8 @@ global $config;
 $datosRutina = RutinaManager::getAll();
 
 ?>
+<h1 class="tituloR"> <a href="rutinas.php"> Rutinas:</a></h1>
 <div id="rutinas"class="rutinas">
-  <h1> <a href="rutinas.php"> Rutinas:</a></h1>
   <?php foreach ($datosRutina   as $fila) { ?>
     <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
     <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
