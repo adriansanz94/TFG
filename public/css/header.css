@@ -40,6 +40,10 @@ header{
   width:100%;
   text-align: center;
 }
+.menu-icon img{
+  width: 10%;
+}
+
 
 .bienvenido img{
   width: 15%;
@@ -72,6 +76,7 @@ header{
   .menu-icon{
     display: none;
   }
+
   .navigation ul.show{
     flex-direction: inherit;
   }
@@ -90,8 +95,9 @@ header{
 
   .bienvenido{
     position: absolute;
-    top:50px;;
-    right: 0;
+    top:120px;
+    right: 0px;
+    width: 250px;
   }
 
 }

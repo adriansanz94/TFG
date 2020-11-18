@@ -40,24 +40,22 @@
     <?php } ?>
   </div>
 
-  <div class="favoritos">
-        <p class="negrita">Tus rutinas favoritas</p>
-  <?php if($rutina == true){
-          for ($i=0; $i < count($rutinas); $i++) {?>
-        <p>-<a href="rutina.php?id=<?=$rutinas[$i]['ID']?>"><?=$rutinas[$i]['NOMBRE']?></a></p>
-  <?php
-          }
-        }
-  ?>
-  </div>
+  <?php if($rutina == true){?>
+    <div class="favoritos">
+      <p class="negrita">Tus rutinas favoritas</p>
 
-  <div class="favoritos">
-        <p class="negrita">Tus recetas favoritas</p>
-  <?php if($receta == true){
-          for ($i=0; $i < count($recetas); $i++) {?>
-          <p>-<a href="receta.php?id=<?=$recetas[$i]['ID']?>"><?=$recetas[$i]['NOMBRE']?></a></p>
-  <?php
-          }
-        }
-  ?>
-  </div>
+      <?php for ($i=0; $i < count($rutinas); $i++) {?>
+            <p>-<a href="rutina.php?id=<?=$rutinas[$i]['ID']?>"><?=$rutinas[$i]['NOMBRE']?></a></p>
+    <?php } ?>
+    </div>
+  <?php } ?>
+
+  <?php if($receta == true){?>
+    <div class="favoritos">
+      <p class="negrita">Tus recetas favoritas</p>
+
+      <?php for ($i=0; $i < count($recetas); $i++) {?>
+            <p>-<a href="receta.php?id=<?=$recetas[$i]['ID']?>"><?=$recetas[$i]['NOMBRE']?></a></p>
+    <?php } ?>
+    </div>
+  <?php } ?>

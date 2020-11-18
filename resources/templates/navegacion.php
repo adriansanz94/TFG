@@ -29,13 +29,16 @@ if(count($usuario) != 0){
       <h1>PONTE EN FORMA</h1>
       <?php if($mensaje == true){?>
         <div class="bienvenido">
-          <p>Bienvenido <?= $usuario['NOMBRE']?></p>
           <p><img src="<?= $usuario['IMAGEN']?>" alt=""></p>
+          <p>Bienvenido/a <?= $usuario['NOMBRE']?></p>
+
         </div>
       <?php }?>
     </div>
   </div>
-  <p class="menu-icon"> MENÚ</p>
+  <figure class="menu-icon">
+    <img src="/imagenes/menu.png" alt="">
+  </figure>
   <nav class="navigation">
     <ul>
       <li><a href="principal.php">Inicio</a></li>
