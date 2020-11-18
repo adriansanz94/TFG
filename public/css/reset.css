@@ -4,6 +4,8 @@
   --color3: #984B43; /*Rusty Red*/
   --color4: #EAC67A; /*Warm Yellow*/
   --colorTexto1: black;
+  --colorTabla1: #BDBDBD;
+  --colorTabla2: #EEEEEE;
 
 }
 /*agregada el height al 100% porque no llegaba hasta abajo si era corta la pag*/

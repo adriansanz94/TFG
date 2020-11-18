@@ -27,13 +27,12 @@
   <div>
     <h2>Usuarios</h2>
     <div>
-      <div class="usuarios">
+      <div class="tablaUsuarios">
     <table border="1px">
       <thead>
         <tr>
           <th>ID</th>
           <th>Nombre</th>
-          <th class="ocultar">Contraseña</th>
           <th class="ocultar">Email</th>
           <th class="ocultar">Imagen</th>
           <th>Rol</th>
@@ -46,7 +45,6 @@
       <tr>
         <td><?=$fila['ID']?></td>
         <td><?=$fila['NOMBRE']?></td>
-        <td class="ocultar"><?=$fila['PASS']?></td>
         <td class="ocultar"><?=$fila['EMAIL']?></td>
         <td class="ocultar"><?=$fila['IMAGEN']?></td>
         <td><?=$fila['ROL']?></td>
@@ -75,7 +73,7 @@
   <div>
     <h2>Recetas</h2>
     <div>
-      <div class="recetas">
+      <div class="tablaRecetas">
     <table border="1px">
       <thead>
         <tr>
@@ -110,7 +108,7 @@
 
   <div> <h2>Ejercicios</h2>
     <div>
-      <div class="ejercicios">
+      <div class="tablaEjercicios">
     <table border="1px">
       <thead>
         <tr>
@@ -144,7 +142,7 @@
 
   <div> <h2>Rutinas</h2>
     <div>
-      <div class="rutinas">
+      <div class="tablaRutinas">
     <table border="1px">
       <thead>
         <tr>

@@ -27,7 +27,7 @@ Son necesarias las variables
       ?>
       <div class="grow">
         <?php
-            
+
           require("$ROOT/resources/templates/contenido$ruta_contenido");
         ?>
       </div>

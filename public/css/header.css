@@ -41,6 +41,11 @@ header{
   text-align: center;
 }
 
+.bienvenido img{
+  width: 15%;
+  border-radius:50%;
+}
+
 #general{
   text-align: center;
 }
@@ -81,6 +86,12 @@ header{
   .navigation ul li a{
     display: block;
     padding:0.5em 1em;
+  }
+
+  .bienvenido{
+    position: absolute;
+    top:50px;;
+    right: 0;
   }
 
 }

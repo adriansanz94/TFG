@@ -7,7 +7,7 @@
 }
 
 .ocultar{
-  display:none;
+  display: none;
 }
 
 /*hechas estas dos clases para poner el footer abajo, una dice que es flex el padre, y otra que el contenedor del template
@@ -301,9 +301,32 @@ crecerá para ocupar el maximo espacio del contenido*/
   border-radius: 25px;
 }
 /*ADMIN*/
+.tablas{
+  text-align: center;
+
+}
+.tablas table{
+  margin:2em auto;
+}
+.tablas a{
+  text-decoration: none;
+  color: var(--colorTexto1);
+}
 .tablas img{
-  width: 70px;
-  height: 75px;
+  width: 50px;
+  height: 55px;
+  color:var(--colorTexto1);
+}
+.tablas thead{
+  background-color: var(--color3);
+  color:white;
+}
+.tablas tbody{
+  background-color: var(--colorTabla1);
+}
+
+.tablas tbody tr:nth-child(odd){
+  background-color: var(--colorTabla2);
 }
 
 /*QUIENES SOMOS*/
@@ -392,7 +415,16 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   /*CONFIGURACION PERFIL*/
 
-
+  /*ADMIN*/
+  .tablas table{
+    width: 80%;
+  }
+  .tablas thead th{
+    padding: 1em;
+  }
+  .ocultar{
+    display:table-cell;
+  }
   /*SUBIR RECETA*/
 
   /*SUBIR RUTINA 1*/

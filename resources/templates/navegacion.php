@@ -8,6 +8,13 @@ if(isset($_GET['ID'])){
 
 $admin = "ADMIN";
 
+$usuario = UsuarioManager::getById($_SESSION['ID']);
+$mensaje = false;
+if(count($usuario) != 0){
+  $mensaje = true;
+}
+
+
 
 ?>
 <link rel="stylesheet" href="/css/header.css">
@@ -20,6 +27,12 @@ $admin = "ADMIN";
     </div>
     <div id="texto">
       <h1>PONTE EN FORMA</h1>
+      <?php if($mensaje == true){?>
+        <div class="bienvenido">
+          <p>Bienvenido <?= $usuario['NOMBRE']?></p>
+          <p><img src="<?= $usuario['IMAGEN']?>" alt=""></p>
+        </div>
+      <?php }?>
     </div>
   </div>
   <p class="menu-icon"> MENÚ</p>
@@ -42,7 +55,7 @@ $admin = "ADMIN";
 </header>
 <script type="text/javascript">
 
-    let menuBtn = document.querySelector('p');
+    let menuBtn = document.querySelectorAll('p')[2];
     let menu = document.querySelector('ul');
 
     console.log(menuBtn);
