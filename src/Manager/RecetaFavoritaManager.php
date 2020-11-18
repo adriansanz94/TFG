@@ -1,7 +1,7 @@
 <?php
 
 class RecetaFavoritaManager implements IDWESEntidadManager{
-  
+
   public static function getAll(){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM  RECETAFAVORITA");
@@ -15,11 +15,11 @@ class RecetaFavoritaManager implements IDWESEntidadManager{
   public static function getAllByIdUser($id){
     $db = DWESBaseDatos::obtenerInstancia();
     $db->ejecuta("SELECT * FROM RECETAFAVORITA WHERE ID_USUARIO = ?",$id);
-    return $db->obtenDatos()[0];
+    return $db->obtenDatos();
   }
   public static function getByIdReceta(...$campos){
     $db = DWESBaseDatos::obtenerInstancia();
-    $db->ejecuta("SELECT * FROM RECETAFAVORITA WHERE ID_RECETA = ? AND 
+    $db->ejecuta("SELECT * FROM RECETAFAVORITA WHERE ID_RECETA = ? AND
                   ID_USUARIO = ? ",$campos);
     return $db->obtenDatos()[0];
   }

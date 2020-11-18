@@ -87,6 +87,24 @@ crecerá para ocupar el maximo espacio del contenido*/
   width: 35%;
   border-radius: 50%;
 }
+
+.favoritos{
+  text-align: center;
+  width: 75%;
+  margin:2em auto;
+  background-color: var(--color2);
+  color: white;
+  border-radius: 25px;
+  padding: 1em 0;
+}
+.favoritos p{
+  text-align: left;
+  padding-left: 2em;
+}
+.favoritos a{
+  text-decoration: none;
+  color:white;
+}
 /*CONFIGURACION USUARIO*/
 .configuracion {
   width: 70%;
@@ -419,6 +437,9 @@ crecerá para ocupar el maximo espacio del contenido*/
     margin: 0 auto;
     width: 25%;
     border-radius: 50%;
+  }
+  .favoritos{
+    width: 30%;
   }
 
   /* REGISTRATE*/
