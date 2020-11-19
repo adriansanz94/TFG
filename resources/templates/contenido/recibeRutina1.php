@@ -25,25 +25,12 @@ if(isset($_GET) && count($_GET) > 0){
 }
   $rutinas = RutinaManager::getByIdAJAX($_SESSION['ID']);
   $ultimaRutina = end($rutinas);
-  echo "<pre>";
-  print_r($rutinas);
-  echo "</pre>";
-
-  echo "<pre>";
-  print_r($ultimaRutina);
-  echo "</pre>";
-
-  echo "texto y check en posicion 0";
-  print_r($text[0]);
-  print_r($check[0]);
 
   $textArray = explode(',',$text);
   $checkArray = explode(',',$check);
 
   $ultimoid = intval($ultimaRutina['ID']);
-  echo "consulta de Germán";
   $consulta = RutinaManager::consultaExtra($ultimoid);
-  print_r($consulta);
 
   for ($i=0; $i < count($textArray); $i++) {
       EjercicioRutinaManager::insert($textArray[$i],$ultimoid,intval($checkArray[$i]));

@@ -385,7 +385,27 @@ crecerá para ocupar el maximo espacio del contenido*/
   width: 80%;
 }
 
-
+/*CALCULADOR IMC*/
+.calculadora{
+  margin: 25px auto;
+  text-align: center;
+  width: 18em;
+  background-color: var(--color2);
+  color: white;
+  border-radius: 25px;
+  padding: 1em;
+}
+.espacio{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.medio{
+  text-align: center;
+}
+.textocal{
+  padding: 1em;
+  text-align: justify;
+}
 /*MEDIAS QUERYS*/
 @media only screen and (min-width: 767px) {
 
