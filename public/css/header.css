@@ -60,6 +60,9 @@ header{
   width: 100px;
   height: 120px;
 }
+#imagenMenu h2{
+  color: white;
+}
 #texto{
   text-align: center;
   color:white;
@@ -69,6 +72,22 @@ header{
   #general{
     padding-top: 60px;
   }
+  
+  .menu-icon img{
+    width: 4%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  .bienvenido{
+    position: absolute;
+    top:120px;
+    right: 0px;
+    width: 250px;
+  }
+
+}
+@media only screen and (min-width: 1200px) {
   .navigation{
     position:fixed;
     left:0;
@@ -95,12 +114,4 @@ header{
     display: block;
     padding:0.5em 1em;
   }
-
-  .bienvenido{
-    position: absolute;
-    top:120px;
-    right: 0px;
-    width: 250px;
-  }
-
 }

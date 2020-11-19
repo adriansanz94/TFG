@@ -32,7 +32,7 @@
 		  document.getElementById("error").innerHTML = 'Escribe números por favor';
 		  document.getElementById("error").style.color = 'red';
 		} else {
-			document.getElementById("error").innerHTML = ''
+			document.getElementById("error").innerHTML = '';
 			let altFin = parseInt(alt.value) * parseInt(alt.value);
 			let pesFin = parseInt(pes.value) * 10000;
 			let res = pesFin / altFin + '';

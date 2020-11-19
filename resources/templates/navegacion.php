@@ -21,6 +21,7 @@ if(count($usuario) != 0){
 <header>
   <div id="general">
     <div id="imagenMenu">
+      <h2 >Bienvenido a </h2>
       <a href="principal.php">
       <img src="imagenes/logo.png" alt="">
     </a>
@@ -43,12 +44,13 @@ if(count($usuario) != 0){
       <li><a href="principal.php">Inicio</a></li>
       <li><a href="calculadoraIMC.php">Calculadora</a></li>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
+        
+        <li><a href="subirReceta.php">Subir Receta</a></li>
+        <li><a href="subirRutina1.php">Subir Rutina</a></li>
         <li><a href="perfil.php">Perfil</a></li>
         <?php if(isset($_SESSION['ROL']) && $_SESSION['ROL'] == $admin ){ ?>
           <li><a href="admin.php">Admin</a></li>
         <?php }?>
-        <li><a href="subirReceta.php">Subir Receta</a></li>
-        <li><a href="subirRutina1.php">Subir Rutina</a></li>
         <li><a href="principal.php?cerrarSesion=true"  id='perfil'>Logout</a></li>
       <?php } elseif($uri != '/login.php'){?>
         <li><a href="login.php">Login</a></li>

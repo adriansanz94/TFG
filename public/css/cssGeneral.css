@@ -28,6 +28,8 @@ crecerá para ocupar el maximo espacio del contenido*/
 
 .grow{
   flex-grow: 1;
+  max-width: 1200px;
+  margin:0 auto;
 }
 /*BUSCADOR- PRINCIPAL*/
 .buscador{
@@ -493,16 +495,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   /*CONFIGURACION PERFIL*/
 
-  /*ADMIN*/
-  .tablas table{
-    width: 80%;
-  }
-  .tablas thead th{
-    padding: 1em;
-  }
-  .ocultar{
-    display:table-cell;
-  }
+  
   /*SUBIR RECETA*/
 
   /*SUBIR RUTINA 1*/
@@ -561,4 +554,16 @@ crecerá para ocupar el maximo espacio del contenido*/
     margin: 0 auto;
   }
 
+}
+@media only screen and (min-width: 1200px) {
+  /*ADMIN*/
+  .tablas table{
+    width: 80%;
+  }
+  .tablas thead th{
+    padding: 1em;
+  }
+  .ocultar{
+    display:table-cell;
+  }
 }
