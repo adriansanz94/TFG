@@ -31,7 +31,6 @@ if(count($usuario) != 0){
         <div class="bienvenido">
           <p><a href="perfil.php"><img src="<?= $usuario['IMAGEN']?>" alt=""></a></p>
           <p>Bienvenido/a <?= $usuario['NOMBRE']?></p>
-
         </div>
       <?php }?>
     </div>

@@ -71,7 +71,6 @@ for ($i=0; $i < count($datosReceta); $i++) {
   let recetas = document.getElementsByClassName('receta');
   let contenedorRecetas = document.getElementById('recetasPadre');
 
-
   $('#vermasRecetas').click(function(){
     let ultima = recetas.length-1;
     let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
@@ -81,13 +80,10 @@ for ($i=0; $i < count($datosReceta); $i++) {
       url : 'respuestaVerMas.php',
       type: "GET",
       data : {idP: recetaUltima},
-
     })
       .done(function(data) {
-
         let respuesta = JSON.parse(data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim());
         pintarMasRecetas(respuesta);
-
       })
       .fail(function(data) {
         alert( "error" );
@@ -98,15 +94,9 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
     let divRecetas = document.getElementById('recetas');
     let btn = document.getElementById('vermasRecetas');
-    //btn.remove();
-
-
     for (var i = 0; i < datosJSON.length; i++) {
       divRecetas.appendChild(crearReceta(datosJSON[i]));
     }
-    //let btnNuevo = crearElemento('button',{type:'button',id:'vermasRecetas'},'ver más ...');
-    //divRecetas.appendChild(btnNuevo);
-
     contenedorRecetas.appendChild(btn);
   }
 
@@ -186,12 +176,16 @@ function crearRutina(rutinaJSON){
   let divRutina = crearElemento('div',{id:'rutina',class:'rutina','data-id':rutinaJSON.ID},null);
   let h2 = crearElemento('h2',null,null);
   let a = crearElemento('a',{href:'rutina.php?id='+ rutinaJSON.ID},rutinaJSON.NOMBRE);
+  let pTituloDificultad = crearElemento('p',{'class':'negrita'},'Dificultad: ');
+  let pTituloDescripcion = crearElemento('p',{'class':'negrita'},'Descripcion: ');
   let pDificultad = crearElemento('p',null,rutinaJSON.DIFICULTAD);
   let pDescripcion = crearElemento('p',null,rutinaJSON.DESCRIPCION);
 
   h2.appendChild(a);
   divRutina.appendChild(h2);
+  divRutina.appendChild(pTituloDificultad);
   divRutina.appendChild(pDificultad);
+  divRutina.appendChild(pTituloDescripcion);
   divRutina.appendChild(pDescripcion);
 
   return divRutina;
