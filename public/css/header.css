@@ -41,7 +41,10 @@ header{
   text-align: center;
 }
 .menu-icon img{
-  width: 10%;
+  width: 8%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 
