@@ -35,7 +35,7 @@ Son necesarias las variables
         require("$ROOT/resources/templates/pie.php");
       ?>
      </div>
-    <button class='scroll'>
+    <button class='scroll botonSubir'>
             <svg class="icon" viewBox="0 0 16 16">
                 <title>Flecha</title>
                 <g stroke-width="1" stroke="currentColor">

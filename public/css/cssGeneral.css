@@ -14,6 +14,11 @@
   color:black;
 }
 
+.botonSubir{
+  border-radius: 25px;
+  background-color: var(--color4);
+}
+
 /*hechas estas dos clases para poner el footer abajo, una dice que es flex el padre, y otra que el contenedor del template
 crecerá para ocupar el maximo espacio del contenido*/
 #container{
@@ -244,7 +249,7 @@ crecerá para ocupar el maximo espacio del contenido*/
 .receta .icono{
   margin: 1em auto;
   display: flex;
-  
+
 }
 
 /*RUTINA SOLO 1*/
@@ -530,6 +535,12 @@ crecerá para ocupar el maximo espacio del contenido*/
     width: 50%;
   }
 
+  .receta .icono figure{
+    margin-top:0;
+    width: 28%;
+    margin: 0 auto;
+  }
+
   /*RUTINA*/
   .rutina {
     width: 80%;
@@ -544,5 +555,10 @@ crecerá para ocupar el maximo espacio del contenido*/
   .ejerGlobal .ejercicio{
     margin: 25px ;
   }
- 
+  .rutina .icono figure{
+    margin-top:0;
+    width: 28%;
+    margin: 0 auto;
+  }
+
 }
