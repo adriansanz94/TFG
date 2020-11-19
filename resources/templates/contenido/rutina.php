@@ -25,9 +25,8 @@ for ($i=0; $i < count($datosEjer); $i++) {
 }
 
 ?>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <div class="rutina">
+  <h1><?= $datosRutina['NOMBRE']?></h1>
   <div class="icono">
     <?php if($fav == null){ ?>
       <label for="agregar"><span>Agregar a favoritos</span><figure><img src="imagenes/noFav.png" id="imagen"></figure> </label>
@@ -38,7 +37,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
     <?php }?>
   </div>
   <div class="rutinaCabecera">
-    <h1><?= $datosRutina['NOMBRE']?></h1>
+    
     <p><span class="negrita">Dificultad:</span><?= $datosRutina['DIFICULTAD']?></p>
     <p> <span class="negrita">Descripción:</span><?= $datosRutina['DESCRIPCION']?></p>
   </div>
@@ -52,8 +51,8 @@ for ($i=0; $i < count($datosEjer); $i++) {
           <p><span class="negrita">Grupo Muscular:</span><?=$ejercicio[$i]['GRUPOMUSCULAR']?></p>
           <p><span class="negrita">Descripción:</span><?=$ejercicio[$i]['DESCRIPCION']?></p>
           <p><span class="negrita">Repeticiones:</span> <?= $datosEjer[$i]['REPETICIONES']?></p>
-        <?php } ?>
-      </div>
+        </div>
+      <?php } ?>
   </div>
 </div>
 

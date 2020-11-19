@@ -50,7 +50,7 @@ crecerá para ocupar el maximo espacio del contenido*/
 
 .rutina, .receta{
   border-bottom:solid 2px var(--color1);
-  margin:0.5em 0;
+  margin:0.cd t5em 0;
 }
 
 .rutina:nth-last-of-type(1), .receta:nth-last-of-type(1){
@@ -64,6 +64,7 @@ crecerá para ocupar el maximo espacio del contenido*/
 #vermasRecetas, #vermasRutinas{
   margin-bottom: 1em;
 }
+
 /*PERFIL*/
 .perfil{
   width: 85%;
@@ -217,6 +218,11 @@ crecerá para ocupar el maximo espacio del contenido*/
   margin-bottom:0.5em;
 }
 /*RECETA SOLO 1*/
+.receta{
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
 .receta input{
   position: absolute;
   left: -10000px;
@@ -225,24 +231,30 @@ crecerá para ocupar el maximo espacio del contenido*/
   cursor: pointer;
   width: 100%;
 }
-.receta img{
-  cursor: pointer;
-  width: 100%;
-}
+
 .receta .icono figure{
   margin-top:0;
-  width: 15%;
+  width: 8%;
 }
 .receta .icono label{
   display: flex;
-  width: auto;
+  
 }
 .receta .icono{
+  margin: 1em auto;
   display: flex;
+  
 }
 
 /*RUTINA SOLO 1*/
-
+.rutina {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.rutina .rutinaCabecera{
+  padding: 1em;
+}
 .rutina input{
   position: absolute;
   left: -10000px;
@@ -253,14 +265,16 @@ crecerá para ocupar el maximo espacio del contenido*/
 }
 .rutina .icono figure{
   margin-top:0;
-  width: 15%;
+  width: 8%;
 }
-
 .rutina .icono label{
   display: flex;
-  width: auto;
+  margin: 0 auto;
+  text-align: center;
+
 }
 .rutina .icono{
+  margin: 1em auto;
   display: flex;
 }
 .ejercicio{
@@ -487,6 +501,26 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
 
   /*RECETA*/
+  .receta {
+    width: 80%;
+  }
+  .receta img{
+    width: 50%;
+  }
 
   /*RUTINA*/
+  .rutina {
+    width: 80%;
+  }
+  .rutina img{
+    width: 50%;
+  }
+  .ejerGlobal{
+    margin: 0 auto;
+    width: 70%;
+  }
+  .ejerGlobal .ejercicio{
+    margin: 25px ;
+  }
+ 
 }

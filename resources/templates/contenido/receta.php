@@ -25,11 +25,8 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
 }
 
 ?>
-
-
-<link rel="stylesheet" href="/css/receta.css">
-<link rel="stylesheet" href="/css/cssComun.css">
 <div class="receta">
+  <h1><?= $datosReceta['NOMBRE']?></h1>
   <div class="icono">
     <?php if($fav == null){ ?>
       <label for="agregar"><span>Agregar a favoritos</span><figure><img src="imagenes/corazon-roto.png" id="imagen"></figure> </label>
@@ -39,21 +36,17 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
       <input type="checkbox" id="quitar" name="Favorito" value="Favorito" class="favorito">
     <?php }?>
   </div>
-  <div>
-      <div id="receta" class="receta" data-id="<?=$datosReceta['ID']?> ">
-      <h2><a href="receta.php?id=<?= $datosReceta['ID']?>"><?= $datosReceta['NOMBRE']?></a></h2>
-      <figure><img src="<?=$datosReceta['IMAGEN'] ?>"></figure>
-      <p class="negrita">Descripción:</p>
-      <p><?= $datosReceta['DESCRIPCION']?></p>
-      <p class="negrita">Tiempo:</p>
-      <p><?= $datosReceta['TIEMPO']?></p>
-      <p class="negrita">Ingredientes:</p>
-
-      <?php  for ($k=0; $k < count($ingredientesSolos[0]); $k++) { ?>
-              <p> - <?=$ingredientesSolos[0][$k]?></p>
-
-      <?php   } ?>
-       </div>
+  <div id="receta" data-id="<?=$datosReceta['ID']?> ">
+    
+    <figure><img src="<?=$datosReceta['IMAGEN'] ?>"></figure>
+    <p class="negrita">Descripción:</p>
+    <p><?= $datosReceta['DESCRIPCION']?></p>
+    <p class="negrita">Tiempo:</p>
+    <p><?= $datosReceta['TIEMPO']?></p>
+    <p class="negrita">Ingredientes:</p>
+    <?php  for ($k=0; $k < count($ingredientesSolos[0]); $k++) { ?>
+             <p> - <?=$ingredientesSolos[0][$k]?></p>
+    <?php   } ?>
   </div>
 
 
