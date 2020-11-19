@@ -29,7 +29,7 @@ if(count($usuario) != 0){
       <h1>PONTE EN FORMA</h1>
       <?php if($mensaje == true){?>
         <div class="bienvenido">
-          <p><img src="<?= $usuario['IMAGEN']?>" alt=""></p>
+          <p><a href="perfil.php"><img src="<?= $usuario['IMAGEN']?>" alt=""></a></p>
           <p>Bienvenido/a <?= $usuario['NOMBRE']?></p>
 
         </div>
