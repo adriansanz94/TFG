@@ -74,7 +74,7 @@ crecerá para ocupar el maximo espacio del contenido*/
 
 /*PERFIL*/
 .perfil{
-  width: 85%;
+  width: 92%;
   margin: 3% auto;
   background-color: var(--color2);
   color: white;
@@ -98,12 +98,12 @@ crecerá para ocupar el maximo espacio del contenido*/
 
 .favoritos{
   text-align: center;
-  width: 75%;
+  width: 85%;
   margin:2em auto;
   background-color: var(--color2);
   color: white;
   border-radius: 25px;
-  padding: 1em 0;
+  padding: 0.5em 0;
 }
 .favoritos p{
   text-align: left;
@@ -393,26 +393,32 @@ crecerá para ocupar el maximo espacio del contenido*/
 }
 
 /*CALCULADOR IMC*/
-.calculadora{
-  margin: 25px auto;
+.padreCalculadora{
+  width: 90%;
+  margin:0 auto;
   text-align: center;
-  width: 18em;
+}
+
+.calculadora{
+  width: 90%;
+  margin:0 auto;
   background-color: var(--color2);
   color: white;
   border-radius: 25px;
-  padding: 1em;
+  text-align: center;
+  padding: 0.5em;
 }
-.espacio{
+.medio img{
+  width: 100%;
+}
+/*.espacio{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 .medio{
   text-align: center;
-}
-.textocal{
-  padding: 1em;
-  text-align: justify;
-}
+}*/
+
 /*MEDIAS QUERYS*/
 @media only screen and (min-width: 767px) {
 
@@ -470,7 +476,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   /*PERFIL*/
 
   .perfil{
-    width: 30%;/*quitado el height:100%;*/
+    width: 100%;/*quitado el height:100%;*/
     margin-bottom: 3%;
     margin-top: 3%;
     border-radius: 25px;
@@ -482,7 +488,7 @@ crecerá para ocupar el maximo espacio del contenido*/
     border-radius: 50%;
   }
   .favoritos{
-    width: 30%;
+    width: 100%;
   }
 
   /* REGISTRATE*/
@@ -495,7 +501,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   /*CONFIGURACION PERFIL*/
 
-  
+
   /*SUBIR RECETA*/
 
   /*SUBIR RUTINA 1*/
@@ -565,5 +571,12 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   .ocultar{
     display:table-cell;
+  }
+  /*PERFIL*/
+  .perfil{
+    width: 100%;
+  }
+  .favoritos{
+    width: 100%;
   }
 }

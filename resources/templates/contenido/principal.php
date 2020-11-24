@@ -30,12 +30,15 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
   <div id="rutinas"class="rutinas">
     <?php foreach ($datosRutina   as $fila) { ?>
+
       <div id="rutina" class="rutina" data-id="<?=$fila['ID']?> ">
-      <h2><a href="rutina.php?id=<?= $fila['ID']?>"><?= $fila['NOMBRE']?></a></h2>
+      <a href="rutina.php?id=<?= $fila['ID']?>">
+      <h2><?= $fila['NOMBRE']?></h2>
       <p class="negrita">Dificultad:</p>
       <p><?= $fila['DIFICULTAD']?></p>
       <p class="negrita"> Descripcion</p>
       <p><?= $fila['DESCRIPCION']?></p>
+      </a>
       </div>
     <?php } ?>
   </div>
@@ -49,7 +52,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
     <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
       <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
       <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
-      <figure><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></figure>
+      <figure><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></a></figure>
       <p class="negrita">Tiempo:</p>
       <p><?= $datosReceta[$i]['TIEMPO']?></p>
       </div>

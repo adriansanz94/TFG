@@ -7,7 +7,7 @@ require("src/validar_formulario.php");
   $select = "";
   $cadbusca ="";
   $clase = "";
-
+  $errores=[];
 
   if(isset($_POST) && count($_POST)>0){
 
@@ -25,7 +25,8 @@ require("src/validar_formulario.php");
     }
   }
 
-  if ($busqueda != ''){
+
+  if ($busqueda != '' && $selectBuscador != ''){
 
     if($selectBuscador == 'nombre_receta'){
       $cadbusca = RecetaManager::getNombreSolo($busqueda);
