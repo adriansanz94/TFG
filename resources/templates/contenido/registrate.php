@@ -1,106 +1,92 @@
 <?php
 
-require("src/validar_formulario.php");
+	require("src/validar_formulario.php");
 
-//Definir variables
-$usuario = "";
-$correo = "";
-$contraseña = "";
-$r_contraseña = "";
-$imagen = '';
+	//Definir variables
+	$usuario = "";
+	$correo = "";
+	$contraseña = "";
+	$r_contraseña = "";
+	$imagen = '';
+	$descripcion ='';
+	$errores = [];
 
-$descripcion ='';
+	//Obtenemos el nombre de todos los usuarios y su email
+	$nombresUsers = UsuarioManager::getAllNom();
+	$mailsUsers = UsuarioManager::getAllMail() ;
 
-$errores = [];
+	//agregar el post y depurar errores
+	if ( isset($_POST) && count($_POST)!=0 ) {
 
-$nombresUsers = UsuarioManager::getAllNom();
-$mailsUsers = UsuarioManager::getAllMail() ;
-
-
-//agregar el post y depurar errores
-if ( isset($_POST) && count($_POST)!=0 ) {
-
-	//NOMBRE
-	if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=3 ) {
-		foreach($nombresUsers as $fila){
-			if(strtolower( $fila['NOMBRE']) != strtolower($_POST['usuario'])){
-
-				$usuario = limpiarCadena($_POST['usuario']);
-			}else{
-				$errores['error_usuario_duplicado'] = "Ese nombre de usuario ya existe";
+		//NOMBRE
+		if (isset($_POST['usuario']) && strlen($_POST['usuario'])>=3 ) {
+			foreach($nombresUsers as $fila){
+				if(strtolower( $fila['NOMBRE']) != strtolower($_POST['usuario'])){
+					$usuario = limpiarCadena($_POST['usuario']);
+				}else{
+					$errores['error_usuario_duplicado'] = "Ese nombre de usuario ya existe";
+				}
 			}
-		}
-	}else{
-		$errores['error_usuario'] = "Nombre muy corto";
-	}
-
-	//CORREO
-	if (isset($_POST['correo']) && filter_var($_POST['correo'],FILTER_VALIDATE_EMAIL) ) {
-		foreach($mailsUsers as $fila){
-			if($fila['EMAIL'] != $_POST['correo']){
-				$correo = limpiarCadena($_POST['correo']);
-			}else{
-				$errores['error_correo'] = "Correo invalido";
-			}
-		}
-	}else{
-		$errores['error_correo'] = "Correo invalido";
-	}
-
-	//CONTRASEÑA
-	if (isset($_POST['contraseña']) && contraseñaValida($_POST['contraseña'],4) ) {
-		$contraseña = limpiarCadena($_POST['contraseña']);
-	}else{
-		$errores['error_contraseña'] = "Contraseña Invalida";
-	}
-
-	//CONFIRMAR CONTRASEÑA
-	if (isset($_POST['r_contraseña']) && contraseñaValida($_POST['r_contraseña'],4) ) {
-		$r_contraseña = limpiarCadena($_POST['r_contraseña']);
-		if (!strcmp($contraseña, $r_contraseña)==0) {
-			$errores['error_r_contraseña_dif'] = "No coinciden las contraseñas";
 		}else{
-			$contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
+			$errores['error_usuario'] = "Nombre muy corto";
 		}
-	}else{
-		$errores['error_r_contraseña'] = "Contraseña invalida";
+		//CORREO
+		if (isset($_POST['correo']) && filter_var($_POST['correo'],FILTER_VALIDATE_EMAIL) ) {
+			foreach($mailsUsers as $fila){
+				if($fila['EMAIL'] != $_POST['correo']){
+					$correo = limpiarCadena($_POST['correo']);
+				}else{
+					$errores['error_correo'] = "Correo invalido";
+				}
+			}
+		}else{
+			$errores['error_correo'] = "Correo invalido";
+		}
+		//CONTRASEÑA
+		if (isset($_POST['contraseña']) && contraseñaValida($_POST['contraseña'],4) ) {
+			$contraseña = limpiarCadena($_POST['contraseña']);
+		}else{
+			$errores['error_contraseña'] = "Contraseña Invalida";
+		}
+		//CONFIRMAR CONTRASEÑA
+		if (isset($_POST['r_contraseña']) && contraseñaValida($_POST['r_contraseña'],4) ) {
+			$r_contraseña = limpiarCadena($_POST['r_contraseña']);
+			if (!strcmp($contraseña, $r_contraseña)==0) {
+				$errores['error_r_contraseña_dif'] = "No coinciden las contraseñas";
+			}else{
+				$contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
+			}
+		}else{
+			$errores['error_r_contraseña'] = "Contraseña invalida";
+		}
+		//DESCRIPCION
+		if(isset($_POST['descripcion']) && strlen($_POST['descripcion'])>=1){
+			$descripcion = limpiarCadena($_POST['descripcion']);
+		}else{
+			$errores['error_descripcion'] = "Debes agregar alguna descripción.";
+		}
+		//DESCRIPCION
+		if(isset($_FILES['imagen']) && $_FILES['imagen']['name']!=''){
+			$imagen = limpiarCadena($_FILES['imagen']['name']);
+		}else{
+			$imagen = '';
+		}
 	}
-	//DESCRIPCION
-	if(isset($_POST['descripcion']) && strlen($_POST['descripcion'])>=1){
-		$descripcion = limpiarCadena($_POST['descripcion']);
-	}else{
-		$errores['error_descripcion'] = "Debes agregar alguna descripción.";
+	//Hacer el insert y redirigir a Login
+	if (count($errores)==0 && count($_POST)>0) {
+		$rutaImagen = guardarImagen($usuario,'perfil',$imagen);
+		$rol = "USER";
+		UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);
+
+		$usuario = '';
+		$contraseña = '';
+		$correo ='';
+		$descripcion='';
+		$rutaImagen='';
+		$rol='';
+		header('Location: login.php');
+		die();
 	}
-	//DESCRIPCION
-	if(isset($_FILES['imagen']) && $_FILES['imagen']['name']!=''){
-		$imagen = limpiarCadena($_FILES['imagen']['name']);
-	}else{
-		$imagen = '';
-	}
-
-}
-//hacer el insert y redirigir a Login
-if (count($errores)==0 && count($_POST)>0) {
-	echo'<pre>';
-	print_r('sin errores');
-	echo'</pre>';
-
-	$rutaImagen = guardarImagen($usuario,'perfil',$imagen);
-
-
-	$rol = "USER";
-
-	UsuarioManager::insert($usuario,$contraseña,$correo,$descripcion,$rutaImagen,$rol);
-
-	$usuario = '';
-	$contraseña = '';
-	$correo ='';
-	$descripcion='';
-	$rutaImagen='';
-	$rol='';
-	header('Location: login.php');
-	die();
-}
 
 ?>
 

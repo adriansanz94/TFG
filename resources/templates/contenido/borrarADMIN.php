@@ -1,11 +1,10 @@
 <?php
 
+//Página que se usa para borrar datos desde la página admin
 $id = "";
-
 if(isset($_GET['id_usuario'])){
   $id = $_GET['id_usuario'];
   UsuarioManager::delete($id);
-
 }
 
 if(isset($_GET['id_receta'])){

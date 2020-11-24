@@ -1,5 +1,5 @@
 
-<div class="padreCalculadora">	
+<div class="padreCalculadora">
 	<p class="textocal">
 		El IMC es una herramienta útil para averiguar rápidamente si tu peso corporal está situado, por ejemplo, en la zona de sobrepeso, pero hay que tener en cuenta que este índice no contempla las diferentes densidades de la masa muscular o la masa ósea. En el caso de los deportistas que tienen una masa muscular muy desarrollada, el resultado de este cálculo podría indicar erróneamente que  padece sobrepeso. También hay que tener cuidado en los resultados obtenidos en personas embarazadas o en edad avanzada, ya que se tratan de casos especiales y en todo caso habría que tener en cuenta otros parámetros para determinar su IMC.<br>
 		<br>
@@ -23,9 +23,11 @@
 	</figure>
 </div>
 <script type="text/javascript">
+  //Código para el evento de la calculadora
 	let but = document.querySelector('button');
 	but.addEventListener('click',calcular);
 
+	//Función que comprueba que esten bien introducidos los datos y calculamos el valor
 	function calcular(){
 		let alt = document.querySelector('#altura');
 		let pes = document.querySelector('#peso');
@@ -40,7 +42,7 @@
 			document.querySelector('span').innerHTML = dejarDosDecimales(res);
 		}
 	}
-
+	//Función para dejar dos decimales
 	function dejarDosDecimales(num){
 		let numArr = num.split('.');
 		let decInt = parseInt(numArr[1]);

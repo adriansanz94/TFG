@@ -1,42 +1,40 @@
 <?php
   require("src/validar_formulario.php");
   areaPrivada();
-$nombre= "";
-$dificultad = "";
-$descripcion= "";
-$errores = [];
-if(isset($_POST) && count($_POST) > 0){
-  //Nombre
-  if(isset($_POST['nombre']) && $_POST['nombre']!=''){
-      $nombre=limpiarCadena($_POST['nombre']);
-  }else{
-    $errores['error_nombre'] = "Debes ingresar un nombre de rutina";
+  $nombre= "";
+  $dificultad = "";
+  $descripcion= "";
+  $errores = [];
+  if(isset($_POST) && count($_POST) > 0){
+    //Nombre
+    if(isset($_POST['nombre']) && $_POST['nombre']!=''){
+        $nombre=limpiarCadena($_POST['nombre']);
+    }else{
+      $errores['error_nombre'] = "Debes ingresar un nombre de rutina";
+    }
+    //dificultad
+    if(isset($_POST['dificultad'])){
+        $dificultad=limpiarCadena($_POST['dificultad']);
+    }else{
+      $errores['error_dificultad'] = "Debes seleccionar una dificultad.";
+    }
+    //descripcion
+    if(isset($_POST['descripcion']) && $_POST['descripcion']!=''){
+        $descripcion=limpiarCadena($_POST['descripcion']);
+    }else{
+      $errores['error_descripcion'] = "Debes ingresar una descripcion.";
+    }
+    print_r($_POST);
+
   }
-  //dificultad
-  if(isset($_POST['dificultad'])){
-      $dificultad=limpiarCadena($_POST['dificultad']);
-  }else{
-    $errores['error_dificultad'] = "Debes seleccionar una dificultad.";
+
+  if(count($errores) == 0 && count($_POST)>0){
+    print_r($errores);
+    $id =intval($_SESSION['ID']);
+    RutinaManager::insert($nombre,$dificultad,$descripcion,$id);
+    header("Location:subirRutina2.php");
+    die();
   }
-  //descripcion
-  if(isset($_POST['descripcion']) && $_POST['descripcion']!=''){
-      $descripcion=limpiarCadena($_POST['descripcion']);
-  }else{
-    $errores['error_descripcion'] = "Debes ingresar una descripcion.";
-  }
-  print_r($_POST);
-
-}
-
-if(count($errores) == 0 && count($_POST)>0){
-  print_r($errores);
-  $id =intval($_SESSION['ID']);
-
-  RutinaManager::insert($nombre,$dificultad,$descripcion,$id);
-
-  header("Location:subirRutina2.php");
-  die();
-}
 
 
 ?>

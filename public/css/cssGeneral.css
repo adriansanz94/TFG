@@ -224,6 +224,9 @@ crecerá para ocupar el maximo espacio del contenido*/
   margin:auto;
   margin-bottom:0.5em;
 }
+.cajas > span{
+  margin-bottom: 0px;
+}
 /*RECETA SOLO 1*/
 .receta{
   margin: 0 auto;
@@ -418,7 +421,19 @@ crecerá para ocupar el maximo espacio del contenido*/
 .medio{
   text-align: center;
 }*/
+/*Página Error*/
+.errorBuscador img{
+  width: 80%;
+}
 
+.errorBuscador p{
+  margin: 0 auto;
+  text-align: center;
+}
+.errorBuscador img{
+  width: 30%;
+  margin:1em auto;
+}
 /*MEDIAS QUERYS*/
 @media only screen and (min-width: 767px) {
 
@@ -473,24 +488,6 @@ crecerá para ocupar el maximo espacio del contenido*/
     border-bottom:solid 2px var(--color1);
   }
 
-  /*PERFIL*/
-
-  .perfil{
-    width: 100%;/*quitado el height:100%;*/
-    margin-bottom: 3%;
-    margin-top: 3%;
-    border-radius: 25px;
-    padding: 0.5em;
-  }
-  .perfil img{
-    margin: 0 auto;
-    width: 25%;
-    border-radius: 50%;
-  }
-  .favoritos{
-    width: 100%;
-  }
-
   /* REGISTRATE*/
   .registro{
     width: 60%;
@@ -500,7 +497,6 @@ crecerá para ocupar el maximo espacio del contenido*/
     margin:0.5em;
   }
   /*CONFIGURACION PERFIL*/
-
 
   /*SUBIR RECETA*/
 

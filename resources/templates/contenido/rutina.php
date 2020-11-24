@@ -1,28 +1,26 @@
 <?php
-global $ROOT;
-global $config;
+  global $ROOT;
+  global $config;
 
-if(isset($_GET['id'])){
-  $id = $_GET['id'];
-}
-$id_user = $_SESSION['ID'];
-///esta consulta tiene que ser en una sola
-$datosRutina = RutinaManager::getById($id);
-$fav = RutinaFavoritaManager::getByIdRutina($id,$id_user);
-if($fav == null){
-  $favoritos = 'null';
-}else{
-  $favoritos = $fav['ID'];
-}
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+  }
+  $id_user = $_SESSION['ID'];
+  $datosRutina = RutinaManager::getById($id);
+  $fav = RutinaFavoritaManager::getByIdRutina($id,$id_user);
+  if($fav == null){
+    $favoritos = 'null';
+  }else{
+    $favoritos = $fav['ID'];
+  }
 
-//$datosEjerCompleto = EjercicioRutinaManager::getByIdEjercicio($datosRutina[]);
-$datosEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
+  $datosEjer = EjercicioRutinaManager::getByIdRutina($datosRutina['ID']);
 
-$ejercicio = [];
-for ($i=0; $i < count($datosEjer); $i++) {
-    $id = $datosEjer[$i]['ID_EJERCICIO'];
-    $ejercicio[$i]= EjercicioManager::getById($id);
-}
+  $ejercicio = [];
+  for ($i=0; $i < count($datosEjer); $i++) {
+      $id = $datosEjer[$i]['ID_EJERCICIO'];
+      $ejercicio[$i]= EjercicioManager::getById($id);
+  }
 
 ?>
 <div class="rutina">
@@ -37,7 +35,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
     <?php }?>
   </div>
   <div class="rutinaCabecera">
-    
+
     <p><span class="negrita">Dificultad:</span><?= $datosRutina['DIFICULTAD']?></p>
     <p> <span class="negrita">Descripción:</span><?= $datosRutina['DESCRIPCION']?></p>
   </div>
@@ -62,7 +60,6 @@ for ($i=0; $i < count($datosEjer); $i++) {
   let fav = favoritos || 'null';
   $(favorito).click(function(){
 
-
     let id_rutina = <?=$datosRutina['ID']?>;
     let id_user = <?=$id_user?>;
 
@@ -73,9 +70,7 @@ for ($i=0; $i < count($datosEjer); $i++) {
         data : {"fav": fav,"id_user": id_user,"id_rutina": id_rutina},
       })
         .done(function(data) {
-
           fav = data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim();
-          //console.log(fav);
           let im =  document.getElementById('imagen');
           let figcaption = document.querySelector('figcaption');
           if (fav != 'null') {

@@ -4,7 +4,6 @@ $datosRutina = RutinaManager::verMasRutinas(0);
 $datosReceta = RecetaManager::verMasReceta(0);
 
 $ingredientes = "";
-
 $ingredientesSolos = [];
 
 for ($i=0; $i < count($datosReceta); $i++) {
@@ -66,16 +65,21 @@ for ($i=0; $i < count($datosReceta); $i++) {
   let recetas = document.getElementsByClassName('receta');
   let contenedorRecetas = document.getElementById('recetasPadre');
 
+  //Usamos JQuery para hacer la petición de la consulta de ver más
   $('#vermasRecetas').click(function(){
+    //Seleccionamos la ultima receta para el id
     let ultima = recetas.length-1;
     let recetaUltima = document.getElementsByClassName('receta')[ultima].getAttribute('data-id');
+    //Creamos la URL
     let url='respuestaVerMas.php?idP='+recetaUltima;
+    //Ajax donde pasamos la url donde redirigimos los datos lo pasamos por GET
     $.ajax(
     {
       url : 'respuestaVerMas.php',
       type: "GET",
       data : {idP: recetaUltima},
     })
+      //Si todo funciona Seleccionamos los datos que nos envíe y llamamos a la función para que nos pinte mas recetas.
       .done(function(data) {
         let respuesta = JSON.parse(data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim());
         pintarMasRecetas(respuesta);
@@ -85,6 +89,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
       });
   });
 
+  //Función que nos pinta las recetas en el HTML
   function pintarMasRecetas(datosJSON){
 
     let divRecetas = document.getElementById('recetas');
@@ -95,6 +100,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
     contenedorRecetas.appendChild(btn);
   }
 
+  //Función que nos Crea cada Receta individualmente con sus etiquetas correspondientes
   function crearReceta(recetaJSON){
 
     let divReceta = crearElemento('div',{id:'receta',class:'receta','data-id':recetaJSON.ID},null);
@@ -105,7 +111,6 @@ for ($i=0; $i < count($datosReceta); $i++) {
     let pTituloTiempo = crearElemento('p',{'class':'negrita'},'Tiempo: ');
     let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
 
-
     h2.appendChild(a);
     figure.appendChild(img);
     divReceta.appendChild(h2);
@@ -113,10 +118,8 @@ for ($i=0; $i < count($datosReceta); $i++) {
     divReceta.appendChild(pTituloTiempo);
     divReceta.appendChild(pTiempo);
 
-
     let ingre = recetaJSON.INGREDIENTES;
     let ingreSolos = ingre.split(',');
-
 
     return divReceta;
   }
@@ -178,9 +181,6 @@ function crearRutina(rutinaJSON){
   return divRutina;
 }
 
-
-
-
 /*funcion auxiliar que nos crea los elementos necesarios en el html*/
 function crearElemento(tipo,atributos,contenido){
   const elemento = document.createElement(tipo);
@@ -195,7 +195,6 @@ function crearElemento(tipo,atributos,contenido){
   } else if (Array.isArray(contenido)){
     contenido.forEach(hijo => elemento.appendChild(hijo));
   }
-
   return elemento;
 }
 </script>
