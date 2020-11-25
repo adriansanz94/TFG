@@ -1,9 +1,4 @@
 <?php
-/**************
- *
- *  HAY QUE MODIFICAR TODOS LOS ATRIBUTOS DE LAS CONSULTAS CON NUESTROS ATRIBUTOS DE BASE DE DATOS
- *
- ***************/
 
   class UsuarioManager implements IDWESEntidadManager{
 

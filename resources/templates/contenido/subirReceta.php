@@ -1,72 +1,62 @@
 <?php
-require("$ROOT/src/validar_formulario.php");
-areaPrivada();
-$nombre = "";
-$ingredientes ="";
-$descripcion = "";
-$tiempo = "";
-$imagen = "";
-$errores = [];
-$id_usuario = $_SESSION['ID'];
-$rutaImagen = "";
+	require("$ROOT/src/validar_formulario.php");
+	areaPrivada();
+	$nombre = "";
+	$ingredientes ="";
+	$descripcion = "";
+	$tiempo = "";
+	$imagen = "";
+	$errores = [];
+	$id_usuario = $_SESSION['ID'];
+	$rutaImagen = "";
 
-if (count($_POST)>0 ) {
+	if (count($_POST)>0 ) {
+		//NOMBRE
+		if (isset($_POST['nombre']) && $_POST['nombre'] != '') {
+			$nombre = limpiarCadena($_POST['nombre']);
+		}else{
+			$errores['nombre'] = "El nombre de la receta debe ser mayor a 3 caracteres.";
+		}
+		//INGREDIENTES
+		if (isset($_POST['ingredientes']) && $_POST['ingredientes'] != '') {
+			$ingredientes = limpiarCadena($_POST['ingredientes']);
+		}else{
+			$errores['ingredientes'] = "Debes rellenar los ingredientes";
+		}
+	  //DESCRIPCION
+	  if (isset($_POST['descripcion']) && $_POST['descripcion'] != '') {
+	    $descripcion = limpiarCadena($_POST['descripcion']);
+	  }else{
+	    $errores['descripcion'] = "La descripción debe de contener más de 10 caracteres.";
+	  }
+	  //TIEMPO
+	  if (isset($_POST['tiempo']) && $_POST['tiempo'] != '') {
+	    $tiempo = limpiarCadena($_POST['tiempo']);
+	  }else{
+	    $errores['tiempo'] = "El tiempo debe de contener más de 3 caracteres.";
+	  }
+	  //IMAGEN
+	  if (isset($_FILES['imagen']['name']) && $_FILES['imagen']['name'] != '') {
+	    $imagen = limpiarCadena($_FILES['imagen']['name']);
+			$nombreUsuario = UsuarioManager::getById($id_usuario);
+	    $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'].'/recetas',$nombre,$_FILES['imagen']['name']);
+	  }else{
+	    $errores['imagen'] = "imagen no valida";
+	  }
 
-	//NOMBRE
-	if (isset($_POST['nombre']) && $_POST['nombre'] != '') {
-		$nombre = limpiarCadena($_POST['nombre']);
-	}else{
-		$errores['nombre'] = "El nombre de la receta debe ser mayor a 3 caracteres.";
+	  if (count($errores) == 0) {
+	      RecetaManager::insert($nombre,$ingredientes,$descripcion,$tiempo,$rutaImagen,$id_usuario);
+				$nombre = "";
+				$ingredientes ="";
+				$descripcion = "";
+				$tiempo = "";
+				$imagen = "";
+				$errores = [];
+				$rutaImagen="";
+	      header("Location:principal.php");
+	      die();
+	  }
 	}
-
-	//INGREDIENTES
-	if (isset($_POST['ingredientes']) && $_POST['ingredientes'] != '') {
-		$ingredientes = limpiarCadena($_POST['ingredientes']);
-	}else{
-		$errores['ingredientes'] = "Debes rellenar los ingredientes";
-	}
-
-  //DESCRIPCION
-  if (isset($_POST['descripcion']) && $_POST['descripcion'] != '') {
-    $descripcion = limpiarCadena($_POST['descripcion']);
-  }else{
-    $errores['descripcion'] = "La descripción debe de contener más de 10 caracteres.";
-  }
-
-  //TIEMPO
-  if (isset($_POST['tiempo']) && $_POST['tiempo'] != '') {
-    $tiempo = limpiarCadena($_POST['tiempo']);
-  }else{
-    $errores['tiempo'] = "El tiempo debe de contener más de 3 caracteres.";
-  }
-
-  //IMAGEN
-  if (isset($_FILES['imagen']['name']) && $_FILES['imagen']['name'] != '') {
-    $imagen = limpiarCadena($_FILES['imagen']['name']);
-
-    //probar con rutas para ver como guardar las imagenes
-		$nombreUsuario = UsuarioManager::getById($id_usuario);
-
-    //esto puede cambiar
-     $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'].'/recetas',$nombre,$_FILES['imagen']['name']);
-  }else{
-    $errores['imagen'] = "imagen no valida";
-  }
-
-  if (count($errores) == 0) {
-
-      RecetaManager::insert($nombre,$ingredientes,$descripcion,$tiempo,$rutaImagen,$id_usuario);
-			$nombre = "";
-			$ingredientes ="";
-			$descripcion = "";
-			$tiempo = "";
-			$imagen = "";
-			$errores = [];
-			$rutaImagen="";
-      header("Location:principal.php");
-      die();
-  }
-}
 
 ?>
 

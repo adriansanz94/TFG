@@ -14,8 +14,6 @@ if(count($usuario) != 0){
   $mensaje = true;
 }
 
-
-
 ?>
 <link rel="stylesheet" href="/css/header.css">
 <header>
@@ -44,7 +42,7 @@ if(count($usuario) != 0){
       <li><a href="principal.php">Inicio</a></li>
       <li><a href="calculadoraIMC.php">Calculadora</a></li>
       <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == true ){ ?>
-        
+
         <li><a href="subirReceta.php">Subir Receta</a></li>
         <li><a href="subirRutina1.php">Subir Rutina</a></li>
         <li><a href="perfil.php">Perfil</a></li>

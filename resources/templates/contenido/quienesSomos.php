@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="quienesSomos">
   <h2>Ponte En Forma</h2>
   <div class='texto'>
@@ -19,23 +16,18 @@
     <p>
       A día de hoy, te encontrarás con infinitas páginas que prometan resultados rápidos y sin esfuerzos. Pero seamos realistas, nada es posible sin poner dedicación. Así que si estás dispuesto a dar un cambio en tu vida,
       o simplemente buscas ideas nuevas para que tus entrenamientos y dietas sean algo diferentes, este es tu sitio.
-
     </p>
     <p>
       En esta web da igual si eres un pro del deporte, un novato que quiere empezar o llevas toda la vida compitiendo, aquí hay sitio para todo el mundo. Así que ya sabes, si lo que quieres es llevar una vida mas sana,
       ¡no dudes en registrarte!
-
     </p>
 
     <br>
     <p>Queremos agradecer también a nuestros profesores del primer y segundo año, sin los cuales todo esto no habría sido posible.  </p>
-
     <p>
       Proyecto creado por Adrián Sanz, Steven Cadena y Gérman Romero, alumnos de DAW del Instituto Juan de la Cierva.
     </p>
     <br>
     <p>DAW 2020</p>
   </div>
-
-
 </div>

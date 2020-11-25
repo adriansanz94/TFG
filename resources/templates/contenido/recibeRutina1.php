@@ -2,33 +2,27 @@
 
   require("src/validar_formulario.php");
 
-//$text = $_GET['rutinaText'];
-//$check = $_GET['rutinaCheck'];
-print_r($_GET);
-//print_r($text);
-//print_r($check);
+  $text = [];
+  $check = [];
 
-
-$text = [];
-$check = [];
-
-if(isset($_GET) && count($_GET) > 0){
-  //text
-  if(isset($_GET['rutinaText'])){
-      $text=$_GET['rutinaText'];
+  if(isset($_GET) && count($_GET) > 0){
+    //text
+    if(isset($_GET['rutinaText'])){
+        $text=$_GET['rutinaText'];
+    }
+    //check
+    if(isset($_GET['rutinaCheck'])){
+        $check=$_GET['rutinaCheck'];
+    }
   }
-
-  //check
-  if(isset($_GET['rutinaCheck'])){
-      $check=$_GET['rutinaCheck'];
-  }
-}
   $rutinas = RutinaManager::getByIdAJAX($_SESSION['ID']);
   $ultimaRutina = end($rutinas);
 
+  //Usamos el Explode para separar el text y check
   $textArray = explode(',',$text);
   $checkArray = explode(',',$check);
 
+  //Seleccionamos el último de ID
   $ultimoid = intval($ultimaRutina['ID']);
   $consulta = RutinaManager::consultaExtra($ultimoid);
 

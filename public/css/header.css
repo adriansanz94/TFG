@@ -47,7 +47,6 @@ header{
   padding: 5px;
 }
 
-
 .bienvenido img{
   width: 15%;
   border-radius:50%;
@@ -72,18 +71,17 @@ header{
   #general{
     padding-top: 60px;
   }
-  
+  #general{
+    padding-top: 0px;
+  }
   .menu-icon img{
     width: 4%;
     background-color: white;
     border-radius: 15px;
     padding: 5px;
   }
-  .bienvenido{
-    position: absolute;
-    top:120px;
-    right: 0px;
-    width: 250px;
+  .bienvenido img{
+    width: 10%;
   }
 
 }
@@ -113,5 +111,14 @@ header{
   .navigation ul li a{
     display: block;
     padding:0.5em 1em;
+  }
+
+  .bienvenido{
+    position: absolute;
+    top:130px;
+    right: 0px;
+  }
+  .bienvenido img{
+    width: 20%;
   }
 }

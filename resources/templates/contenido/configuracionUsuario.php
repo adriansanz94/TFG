@@ -1,10 +1,12 @@
 <?php
+	//Este require nos sirve para usar la función de limpiarCadena
 	require("$ROOT/src/validar_formulario.php");
+	//Función para no dar el acceso si no estás logeado
 	areaPrivada();
 	if(isset($_SESSION['ID'])){
 		$id = $_SESSION['ID'];
 	}
-
+	//Obtener todos los datos con el $id
 	$datos = UsuarioManager::getById($id);
 
 	$email="";
@@ -45,10 +47,8 @@
 
 		if (isset($_FILES['imagen'])) {
 			$imagen = limpiarCadena($_FILES['imagen']['name']);
-			//probar con rutas para ver como guardar las imagenes
 			$nombreUsuario = UsuarioManager::getById($id_usuario);
-			//esto puede cambiar
-			 $rutaImagen = guardarImagen($nombreUsuario['NOMBRE'],'perfil',$_FILES['imagen']['name']);
+			$rutaImagen = guardarImagen($nombreUsuario['NOMBRE'],'perfil',$_FILES['imagen']['name']);
 		}else{
 			$errores['imagen'] = "imagen no valida";
 		}

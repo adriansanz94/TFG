@@ -1,13 +1,13 @@
 <?php
 
-require("src/validar_formulario.php");
+  require("src/validar_formulario.php");
 
   $busqueda = "";
   $selectBuscador = "";
   $select = "";
   $cadbusca ="";
   $clase = "";
-
+  $errores=[];
 
   if(isset($_POST) && count($_POST)>0){
 
@@ -25,7 +25,8 @@ require("src/validar_formulario.php");
     }
   }
 
-  if ($busqueda != ''){
+  //Si la cadena de busqueda y el select son distintas de cadena vácia se meté
+  if ($busqueda != '' && $selectBuscador != ''){
 
     if($selectBuscador == 'nombre_receta'){
       $cadbusca = RecetaManager::getNombreSolo($busqueda);
@@ -35,6 +36,7 @@ require("src/validar_formulario.php");
       $cadbusca = RutinaManager::getNombreSolo($busqueda);
       $clase = "rutina";
     }
+  //En caso contrario te redirige a el error
   }else{
     header("Location:page404.php");
     die();

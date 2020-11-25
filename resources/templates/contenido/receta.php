@@ -1,28 +1,28 @@
 <?php
-global $ROOT;
-global $config;
-if(isset($_GET['id'])){
-  $id = $_GET['id'];
-}
-$id_user = $_SESSION['ID'];
-$fav = RecetaFavoritaManager::getByIdReceta($id,$id_user);
-if($fav == null){
-  $favoritos = 'null';
-}else{
-  $favoritos = $fav['ID'];
-}
+  global $ROOT;
+  global $config;
 
-$datosReceta = RecetaManager::getById($id);
-$no = $datosReceta['IMAGEN'];
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+  }
+  $id_user = $_SESSION['ID'];
+  $fav = RecetaFavoritaManager::getByIdReceta($id,$id_user);
+  if($fav == null){
+    $favoritos = 'null';
+  }else{
+    $favoritos = $fav['ID'];
+  }
 
-$ingredientes = "";
+  $datosReceta = RecetaManager::getById($id);
+  $no = $datosReceta['IMAGEN'];
 
-$ingredientesSolos = [];
+  $ingredientes = "";
+  $ingredientesSolos = [];
 
-for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
-  $ingredientes = $datosReceta['INGREDIENTES'];
-  $ingredientesSolos[$i] = explode(',',$ingredientes);
-}
+  for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
+    $ingredientes = $datosReceta['INGREDIENTES'];
+    $ingredientesSolos[$i] = explode(',',$ingredientes);
+  }
 
 ?>
 <div class="receta">
@@ -37,7 +37,7 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
     <?php }?>
   </div>
   <div id="receta" data-id="<?=$datosReceta['ID']?> ">
-    
+
     <figure><img src="<?=$datosReceta['IMAGEN'] ?>"></figure>
     <p class="negrita">Descripción:</p>
     <p><?= $datosReceta['DESCRIPCION']?></p>
@@ -53,13 +53,16 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
+
   let favorito = document.querySelector('label');
   let favoritos = <?=$favoritos?>;
   let fav = favoritos || 'null';
+  //Función de Click
   $(favorito).click(function(){
 
   let id_receta = <?=$datosReceta['ID']?>;
   let id_user = <?=$id_user?>;
+  //Ajax
   $.ajax(
     {
       url : 'AJAXRecetaFav.php',
@@ -72,7 +75,6 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
         let im =  document.getElementById('imagen');
         let figcaption = document.querySelector('figcaption');
         if (fav != 'null') {
-          console.log('a');
           im.src="imagenes/corazon.png";
           figcaption.innerHTML = "Quitar de favoritos";
         }else{
@@ -84,6 +86,5 @@ for ($i=0; $i < count($datosReceta['INGREDIENTES']); $i++) {
         alert( "error" );
       });
 });
-
 
 </script>

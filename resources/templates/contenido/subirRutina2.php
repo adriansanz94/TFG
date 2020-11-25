@@ -1,8 +1,7 @@
 <?php
-areaPrivada();
- $ejercicios = EjercicioManager::getAll();
-
- $ejercicios_json = json_encode($ejercicios);
+  areaPrivada();
+  $ejercicios = EjercicioManager::getAll();
+  $ejercicios_json = json_encode($ejercicios);
 ?>
 
 <h1>Seleccionar ejercicios</h1>
@@ -20,7 +19,7 @@ areaPrivada();
     </div> <br>
   <?php } ?>
 </div>
-<p id="subirRutinaBtn"><input type="submit" name="enviar" value="Enviar" id="send"></p> 
+<p id="subirRutinaBtn"><input type="submit" name="enviar" value="Enviar" id="send"></p>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
@@ -45,8 +44,6 @@ areaPrivada();
             alert("Debes poner el tiempo o repetición en alguno de los seleccionados");
           }
       }
-      console.log(rutinaFinalText);
-      console.log(rutinaFinalCheck);
       if(rutinaSeleccionada.length === padreChecked.length){
 
         let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;

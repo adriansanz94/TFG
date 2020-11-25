@@ -1,17 +1,15 @@
 <?php
   $errores = [];
   $nuevaPassword;
-
-
+  //Comprobamos que lo que recibimos del correo
   if ( count($_POST) > 0){
     $tokenCorrecto =  true;
     $email = $_POST['emailOculto'];
     $token = $_POST['tokenOculto'];
-
+    //Haces una consulta con el Token recibido para verificar que sea correcto
     $tokenBD = TokenManager::getByEmail($email);
 
-    // TODO: Verificar tokenOculto e email con base de datos
-
+    //Comprobamos las contraseñas y que los datos de la BBDD sean iguales a los que recibimos
     if (  isset($_POST['password']) &&
           $_POST['password'] != null &&
           isset($_POST['password2']) &&
@@ -23,16 +21,16 @@
           $tokenBD[0]['EMAIL'] == $email
         ){
 
+      //Se hace el hash de la nueva contraseña
       $nuevaPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+      //Si todo está bien
       if (count($errores) == 0) {
-
+        //Se cambia la contraseña
         ConfiguracionUsuarioManager::updateContraseñaPassword($email,$nuevaPassword);
-        //destruir token
-        // TODO: Borrar de la base de datos (así se destruye de la base de datos)
-
+        //Destruimos el token
         TokenManager::delete($email);
-
+        //Redirigimos a Login
         header("Location: login.php");
         die();
       }
@@ -44,11 +42,9 @@
     if (  isset($_GET['email']) && $_GET['email'] != null &&
           isset($_GET['token']) && $_GET['token'] != null
         ) {
-
       $email = $_GET['email'];
       $token = $_GET['token'];
       $tokenBD = TokenManager::getByEmail($email);
-
      if( $tokenBD[0]['TOKEN'] != null && $tokenBD[0]['TOKEN'] == $token){
         $tokenCorrecto =  true;
       }else{

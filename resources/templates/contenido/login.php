@@ -3,9 +3,8 @@ $errores = [];
 $info = ['USUARIO' => '','CONTRASEÑA' => '',];
 
 if( count($_POST) > 0 ){
-  //crear clase gestiona errores
-  gestionaErrores($_POST, $info, $errores);
 
+  gestionaErrores($_POST, $info, $errores);
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
 
@@ -20,10 +19,12 @@ if( count($_POST) > 0 ){
 
         //RECUERDAME
         if( isset($_POST['recuerdame']) && $_POST['recuerdame'] == true ){
-          $token = TokenManager::getToken();                                    //generamos un token y lo convertimos a hash
-          //ViajesManager::insertCookieSesion([$token, $id]);       //insertamos el token en la base de datos
+          //generamos un token y lo convertimos a hash
+          $token = TokenManager::getToken();
+          //insertamos el token en la base de datos
           CookieManager::insert($token, $id);
-          setcookie('recuerdame', $token, time()+(24*60*60*7));  //se establece la cookie de recuerdame
+          //se establece la cookie de recuerdame para una semana
+          setcookie('recuerdame', $token, time()+(24*60*60*7));  
         }
 
         header("Location:principal.php");

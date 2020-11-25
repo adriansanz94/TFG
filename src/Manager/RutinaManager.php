@@ -57,7 +57,6 @@ class RutinaManager {
     $db->ejecuta("SELECT * FROM RUTINA where ID limit ? , 3 ",$id);
     return $db->obtenDatos();
   }
-
   /*ESTO ES PARA EL BUSCADOR*/
   public static function getNombreSolo($busqueda){
     $db = DWESBaseDatos::obtenerInstancia();

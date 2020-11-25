@@ -7,17 +7,13 @@
 
      //SI es ADMIN
      if( isset($user) && $user['ROL'] === 'ADMIN') {
-
        $usuarios = UsuarioManager::getAll();
        $recetas = RecetaManager::getAll();
        $ejercicios = EjercicioManager::getAll();
        $rutinas = RutinaManager::getAll();
-
-     //SINO AL INICIO
-     }else{
-       //header('Location: principal.php');
-       //die();
+       //Obtenemos todos los datos de la BBDD
      }
+     //SINO AL INICIO
    }else{
      header('Location: principal.php');
      die();
