@@ -22,9 +22,6 @@ if(isset($_COOKIE['recuerdame'])){
   //token correcto
   if($id_user != null){
     setcookie('recuerdame', $_COOKIE['recuerdame'], time()+(24*60*60*7));   //establecemos la cookie otra semana mas
-
-    $_SESSION['autentificado'] = true;      //autentificamos la sesion
-    $_SESSION['ID'] = $id_user;
   }
 
 }
