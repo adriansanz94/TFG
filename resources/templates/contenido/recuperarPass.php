@@ -29,7 +29,6 @@
       $mail = new PHPMailer();
       $mail->IsSMTP();
       $mail->Mailer = "smtp";
-
       $mail->SMTPOptions = array(
                               'ssl' => array(
                               'verify_peer' => false,
@@ -37,7 +36,6 @@
                               'allow_self_signed' => true
                               )
                             );
-
       $mail->SMTPDebug  = 0;
       $mail->SMTPAuth   = TRUE;
       $mail->SMTPSecure = "tls";

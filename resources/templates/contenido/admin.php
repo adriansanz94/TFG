@@ -1,12 +1,10 @@
 <?php
-
   //OBTENER ID del USER
    if ( isset($_SESSION['ID']) ){
      $id = $_SESSION['ID'];
      $user = UsuarioManager::getByID($id);
-
      //SI es ADMIN
-     if( isset($user) && $user['ROL'] === 'ADMIN') {
+     if( isset($user) && $user['ROL'] === 'ADMIN'){
        $usuarios = UsuarioManager::getAll();
        $recetas = RecetaManager::getAll();
        $ejercicios = EjercicioManager::getAll();

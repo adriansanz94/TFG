@@ -61,9 +61,6 @@ if(count($usuario) != 0){
     let menuBtn = document.getElementsByClassName('menu-icon')[0];
     let menu = document.querySelector('ul');
 
-    console.log(menuBtn);
-    console.log(menu);
-
     menuBtn.addEventListener('click', mostrarMenu);
 
     function mostrarMenu(){

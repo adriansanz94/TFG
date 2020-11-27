@@ -26,7 +26,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
 <!-- RUTINAS -->
 <div id="rutinasPadre">
-  <h1 class="titulo"> <a href="rutinas.php"> Rutinas</a></h1>
+  <h1 class="titulo"> <a href="rutinas.php" class="titulo"> Rutinas</a></h1>
   <div id="rutinas"class="rutinas">
     <?php foreach ($datosRutina   as $fila) { ?>
 
@@ -46,7 +46,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
 <!-- RECETAS -->
 <div id="recetasPadre">
-<h1 class="titulo"><a href="recetas.php">Recetas</a></h1>
+<h1 class="titulo"><a href="recetas.php" class="titulo">Recetas</a></h1>
   <div id="recetas" class="recetas">
     <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
       <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
@@ -91,7 +91,6 @@ for ($i=0; $i < count($datosReceta); $i++) {
 
   //Función que nos pinta las recetas en el HTML
   function pintarMasRecetas(datosJSON){
-
     let divRecetas = document.getElementById('recetas');
     let btn = document.getElementById('vermasRecetas');
     for (var i = 0; i < datosJSON.length; i++) {
@@ -99,28 +98,26 @@ for ($i=0; $i < count($datosReceta); $i++) {
     }
     contenedorRecetas.appendChild(btn);
   }
-
   //Función que nos Crea cada Receta individualmente con sus etiquetas correspondientes
   function crearReceta(recetaJSON){
-
     let divReceta = crearElemento('div',{id:'receta',class:'receta','data-id':recetaJSON.ID},null);
     let h2 = crearElemento('h2',null,null);
     let a = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID},recetaJSON.NOMBRE);
+    let aImagen = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID});
     let figure = crearElemento('figure',null,null);
     let img = crearElemento('img',{src:recetaJSON.IMAGEN},null);
     let pTituloTiempo = crearElemento('p',{'class':'negrita'},'Tiempo: ');
     let pTiempo = crearElemento('p',null,recetaJSON.TIEMPO);
 
     h2.appendChild(a);
-    figure.appendChild(img);
+    figure.appendChild(aImagen);
+    aImagen.appendChild(img);
     divReceta.appendChild(h2);
     divReceta.appendChild(figure);
     divReceta.appendChild(pTituloTiempo);
     divReceta.appendChild(pTiempo);
-
     let ingre = recetaJSON.INGREDIENTES;
     let ingreSolos = ingre.split(',');
-
     return divReceta;
   }
 

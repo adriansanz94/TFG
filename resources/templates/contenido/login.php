@@ -1,9 +1,7 @@
 <?php
 $errores = [];
 $info = ['USUARIO' => '','CONTRASEÑA' => '',];
-
 if( count($_POST) > 0 ){
-
   gestionaErrores($_POST, $info, $errores);
     if($errores == null ){
       $datos = UsuarioManager::autentificado($info['USUARIO']);
@@ -15,8 +13,6 @@ if( count($_POST) > 0 ){
         //consulta para sacar el rol de dicho usuario
         $usuario = UsuarioManager::getById($id);
         $_SESSION['ROL'] = $usuario['ROL'];
-
-
         //RECUERDAME
         if( isset($_POST['recuerdame']) && $_POST['recuerdame'] == true ){
           //generamos un token y lo convertimos a hash
@@ -24,9 +20,8 @@ if( count($_POST) > 0 ){
           //insertamos el token en la base de datos
           CookieManager::insert($token, $id);
           //se establece la cookie de recuerdame para una semana
-          setcookie('recuerdame', $token, time()+(24*60*60*7));  
+          setcookie('recuerdame', $token, time()+(24*60*60*7));
         }
-
         header("Location:principal.php");
         die();
       }else{
@@ -53,9 +48,9 @@ if( count($_POST) > 0 ){
      <br>
      <a href="recuperarPass.php" id="olvidadoContraseña">¿Has olvidado tu contraseña?</a>
      <br>
-     <input type="submit" name="enviar" value="Enviar">
+     <input type="submit" name="enviar" value="Enviar" class="boton3">
      <p>O</p>
-     <a href="registrate.php" id="registrate">Registrate</a>
+     <a href="registrate.php" id="registrate" class="boton3">Registrate</a>
 
       <?php if( isset($errores['db'])) { ?>
         <br><br><span class='error'><?=$errores['db']?></span><br>

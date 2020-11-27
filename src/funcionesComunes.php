@@ -15,7 +15,7 @@ function gestionaErrores($post, &$info, &$errores){
   foreach($post as $key=>$value){
       if ( isset($post[$key]) && $value != '' ){
         $info[$key] = clear_input($value);
-      } else{ 
+      } else{
         $errores[$key] = "ERROR ".strtoupper($key);
       }
   }
@@ -33,32 +33,26 @@ function startsWith ($string, $startString) {
     return (substr($string, 0, $len) === $startString);
 }
  //funciona que guarda las imagenes en la BBDD
- function guardarImagen($carpeta,$id,$imagen){
+function guardarImagen($carpeta,$id,$imagen){
   global $ROOT;
   global $config;
 
   $fichero;
   $nombreImg;
-  //mete el nombre del fichero como string y luego nombre separa el nombre de la imagen
-  
-
-  //metemos la información dentro de las variables 
+  //metemos la información dentro de las variables
   $dirCarpeta = "$carpeta";
   $dirID = "$id";
-  $nombre = $imagen;//[count($nombreImg)-1];
+  $nombre = $imagen;
   //son variables para la ruta
-  $rutaSEHDir = "/$dirCarpeta/$dirID/";///3/recetas/nombrecarpeta/
-  $rutaSEH = "$rutaSEHDir$nombre";///3/recetas/nombrecarpeta/
+  $rutaSEHDir = "/$dirCarpeta/$dirID/";
+  $rutaSEH = "$rutaSEHDir$nombre";
 
   $rutaURLImagenParaBD = $config['img_in_url'] . $rutaSEH;
   $rutaFísicaDeFichero = $ROOT . $config['img_path'] . $rutaSEH;
 
-  //$fichero = file_get_contents($rutaFísicaDeFichero.'/'.$imagen);
   $nombreImg = explode('/',$imagen);
 
   mkdir($ROOT . $config['img_path'] . $rutaSEHDir, 0777, true);
-  //file_put_contents($rutaFísicaDeFichero, $fichero);
-  //move_uploaded_file($imagen,$rutaFísicaDeFichero);
   echo $rutaFísicaDeFichero;
   move_uploaded_file($_FILES['imagen']['tmp_name'],$rutaFísicaDeFichero);
   return $rutaURLImagenParaBD;

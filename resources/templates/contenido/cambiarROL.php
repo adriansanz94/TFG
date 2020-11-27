@@ -1,5 +1,5 @@
 <?php
-//En está paǵina cambiamos el Rol del Usuario 
+//En está paǵina cambiamos el Rol del Usuario
 $id = "";
 if(isset($_GET['id_usuario'])){
   $id = $_GET['id_usuario'];
@@ -10,7 +10,7 @@ if(isset($_GET['id_usuario'])){
     UsuarioManager::updateROL($id,"ADMIN");
   }elseif($rol == 'ADMIN'){
     UsuarioManager::updateROL($id,"USER");
-    header("Location:principal.php");
+    header("Location:admin.php");
     die();
   }
 }

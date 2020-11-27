@@ -26,7 +26,6 @@
   //Código para el evento de la calculadora
 	let but = document.querySelector('button');
 	but.addEventListener('click',calcular);
-
 	//Función que comprueba que esten bien introducidos los datos y calculamos el valor
 	function calcular(){
 		let alt = document.querySelector('#altura');

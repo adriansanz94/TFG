@@ -19,12 +19,11 @@
     </div> <br>
   <?php } ?>
 </div>
-<p id="subirRutinaBtn"><input type="submit" name="enviar" value="Enviar" id="send"></p>
+<p id="subirRutinaBtn"><input type="submit" name="enviar" value="Enviar" id="send" class="boton1"></p>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
   $('#send').click( function() {
-
       let rutinaFinalCheck = [];
       let rutinaFinalText = [];
       let rutinaChecked = document.querySelectorAll('#rutina');
@@ -45,7 +44,6 @@
           }
       }
       if(rutinaSeleccionada.length === padreChecked.length){
-
         let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;
         //alert('Enviando!');
           $.ajax(

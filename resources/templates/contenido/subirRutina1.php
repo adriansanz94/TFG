@@ -24,7 +24,6 @@
     }else{
       $errores['error_descripcion'] = "Debes ingresar una descripcion.";
     }
-    print_r($_POST);
 
   }
 
@@ -64,6 +63,6 @@
     <?php if( isset($errores['error_descripcion'])) { ?>
       <br><span class='error'><?=$errores['error_descripcion']?></span><br>
     <?php } ?>
-    <input type="submit" name="subirRutina1" value="Subir Rutina">
+    <input type="submit" name="subirRutina1" value="Subir Rutina" class="boton1">
   </form>
 </div>

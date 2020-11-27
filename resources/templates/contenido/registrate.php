@@ -1,7 +1,6 @@
 <?php
 
 	require("src/validar_formulario.php");
-
 	//Definir variables
 	$usuario = "";
 	$correo = "";
@@ -10,7 +9,6 @@
 	$imagen = '';
 	$descripcion ='';
 	$errores = [];
-
 	//Obtenemos el nombre de todos los usuarios y su email
 	$nombresUsers = UsuarioManager::getAllNom();
 	$mailsUsers = UsuarioManager::getAllMail() ;

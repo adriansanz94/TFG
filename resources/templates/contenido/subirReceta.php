@@ -93,6 +93,6 @@
       <br><span class='error'><?=$errores['imagen']?></span><br>
     <?php } ?>
 
-    <input type="submit" name="enviar" value="Subir Receta">
+    <input type="submit" name="enviar" value="Subir Receta" class="boton1">
   </form>
 </div>
