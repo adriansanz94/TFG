@@ -12,7 +12,12 @@ for ($i=0; $i < count($datosReceta); $i++) {
 }
 
 ?>
-
+<style media="screen">
+  /*#principal_imagen:hover{
+    width: 200px;
+    height: 200px;
+  }*/
+</style>
 <form method="post" action="resultadosBusqueda.php" class="buscador">
 
   <select class="" name="selectBuscador">
@@ -50,8 +55,8 @@ for ($i=0; $i < count($datosReceta); $i++) {
   <div id="recetas" class="recetas">
     <?php for ($i=0; $i < count($datosReceta); $i++) { ?>
       <div id="receta" class="receta" data-id="<?=$datosReceta[$i]['ID']?> ">
-      <h2><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
-      <figure><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><img src="<?=$datosReceta[$i]['IMAGEN'] ?>"></a></figure>
+      <h2 class="encabezado"><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><?= $datosReceta[$i]['NOMBRE']?></a></h2>
+      <figure><a href="receta.php?id=<?= $datosReceta[$i]['ID']?>"><img id="principal_imagen" src="<?=$datosReceta[$i]['IMAGEN'] ?>"></a></figure>
       <p class="negrita">Tiempo:</p>
       <p><?= $datosReceta[$i]['TIEMPO']?></p>
       </div>
@@ -101,7 +106,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
   //Función que nos Crea cada Receta individualmente con sus etiquetas correspondientes
   function crearReceta(recetaJSON){
     let divReceta = crearElemento('div',{id:'receta',class:'receta','data-id':recetaJSON.ID},null);
-    let h2 = crearElemento('h2',null,null);
+    let h2 = crearElemento('h2',{class:'encabezado'},null);
     let a = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID},recetaJSON.NOMBRE);
     let aImagen = crearElemento('a',{href:'receta.php?id='+ recetaJSON.ID});
     let figure = crearElemento('figure',null,null);
@@ -194,4 +199,6 @@ function crearElemento(tipo,atributos,contenido){
   }
   return elemento;
 }
+
+
 </script>

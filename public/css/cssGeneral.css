@@ -263,9 +263,7 @@ crecerá para ocupar el maximo espacio del contenido*/
 }
 
 /*SUBIR RUTINA 2*/
-.subirRutina2{
-  /*background-color: var(--color3);*/
-}
+
 .cajas{
   background-color: #EAF2F8;
   border: 1px solid red;
@@ -407,7 +405,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   height: 50px;
 }
 .registro input[type='submit']{
-  width: 100px;
+  width: 138px;
 }
 
 .registro input:nth-last-of-type(1) , h1{
@@ -522,6 +520,14 @@ crecerá para ocupar el maximo espacio del contenido*/
     height: 35px;
     margin-top:12px;
   }
+
+  /*agregado por Steven*/
+  /*PRINCIPAL*/
+  .encabezado{
+    margin:0 auto;
+    height: 60px;
+    width: 90%;
+  }
 /* RUTINAS Y RECETAS - PRINCIPAL*/
   #rutinas, #recetas{
     width: 100%;
@@ -552,6 +558,13 @@ crecerá para ocupar el maximo espacio del contenido*/
   .receta:nth-last-of-type(1) {
     border-bottom:solid 2px var(--color1);
   }
+
+  /*algo nuevo por steven*/
+  .receta figure a img{
+    width: 100px;
+    height: 200px;
+  }
+
 
   /* REGISTRATE*/
   .registro{
@@ -605,6 +618,7 @@ crecerá para ocupar el maximo espacio del contenido*/
   /*RUTINA*/
   .rutina {
     width: 80%;
+    margin:0 auto;
   }
   .rutina img{
     width: 50%;
@@ -618,12 +632,13 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   .rutina .icono figure{
     margin-top:0;
-    width: 28%;
+    width: 12%;
     margin: 0 auto;
   }
 
 }
 @media only screen and (min-width: 1200px) {
+
   /*ADMIN*/
   .tablas table{
     width: 80%;
@@ -648,5 +663,9 @@ crecerá para ocupar el maximo espacio del contenido*/
   /*RUTINA*/
   .rutina{
    margin: 0.5vh auto;
+  }
+  /*CONFIGURACION*/
+  .configuracion{
+    width: 100%;
   }
 }

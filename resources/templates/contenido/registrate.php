@@ -133,6 +133,6 @@
 					<br><span class='error'><?=$errores['error_descripcion']?></span><br>
 				<?php } ?>
 
-    		<input type="submit" name="enviar" value="Registrarse">
+    		<input type="submit" name="enviar" value="Registrarse" class="boton1">
     	</form>
 </div>

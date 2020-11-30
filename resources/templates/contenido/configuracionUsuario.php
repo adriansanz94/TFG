@@ -117,7 +117,7 @@
 					<span class="error"><?=$errores['contraseña']?></span><br>
 				<?php } ?>
 			</div>
-			<input type="submit" name="cambiar" value="Cambiar"><br>
+			<input type="submit" name="cambiar" value="Cambiar" class="boton1"><br>
 		</div>
 	</form>
 </div>
