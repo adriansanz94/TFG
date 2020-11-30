@@ -536,7 +536,11 @@ crecerá para ocupar el maximo espacio del contenido*/
     flex-wrap: wrap;
     justify-content:space-between;
   }
+  
   #recetas figure a img{
+    width: 80%;
+  }
+  #recetas figure a img:hover{
     width: 100%;
   }
   .rutina , .receta{
