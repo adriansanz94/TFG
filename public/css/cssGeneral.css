@@ -551,12 +551,15 @@ crecerá para ocupar el maximo espacio del contenido*/
     flex-wrap: wrap;
     justify-content:space-between;
   }
-  
+  #recetas figure{
+    box-sizing: border-box;
+    overflow: hidden;
+  }
   #recetas figure a img{
-    width: 80%;
+    width: 100%;
   }
   #recetas figure a img:hover{
-    transform: scale(1.18);
+    transform: scale(1.5);
   }
   .rutina , .receta{
     flex-basis: 32.9%;
