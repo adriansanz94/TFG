@@ -86,6 +86,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
     })
       //Si todo funciona Seleccionamos los datos que nos envíe y llamamos a la función para que nos pinte mas recetas.
       .done(function(data) {
+        console.log(data);
         let respuesta = JSON.parse(data.split('script')[8].split('>')[2].split('<')[0].split('\n')[1].trim());
         pintarMasRecetas(respuesta);
       })

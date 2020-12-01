@@ -559,10 +559,10 @@ crecerá para ocupar el maximo espacio del contenido*/
     width: 100%;
   }
   #recetas figure a img:hover{
-    transform: scale(1.5);
+    transform: scale(1.18);
   }
   .rutina , .receta{
-    flex-basis: 32.9%;
+    flex-basis: 32.7%;
     margin:0.15em 0.10em;
   }
 
@@ -596,8 +596,14 @@ crecerá para ocupar el maximo espacio del contenido*/
     width: 90%;
     margin:0.5em;
   }
+  /*PERFIL*/
+  .perfil{
+    width: 100%;
+  }
   /*CONFIGURACION PERFIL*/
-
+  .configuracion{
+    width: 100%;
+  }
   /*SUBIR RECETA*/
 
   /*SUBIR RUTINA 1*/

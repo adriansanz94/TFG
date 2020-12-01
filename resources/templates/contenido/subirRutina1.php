@@ -28,10 +28,9 @@
   }
 
   if(count($errores) == 0 && count($_POST)>0){
-    print_r($errores);
     $id =intval($_SESSION['ID']);
-    RutinaManager::insert($nombre,$dificultad,$descripcion,$id);
-    header("Location:subirRutina2.php");
+    //RutinaManager::insert($nombre,$dificultad,$descripcion,$id);
+    header("Location:subirRutina2.php?nombre=".$nombre."&dificultad=".$dificultad."&descripcion=".$descripcion."&id=".$id);
     die();
   }
 

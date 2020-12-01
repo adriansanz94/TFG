@@ -2,6 +2,25 @@
   areaPrivada();
   $ejercicios = EjercicioManager::getAll();
   $ejercicios_json = json_encode($ejercicios);
+  $nombre = "";
+  $descripcion = "";
+  $dificultad = "";
+  $id = "";
+  if(isset($_GET) && count($_GET) > 0){
+    if(isset($_GET['nombre'])){
+      $nombre = $_GET['nombre'];
+    }
+    if(isset($_GET['descripcion'])){
+      $descripcion = $_GET['descripcion'];
+    }
+    if(isset($_GET['dificultad'])){
+      $dificultad = $_GET['dificultad'];
+    }
+    if(isset($_GET['id'])){
+      $id = $_GET['id'];
+    }
+  }
+  //print_r($_GET);
 ?>
 
 <h1>Seleccionar ejercicios</h1>
@@ -23,7 +42,14 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
+      let nombre = `<?=$nombre?>`;
+      let descripcion = `<?=$descripcion?>`;
+      let dificultad = `<?=$dificultad?>`;
+      let id = `<?=$id?>`;
+
+
   $('#send').click( function() {
+
       let rutinaFinalCheck = [];
       let rutinaFinalText = [];
       let rutinaChecked = document.querySelectorAll('#rutina');
@@ -44,8 +70,7 @@
           }
       }
       if(rutinaSeleccionada.length === padreChecked.length){
-        let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck;
-        //alert('Enviando!');
+        let url = 'recibeRutina1.php?rutinaText='+rutinaFinalText+'&rutinaCheck='+rutinaFinalCheck+'&nombre='+nombre+'&descripcion='+descripcion+'&dificultad='+dificultad+'&id='+id;
           $.ajax(
             {
               success: function(){
