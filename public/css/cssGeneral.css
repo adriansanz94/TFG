@@ -642,7 +642,6 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   .receta img{
     width: 100%;
-    height: 200px;
   }
   .recetas img:hover{
     transform: scale(1.5);
@@ -651,6 +650,11 @@ crecerá para ocupar el maximo espacio del contenido*/
     margin-top:0;
     width: 28%;
     margin: 0 auto;
+  }
+  /*MUCHAS RECETAS*/
+  .muchasrecetas img{
+    width: 100%;
+    height: 200px;
   }
 
   /*RUTINA*/

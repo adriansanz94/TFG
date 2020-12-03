@@ -12,12 +12,7 @@ for ($i=0; $i < count($datosReceta); $i++) {
 }
 
 ?>
-<style media="screen">
-  /*#principal_imagen:hover{
-    width: 200px;
-    height: 200px;
-  }*/
-</style>
+
 <form method="post" action="resultadosBusqueda.php" class="buscador">
 
   <select class="" name="selectBuscador">

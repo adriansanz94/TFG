@@ -1,9 +1,10 @@
 <?php
   global $ROOT;
   global $config;
+  require("src/validar_formulario.php");
 
   if(isset($_GET['id'])){
-    $id = $_GET['id'];
+    $id = limpiarCadena($_GET['id']);
   }
   $id_user = $_SESSION['ID'];
   $fav = RecetaFavoritaManager::getByIdReceta($id,$id_user);
