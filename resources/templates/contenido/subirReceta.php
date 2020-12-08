@@ -69,13 +69,13 @@
       <br><span class='error'><?=$errores['nombre']?></span><br>
     <?php } ?>
 
-    <label>Ingredientes (separalos por , ):</label> <br>
+    <label>Ingredientes (separalos por ,):</label> <br>
     <input type="text" name="ingredientes" value="<?=$ingredientes?>"> <br>
     <?php if( isset($errores['ingredientes'])) { ?>
       <br><span class='error'><?=$errores['ingredientes']?></span><br>
     <?php } ?>
 
-    <label>Descripción de la receta (Ingredientes y preparación):</label> <br>
+    <label>Preparación de la receta:</label> <br>
     <input type="textarea" name="descripcion" value="<?=$descripcion?>"> <br>
     <?php if( isset($errores['descripcion'])) { ?>
       <br><span class='error'><?=$errores['descripcion']?></span><br>

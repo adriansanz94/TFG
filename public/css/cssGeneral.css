@@ -132,9 +132,6 @@ crecerá para ocupar el maximo espacio del contenido*/
   transform: translateY(4px);
 }
 
-
-
-
 /*PERFIL*/
 .perfil{
   width: 92%;
@@ -323,9 +320,16 @@ crecerá para ocupar el maximo espacio del contenido*/
 }
 
 .receta .icono figure{
-  margin-top:0;
-  width: 12%;
+  width: 50%;
   margin: 0 auto;
+}
+.receta .icono figure img{
+  width: 25%;
+  margin: 0 auto;
+}
+.receta .icono figure figcaption{
+  width: 50%;
+  margin:0 auto;
 }
 .receta .icono label{
   display: flex;
@@ -356,14 +360,22 @@ crecerá para ocupar el maximo espacio del contenido*/
 }
 .rutina .icono figure{
   margin-top:0;
-  width: 12%;
+  width: 50%;
   margin: 0 auto;
+}
+.rutina .icono figure img{
+  width: 20%;
+  margin: 0 auto;
+}
+.rutina .icono figure figcaption{
+  width: 50%;
+  margin:0 auto;
 }
 .rutina .icono label{
   display: flex;
   margin: 0 auto;
   text-align: center;
-
+  width: 100%;
 }
 .rutina .icono{
   margin: 1em auto;
@@ -385,7 +397,6 @@ crecerá para ocupar el maximo espacio del contenido*/
   height: 40%;
   padding-top: 5%;
 	margin:4em auto;
-
 }
 
 .login input[type=text], .login input[type=password]{
@@ -434,11 +445,18 @@ crecerá para ocupar el maximo espacio del contenido*/
 .recuperaPass{
   margin:2em auto;
   text-align: center;
-  width: 80%;
+  width: 90%;
   padding: 1em;
   background-color: var(--color2);
   color:white;
   border-radius: 25px;
+}
+
+#email{
+  width: 90%;
+}
+.recuperaPass input[type='submit']{
+  margin-top:1em;
 }
 /*ADMIN*/
 .tablas{
@@ -587,7 +605,6 @@ crecerá para ocupar el maximo espacio del contenido*/
     height: 200px;
   }
 
-
   /* REGISTRATE*/
   .registro{
     width: 60%;
@@ -605,6 +622,10 @@ crecerá para ocupar el maximo espacio del contenido*/
     width: 100%;
   }
   /*SUBIR RECETA*/
+  .subirReceta{
+    width: 200%;
+    margin-left: -50%;
+  }
 
   /*SUBIR RUTINA 1*/
 
@@ -647,9 +668,16 @@ crecerá para ocupar el maximo espacio del contenido*/
     transform: scale(1.5);
   }
   .receta .icono figure{
-    margin-top:0;
-    width: 28%;
+    width: 50%;
     margin: 0 auto;
+  }
+  .receta .icono figure img{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .receta .icono figure figcaption{
+    width: 50%;
+    margin:0 auto;
   }
   /*MUCHAS RECETAS*/
   .muchasrecetas img{
@@ -671,6 +699,10 @@ crecerá para ocupar el maximo espacio del contenido*/
   }
   .ejerGlobal .ejercicio{
     margin: 25px ;
+  }
+  .rutina .icono figure img{
+    width: 40%;
+    margin: 0 auto;
   }
   .rutina .icono figure{
     margin-top:0;
